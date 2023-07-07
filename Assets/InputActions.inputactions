@@ -4,8 +4,30 @@
         {
             "name": "Player",
             "id": "a954560c-c5ba-470f-bb2b-603f30968538",
-            "actions": [],
-            "bindings": []
+            "actions": [
+                {
+                    "name": "PositionChange",
+                    "type": "Value",
+                    "id": "2d8ec311-6a24-4acd-b0fd-b19be87241b2",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "410e60ee-8527-46b2-a538-6f9b1cd0dba5",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PositionChange",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         },
         {
             "name": "UI",
