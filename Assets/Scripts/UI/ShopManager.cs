@@ -17,6 +17,7 @@ namespace F4B1.UI
     {
         public VoidEvent clickEvent;
         public IntVariable purchases;
+        public int maxPurchases = -1;
         public string title;
         public int cost;
         public Sprite icon;

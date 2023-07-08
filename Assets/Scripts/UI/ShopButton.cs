@@ -31,9 +31,7 @@ namespace F4B1.UI
         [SerializeField] private float multiplier;
         
         private int itemCost;
-        private int originalCost;
-        private string title;
-        private IntVariable purchases;
+        private ShopItem shopItem;
 
         private void OnEnable()
         {
@@ -49,13 +47,11 @@ namespace F4B1.UI
             descriptionTextField.text = item.description;
             effectTextField.text = item.effect;
 
-            title = item.title;
+            shopItem = item;
             itemCost = item.cost;
-            originalCost = item.cost;
             
-            purchases = item.purchases;
-            if (purchases == null)
-                purchases = ScriptableObject.CreateInstance<IntVariable>();
+            if (item.purchases == null)
+                item.purchases = ScriptableObject.CreateInstance<IntVariable>();
             
             CookieScoreChanged(coins.Value);
             
@@ -64,17 +60,20 @@ namespace F4B1.UI
 
         public void CookieScoreChanged(int value)
         {
-            button.interactable = value >= itemCost;
+            var maxPurchasesNotReached = true;
+            if(shopItem != null)
+                maxPurchasesNotReached = shopItem.purchases.Value < shopItem.maxPurchases || shopItem.maxPurchases == -1;
+            button.interactable = value >= itemCost && maxPurchasesNotReached;
         }
         
         private void BuyItem(VoidEvent clickEvent)
         {
             if (coins.Value < itemCost) return;
+            shopItem.purchases.Value++;
             coins.Subtract(itemCost);
 
-            purchases.Value++;
-            titleTextField.text = $"{title} (x{purchases.Value})";
-            itemCost = Mathf.RoundToInt(originalCost * Mathf.Pow(multiplier, purchases.Value));
+            titleTextField.text = $"{shopItem.title} (x{shopItem.purchases.Value})";
+            itemCost = Mathf.RoundToInt(shopItem.cost * Mathf.Pow(multiplier, shopItem.purchases.Value));
             costTextField.text = itemCost + "";
             
             clickEvent.Raise();
