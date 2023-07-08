@@ -145,7 +145,7 @@ MonoBehaviour:
     title: Steading
     cost: 455
   recipesItems:
-  - clickEvent: {fileID: 0}
+  - clickEvent: {fileID: 11400000, guid: acca1637f03a0ac46a9db6d6ca298a2e, type: 2}
     title: Better Oven
     cost: 40
   - clickEvent: {fileID: 0}
@@ -573,6 +573,10 @@ PrefabInstance:
     - target: {fileID: 7501080469369211708, guid: b28859adae4ca9946b1a8af53966cd71, type: 3}
       propertyPath: m_Name
       value: BuildingShopTab
+      objectReference: {fileID: 0}
+    - target: {fileID: 7501080469369211708, guid: b28859adae4ca9946b1a8af53966cd71, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b28859adae4ca9946b1a8af53966cd71, type: 3}

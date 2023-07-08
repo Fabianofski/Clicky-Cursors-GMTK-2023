@@ -35,10 +35,17 @@ namespace F4B1.UI
 
         private void Awake()
         {
-            foreach (var hardwareItem in hardwareItems)
+            InstantiateShopItems(hardwareItems, hardwareTab);
+            InstantiateShopItems(recipesItems, recipesTab);
+            InstantiateShopItems(buildingItems, buildingsTab);
+        }
+
+        private void InstantiateShopItems(ShopItem[] items, Transform tab)
+        {
+            foreach (var item in items)
             {
-                GameObject go = Instantiate(shopButtonPrefab, hardwareTab);
-                go.GetComponent<ShopButton>().SetButtonInformation(hardwareItem.title, hardwareItem.cost, hardwareItem.clickEvent);
+                GameObject go = Instantiate(shopButtonPrefab, tab);
+                go.GetComponent<ShopButton>().SetButtonInformation(item.title, item.cost, item.clickEvent);
             }
         }
     }

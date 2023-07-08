@@ -46,7 +46,7 @@ namespace F4B1.Core
             Collider2D col = Physics2D.OverlapBox(cursorPos.position, hitBox, 0, mask);
             if (!col) return;
             
-            col.gameObject.GetComponent<CookieScoreManager>().Click(scoreAmount);
+            col.GetComponentInParent<CookieScoreManager>().Click(scoreAmount);
         }
 
         private void OnDrawGizmosSelected()
