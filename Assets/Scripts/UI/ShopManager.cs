@@ -19,6 +19,8 @@ namespace F4B1.UI
         public string title;
         public int cost;
         public Sprite icon;
+        public string description;
+        public string effect;
     }
     
     public class ShopManager : MonoBehaviour
@@ -46,7 +48,7 @@ namespace F4B1.UI
             foreach (var item in items)
             {
                 GameObject go = Instantiate(shopButtonPrefab, tab);
-                go.GetComponent<ShopButton>().SetButtonInformation(item.title, item.cost, item.clickEvent, item.icon);
+                go.GetComponent<ShopButton>().SetButtonInformation(item);
             }
         }
     }

@@ -18,11 +18,16 @@ namespace F4B1.UI
 
         [SerializeField] private IntVariable coins;
         
+        [Header("Shop Button")]
         [SerializeField] private Button button;
         [SerializeField] private TextMeshProUGUI titleTextField;
         [SerializeField] private TextMeshProUGUI costTextField;
         [SerializeField] private Image imageIcon;
-
+        
+        [Header("Shop Tooltip")]
+        [SerializeField] private TextMeshProUGUI descriptionTextField;
+        [SerializeField] private TextMeshProUGUI effectTextField;
+        
         [SerializeField] private float multiplier;
         
         private int itemCost;
@@ -34,18 +39,21 @@ namespace F4B1.UI
             CookieScoreChanged(coins.Value);
         }
 
-        public void SetButtonInformation(string title, int cost, VoidEvent clickEvent, Sprite icon)
+        public void SetButtonInformation(ShopItem item)
         {
-            titleTextField.text = title;
-            costTextField.text = cost + "";
-            imageIcon.sprite = icon;
+            titleTextField.text = item.title;
+            costTextField.text = item.cost + "";
+            imageIcon.sprite = item.icon;
+            
+            descriptionTextField.text = item.description;
+            effectTextField.text = item.effect;
 
-            itemCost = cost;
-            originalCost = cost;
+            itemCost = item.cost;
+            originalCost = item.cost;
             
             CookieScoreChanged(coins.Value);
             
-            button.onClick.AddListener(() => BuyItem(clickEvent));
+            button.onClick.AddListener(() => BuyItem(item.clickEvent));
         }
 
         public void CookieScoreChanged(int value)

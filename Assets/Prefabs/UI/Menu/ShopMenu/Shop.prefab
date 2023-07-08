@@ -139,64 +139,98 @@ MonoBehaviour:
     title: Old Lady
     cost: 2
     icon: {fileID: 21300000, guid: 88ee7a5e95be6af40b6b62e2a534ae7d, type: 3}
+    description: A friendly grandma who buys cookies off the store and passes them
+      off as her own.
+    effect: (NUMBER) cookies/second
   - clickEvent: {fileID: 0}
     title: Steading
     cost: 34
     icon: {fileID: 21300000, guid: 997dac1c0788dca46953389499abb2c0, type: 3}
+    description: 'Farmland where you can grow everything you need: wheat, milk, chocolate
+      chips...'
+    effect: (NUMBER) cookies/second
   - clickEvent: {fileID: 0}
     title: Industry
     cost: 455
     icon: {fileID: 21300000, guid: 5678fe26c24001c4c85d912aadc7f63f, type: 3}
+    description: Nothing like the warm, friendly touch of heavy machinery!
+    effect: (NUMBER) cookies/second
   - clickEvent: {fileID: 0}
     title: Quarry
     cost: 455
     icon: {fileID: 21300000, guid: 594f6f619efbadd4f85f31e0fddb40c3, type: 3}
+    description: Did you know that you can sell precious gems for more cookies? It's
+      true!
+    effect: (NUMBER) cookies/second
   - clickEvent: {fileID: 0}
     title: Spacecraft
     cost: 455
     icon: {fileID: 21300000, guid: f3dac124485bab542a27c400a9a89760, type: 3}
+    description: Even Martians need a lil' choc chip in their lives...
+    effect: (NUMBER) cookies/second
   - clickEvent: {fileID: 0}
     title: Vortex
     cost: 455
     icon: {fileID: 21300000, guid: 996b146e2b749f74da5a355cf8249566, type: 3}
+    description: Steal cookies from other games involving cookies and/or clicking!
+    effect: (NUMBER) cookies/second
   recipesItems:
   - clickEvent: {fileID: 11400000, guid: acca1637f03a0ac46a9db6d6ca298a2e, type: 2}
-    title: More Dough
+    title: Extra Dough
     cost: 40
     icon: {fileID: 21300000, guid: 320b6e821ee74614e80617a4ec4762f2, type: 3}
+    description: Double the recipe, double the cookie!
+    effect: Cookie increases in size.
   - clickEvent: {fileID: 11400000, guid: 954feb5dd3e718d45a64f8cea0e7e6c4, type: 2}
     title: Cooking in Batches
     cost: 80
     icon: {fileID: 21300000, guid: 3636277b754ee5a4381095fb12c0ad2e, type: 3}
+    description: Why waste dough bake lot cookie when many small cookie do trick?
+    effect: Extra mini-cookies that orbit around the big one.
   - clickEvent: {fileID: 0}
-    title: Better Oven
+    title: 'Faster Oven:'
     cost: 200
     icon: {fileID: 21300000, guid: 59b6cce487239ce42ba29886daceabe4, type: 3}
+    description: "Baking at 190\xBAC for 10 minutes is the same as baking at 1900\xBAC
+      for 1 minute!"
+    effect: Cookie follows your mouse faster.
   hardwareItems:
   - clickEvent: {fileID: 11400000, guid: 4011495a992637e47aaddeb7a413f0f3, type: 2}
     title: Broken Cursor
     cost: 5
     icon: {fileID: 21300000, guid: 14359936588c7a64f95af5d097ecd2e6, type: 3}
+    description: It was on discount.
+    effect: (NUMBER) clicks/second, slowest.
   - clickEvent: {fileID: 11400000, guid: 4c5fc66ecffc2194080250643763dee7, type: 2}
     title: Grandpa Cursors
     cost: 10
     icon: {fileID: 21300000, guid: 6a24f28a0ae21114e816b0f2707f3f3e, type: 3}
+    description: Very wise gentleman, but not as sharp as he used to be...
+    effect: (NUMBER) clicks/second, slow.
   - clickEvent: {fileID: 11400000, guid: 5d0de2c33f964924f9ff4e9844ec4ae3, type: 2}
     title: Normal Cursor
     cost: 50
     icon: {fileID: 21300000, guid: 2cf75f664aec62e42aef63254505fa24, type: 3}
+    description: Ol' reliable.
+    effect: (NUMBER) clicks/second, average.
   - clickEvent: {fileID: 11400000, guid: 50a39d075862c5347b0b54e5801ea5ba, type: 2}
-    title: Green Cursor
+    title: Baby Cursor
     cost: 50
     icon: {fileID: 21300000, guid: 7adad2b47ad7f7e4d8ebb269597cd767, type: 3}
+    description: Full of youthful energy!
+    effect: (NUMBER) clicks/second, fast.
   - clickEvent: {fileID: 11400000, guid: 65333b55bab985547aa38598e0b4cdef, type: 2}
-    title: Robo Cursor
+    title: Robot Cursor
     cost: 40
     icon: {fileID: 21300000, guid: 3810a32a44cbe24478e5069da5196833, type: 3}
+    description: Precision-machined to optimise CPS (cookies per second).
+    effect: (NUMBER) clicks/second, fast.
   - clickEvent: {fileID: 11400000, guid: fca3fc5e4366563468397d484fd2c0dd, type: 2}
     title: Pro Cursor
     cost: 50
     icon: {fileID: 21300000, guid: 2a0e99cede2d58944915b418d6ff700f, type: 3}
+    description: Hey! This guy is cheating!
+    effect: (NUMBER) clicks/second, fastest.
 --- !u!1001 &2519963141478151375
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -726,12 +760,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5395740965535137779}
     - target: {fileID: 9028233708761248173, guid: ba851f2ffd3e76e4ea8a82371b74223d, type: 3}
+      propertyPath: m_IsOn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9028233708761248173, guid: ba851f2ffd3e76e4ea8a82371b74223d, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 699810169582771970}
     - target: {fileID: 9028233708795070607, guid: ba851f2ffd3e76e4ea8a82371b74223d, type: 3}
       propertyPath: m_fontSizeBase
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 9208534514865238906, guid: ba851f2ffd3e76e4ea8a82371b74223d, type: 3}
+      propertyPath: m_Padding.m_Left
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9208534514865238906, guid: ba851f2ffd3e76e4ea8a82371b74223d, type: 3}
+      propertyPath: m_Padding.m_Right
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba851f2ffd3e76e4ea8a82371b74223d, type: 3}
