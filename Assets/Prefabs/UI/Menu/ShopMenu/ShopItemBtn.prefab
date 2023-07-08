@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2818630457013676946}
   - component: {fileID: 8808301432456585529}
   - component: {fileID: 5601500175990234533}
+  - component: {fileID: 5973386791314478008}
   m_Layer: 5
   m_Name: ShopItemBtn
   m_TagString: Untagged
@@ -93,26 +94,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: -1395021646, guid: 4ed7fd711018133469e2f40928b1c45f, type: 3}
+    m_PressedSprite: {fileID: -464413330, guid: 4ed7fd711018133469e2f40928b1c45f, type: 3}
+    m_SelectedSprite: {fileID: -1395021646, guid: 4ed7fd711018133469e2f40928b1c45f, type: 3}
+    m_DisabledSprite: {fileID: 92523595, guid: 4ed7fd711018133469e2f40928b1c45f, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -124,6 +125,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5973386791314478008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420976522915839672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2858308cc89d467aadf1520f67196ede, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 5601500175990234533}
+  titleTextField: {fileID: 5469774465994383261}
+  costTextField: {fileID: 2355680050780796996}
 --- !u!1 &960366676080722211
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,7 +152,7 @@ GameObject:
   - component: {fileID: 818278679162255182}
   - component: {fileID: 2355680050780796996}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: Cost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -347,7 +363,7 @@ GameObject:
   - component: {fileID: 7221176791798279399}
   - component: {fileID: 5469774465994383261}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -370,8 +386,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 82.9, y: -28.2}
-  m_SizeDelta: {x: 124.4843, y: 26.939602}
+  m_AnchoredPosition: {x: 156.38882, y: -28.2}
+  m_SizeDelta: {x: 271.4622, y: 26.9396}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7221176791798279399
 CanvasRenderer:
