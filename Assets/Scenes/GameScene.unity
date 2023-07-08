@@ -414,8 +414,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2c35e342c20906f4686c59a13165b71e, type: 2}
+  m_sharedMaterial: {fileID: 2965424348135449650, guid: 2c35e342c20906f4686c59a13165b71e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -804,8 +804,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2c35e342c20906f4686c59a13165b71e, type: 2}
+  m_sharedMaterial: {fileID: 2965424348135449650, guid: 2c35e342c20906f4686c59a13165b71e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1868,6 +1868,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1306743368}
     m_Modifications:
+    - target: {fileID: 996651378238016022, guid: 3b335c984a0b17b4facaf2d00d81419a, type: 3}
+      propertyPath: m_Padding.m_Left
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 996651378238016022, guid: 3b335c984a0b17b4facaf2d00d81419a, type: 3}
+      propertyPath: m_Padding.m_Right
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1104827519547437442, guid: 3b335c984a0b17b4facaf2d00d81419a, type: 3}
       propertyPath: m_Pivot.x
       value: 1
@@ -1979,6 +1987,10 @@ PrefabInstance:
     - target: {fileID: 1104827520195971264, guid: 3b335c984a0b17b4facaf2d00d81419a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104827520195971265, guid: 3b335c984a0b17b4facaf2d00d81419a, type: 3}
+      propertyPath: m_IsOn
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1489668392289449158, guid: 3b335c984a0b17b4facaf2d00d81419a, type: 3}
       propertyPath: m_AnchorMax.y

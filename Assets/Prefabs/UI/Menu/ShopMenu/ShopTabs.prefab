@@ -201,10 +201,6 @@ PrefabInstance:
       propertyPath: m_text
       value: Recipes
       objectReference: {fileID: 0}
-    - target: {fileID: 2015782238924513288, guid: 5ba3a6054d951b94c8e53e58c628cc8a, type: 3}
-      propertyPath: m_fontSize
-      value: 28.3
-      objectReference: {fileID: 0}
     - target: {fileID: 2015782238959491368, guid: 5ba3a6054d951b94c8e53e58c628cc8a, type: 3}
       propertyPath: m_Name
       value: ShopTabButton (1)
@@ -326,10 +322,6 @@ PrefabInstance:
     - target: {fileID: 2015782238924513288, guid: 5ba3a6054d951b94c8e53e58c628cc8a, type: 3}
       propertyPath: m_text
       value: Hardware
-      objectReference: {fileID: 0}
-    - target: {fileID: 2015782238924513288, guid: 5ba3a6054d951b94c8e53e58c628cc8a, type: 3}
-      propertyPath: m_fontSize
-      value: 23.6
       objectReference: {fileID: 0}
     - target: {fileID: 2015782238959491368, guid: 5ba3a6054d951b94c8e53e58c628cc8a, type: 3}
       propertyPath: m_Name

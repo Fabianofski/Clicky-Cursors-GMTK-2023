@@ -21,24 +21,38 @@ namespace F4B1.UI
         [SerializeField] private Button button;
         [SerializeField] private TextMeshProUGUI titleTextField;
         [SerializeField] private TextMeshProUGUI costTextField;
+        [SerializeField] private Image imageIcon;
 
         [SerializeField] private float multiplier;
         
         private int itemCost;
         private int originalCost;
         private int purchases;
-        
-        public void SetButtonInformation(string title, int cost, VoidEvent clickEvent)
+
+        private void OnEnable()
+        {
+            CookieScoreChanged(coins.Value);
+        }
+
+        public void SetButtonInformation(string title, int cost, VoidEvent clickEvent, Sprite icon)
         {
             titleTextField.text = title;
             costTextField.text = cost + "";
+            imageIcon.sprite = icon;
 
             itemCost = cost;
             originalCost = cost;
             
+            CookieScoreChanged(coins.Value);
+            
             button.onClick.AddListener(() => BuyItem(clickEvent));
         }
 
+        public void CookieScoreChanged(int value)
+        {
+            button.interactable = value >= itemCost;
+        }
+        
         private void BuyItem(VoidEvent clickEvent)
         {
             if (coins.Value < itemCost) return;
