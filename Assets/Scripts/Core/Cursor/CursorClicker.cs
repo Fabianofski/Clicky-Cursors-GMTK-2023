@@ -7,7 +7,10 @@
 
 using System;
 using System.Collections;
+using F4B1.Audio;
+using UnityAtoms.BaseAtoms;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace F4B1.Core
 {
@@ -24,6 +27,9 @@ namespace F4B1.Core
         [SerializeField] private float critChance;
         [SerializeField] private float cooldown;
         private float cooldownTimer;
+
+        [SerializeField] private SoundEvent clickSoundEvent;
+        [SerializeField] private Sound[] clickSounds;
         
         private void Awake()
         {
@@ -46,7 +52,8 @@ namespace F4B1.Core
 
         private void PerformClick()
         {
-            LeanTween.scale(gameObject, new Vector3(0.8f, 0.9f, 0.9f), 1f).setEasePunch();
+            LeanTween.scale(gameObject, new Vector3(0.6f, 0.7f, 0.7f), 0.3f).setEasePunch();
+            clickSoundEvent.Raise(clickSounds[Random.Range(0, clickSounds.Length - 1)]);
             
             Collider2D col = Physics2D.OverlapBox(cursorPos.position, hitBox, 0, mask);
             if (!col) return;

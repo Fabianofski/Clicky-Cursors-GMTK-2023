@@ -225,6 +225,12 @@ MonoBehaviour:
   scoreAmount: 1
   critChance: 0
   cooldown: 1
+  clickSoundEvent: {fileID: 11400000, guid: ca1eca7eb3b3c154293af562b7eb9d9a, type: 2}
+  clickSounds:
+  - {fileID: 11400000, guid: 8fa7e2f62ecb3684abf358ae44ddea98, type: 2}
+  - {fileID: 11400000, guid: 886f6aeacc6d4df44abc8daffdbcd132, type: 2}
+  - {fileID: 11400000, guid: c53e449d0cdc5de4e927a62c5162d116, type: 2}
+  - {fileID: 11400000, guid: adb82d5ae2e72c1478fa3a6b979fd459, type: 2}
 --- !u!114 &610250395027955962
 MonoBehaviour:
   m_ObjectHideFlags: 0
