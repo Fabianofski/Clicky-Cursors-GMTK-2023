@@ -18,7 +18,7 @@ namespace F4B1.Core
     {
         [SerializeField] private float speed;
         [SerializeField] private LineRenderer lineRenderer;
-        [SerializeField] private int renderPoints;
+        [SerializeField] private int accuracy;
         
         [SerializeField] private Vector2 bottomLeft;
         [SerializeField] private Vector2 topRight;
@@ -26,6 +26,8 @@ namespace F4B1.Core
         private LTBezierPath oldPath;
         private LTBezierPath path;
         private LTBezierPath newPath;
+
+        private LTDescr activeAnimation;
         
         private void Awake()
         {
@@ -51,10 +53,10 @@ namespace F4B1.Core
             newPath = CreateBezierPath(path.pts[3], endPos);
             
             var distance = path.length;
-            LeanTween.move(gameObject, path, distance / speed);
+            activeAnimation = LeanTween.move(gameObject, path, distance / speed);
             yield return new WaitForSeconds(distance / speed);
-
             oldPath = path;
+
             StartCoroutine(nameof(MoveToRandomPosition));
         }
 
@@ -96,37 +98,69 @@ namespace F4B1.Core
 
         private void UpdateLineRendererPath()
         {
-            var oldPathPoints = CalculateBezierCurveLine(oldPath, 200);
-            var pathPoints = CalculateBezierCurveLine(path, 200);
-            var newPathPoints = CalculateBezierCurveLine(newPath, 200);
+            // var oldPathPoints = CalculateBezierCurveLine(oldPath, Mathf.RoundToInt(oldPath.length) * accuracy);
+            var pathPoints = CalculateBezierCurveLine(path, Mathf.RoundToInt(path.length) * accuracy);
+            // var newPathPoints = CalculateBezierCurveLine(newPath, Mathf.RoundToInt(newPath.length) * accuracy);
 
-            var concat = oldPathPoints.Concat(pathPoints).Concat(newPathPoints).ToList();
-            var closestIndex = FindClosestPointIndex(concat.ToArray(), transform.position);
-            
-            var startIndex = Mathf.Max(0, closestIndex - renderPoints / 2);
-            var endIndex = Mathf.Min(concat.Count - 1, closestIndex + renderPoints / 2);
-            var positions = concat.GetRange(startIndex, endIndex - startIndex + 1).ToArray();           
+            // var concat = oldPathPoints.Concat(pathPoints).Concat(newPathPoints).ToList();
+            //
+            // var index = Mathf.RoundToInt((activeAnimation.passed / activeAnimation.time) * pathPoints.Length) + oldPathPoints.Length;
 
-            lineRenderer.positionCount = positions.Length;
-            lineRenderer.SetPositions(positions);
+            // var truncated = concat.GetRange(index, concat.Count - index);
+            // var positions = GetLineWithDesiredLength(truncated, 3).ToArray();
+            // Debug.Log(truncated.Count + " " + concat.Count);
+            // concat.Reverse();
+            // var endLinePositions = GetLineWithDesiredLength(concat.GetRange(index, concat.Count - index), 3).ToArray();
+            // var positions = startLinePositions.Concat(endLinePositions).ToArray();
+
+            lineRenderer.positionCount = pathPoints.Length;
+            lineRenderer.SetPositions(pathPoints);
+            //
+            // oldLineRenderer.positionCount = oldPathPoints.Length;
+            // oldLineRenderer.SetPositions(oldPathPoints);
+            //
+            // curLineRenderer.positionCount = pathPoints.Length;
+            // curLineRenderer.SetPositions(pathPoints);
+            //
+            // newLineRenderer.positionCount = newPathPoints.Length;
+            // newLineRenderer.SetPositions(newPathPoints);
         }
         
-        private int FindClosestPointIndex(Vector3[] points, Vector3 targetPoint)
+        private List<Vector3> GetLineWithDesiredLength(List<Vector3> points, float desiredLength)
         {
-            float closestDistance = Mathf.Infinity;
-            int closestIndex = -1;
+            var result = new List<Vector3>();
 
-            for (int i = 0; i < points.Length; i++)
+            float totalLength = 0f;
+            for (int i = 1; i < points.Count; i++)
             {
-                float distance = Vector3.Distance(points[i], targetPoint);
-                if (distance < closestDistance)
+                totalLength += Vector3.Distance(points[i - 1], points[i]);
+            }
+
+            float currentLength = 0f;
+            for (int i = 1; i < points.Count; i++)
+            {
+                float segmentLength = Vector3.Distance(points[i - 1], points[i]);
+                float remainingLength = desiredLength - currentLength;
+
+                if (remainingLength <= 0f)
+                    break;
+
+                if (currentLength + segmentLength <= desiredLength)
                 {
-                    closestDistance = distance;
-                    closestIndex = i;
+                    result.Add(points[i]);
+                    if(segmentLength >= 0.1f)
+                        currentLength += segmentLength;
+                }
+                else
+                {
+                    float t = remainingLength / segmentLength;
+                    Vector3 interpolatedPoint = Vector3.Lerp(points[i - 1], points[i], t);
+                    result.Add(interpolatedPoint);
+                    currentLength += remainingLength;
                 }
             }
 
-            return closestIndex;
+            return result;
         }
         
         private Vector3[] CalculateBezierCurveLine(LTBezierPath bezierPath, int numPoints)
