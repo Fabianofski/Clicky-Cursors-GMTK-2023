@@ -239,7 +239,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   lineRenderer: {fileID: 2290845857341406429}
-  accuracy: 20
+  pathLength: 3
+  accuracy: 200
   bottomLeft: {x: -8.5, y: -4.5}
   topRight: {x: 4.5, y: 4.5}
 --- !u!1 &6886438758363578981
