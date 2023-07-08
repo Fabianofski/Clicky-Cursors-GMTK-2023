@@ -15,6 +15,8 @@ namespace F4B1.UI
     public class ShopButton: MonoBehaviour
     {
 
+        [SerializeField] private IntVariable coins;
+        
         [SerializeField] private Button button;
         [SerializeField] private TextMeshProUGUI titleTextField;
         [SerializeField] private TextMeshProUGUI costTextField;
@@ -24,7 +26,16 @@ namespace F4B1.UI
             titleTextField.text = title;
             costTextField.text = cost + "";
 
-            button.onClick.AddListener(clickEvent.Raise);
+            button.onClick.AddListener(() => BuyItem(cost, clickEvent));
+        }
+
+        private void BuyItem(int cost, VoidEvent clickEvent)
+        {
+            if (coins.Value < cost) return;
+            
+            coins.Subtract(cost);
+            
+            clickEvent.Raise();
         }
     }
 }

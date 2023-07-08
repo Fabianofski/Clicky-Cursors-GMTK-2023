@@ -137,6 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2858308cc89d467aadf1520f67196ede, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coins: {fileID: 11400000, guid: 99a2605f7a5768c44a5fb61ffbff67ff, type: 2}
   button: {fileID: 5601500175990234533}
   titleTextField: {fileID: 5469774465994383261}
   costTextField: {fileID: 2355680050780796996}

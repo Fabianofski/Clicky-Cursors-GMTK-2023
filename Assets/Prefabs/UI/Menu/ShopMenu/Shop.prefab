@@ -135,40 +135,43 @@ MonoBehaviour:
   hardwareTab: {fileID: 577459948794588576}
   shopButtonPrefab: {fileID: 420976522915839672, guid: bc12483945293894eaa1928289058582, type: 3}
   buildingItems:
-  - item: {fileID: 0}
+  - clickEvent: {fileID: 0}
     title: Pointer
     cost: 2
-  - item: {fileID: 0}
+  - clickEvent: {fileID: 0}
     title: Old Lady
     cost: 34
-  - item: {fileID: 0}
+  - clickEvent: {fileID: 0}
     title: Steading
     cost: 455
   recipesItems:
-  - item: {fileID: 0}
+  - clickEvent: {fileID: 0}
     title: Better Oven
     cost: 40
-  - item: {fileID: 0}
+  - clickEvent: {fileID: 0}
     title: Cooking in Batches
     cost: 80
-  - item: {fileID: 0}
+  - clickEvent: {fileID: 0}
     title: Fortified with Iron
     cost: 200
   hardwareItems:
-  - item: {fileID: 0}
+  - clickEvent: {fileID: 11400000, guid: 4011495a992637e47aaddeb7a413f0f3, type: 2}
     title: Broken Cursor
     cost: 5
-  - item: {fileID: 0}
+  - clickEvent: {fileID: 11400000, guid: 4c5fc66ecffc2194080250643763dee7, type: 2}
     title: Grandpa Cursors
     cost: 10
-  - item: {fileID: 0}
-    title: Baby Cursor
-    cost: 15
-  - item: {fileID: 0}
+  - clickEvent: {fileID: 11400000, guid: 5d0de2c33f964924f9ff4e9844ec4ae3, type: 2}
+    title: Normal Cursor
+    cost: 50
+  - clickEvent: {fileID: 11400000, guid: 50a39d075862c5347b0b54e5801ea5ba, type: 2}
+    title: Green Cursor
+    cost: 50
+  - clickEvent: {fileID: 11400000, guid: 65333b55bab985547aa38598e0b4cdef, type: 2}
     title: Robo Cursor
     cost: 40
-  - item: {fileID: 0}
-    title: Auto Clicker Cursor
+  - clickEvent: {fileID: 11400000, guid: fca3fc5e4366563468397d484fd2c0dd, type: 2}
+    title: Pro Cursor
     cost: 50
 --- !u!1001 &2519963141478151375
 PrefabInstance:
