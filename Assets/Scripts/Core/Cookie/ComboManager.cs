@@ -28,8 +28,6 @@ namespace F4B1.Core.Cookie
         [SerializeField] private FloatEvent cooldownProgress;
         [SerializeField] private FloatEvent levelUpProgress;
 
-        private bool resetted;
-        
         private void Awake()
         {
             comboLevelUp = levelUpAmount;
@@ -39,20 +37,20 @@ namespace F4B1.Core.Cookie
         {
             comboCooldownTimerPassed -= Time.deltaTime;
 
-            cooldownProgress.Raise(comboCooldownTimerPassed / comboCooldownTimer);
+            if (combo.Value > 0)
+                cooldownProgress.Raise(comboCooldownTimerPassed / comboCooldownTimer);
+            else cooldownProgress.Raise(0);
 
-            if (comboCooldownTimerPassed > 0 || resetted) return;
-            
-            resetted = true;
-            combo.SetValue(0);
+            if (comboCooldownTimerPassed > 0) return;
+
             comboLevelAmount = 0;
-            levelUpProgress.Raise(0);
+            combo.Subtract(1);
+            if (combo.Value < 0) combo.SetValue(0);
+            IncreaseCombo(0);
         }
 
         public void IncreaseCombo(int amount = 1)
         {
-            resetted = false;
-            
             comboCooldownTimer = comboCooldown * (1 / Mathf.Pow(comboCooldownMultiplier, combo.Value));
             comboCooldownTimerPassed = comboCooldownTimer;
             

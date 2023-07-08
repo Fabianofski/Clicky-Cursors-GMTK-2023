@@ -14,7 +14,8 @@ namespace F4B1.UI
     public class ComboTween : MonoBehaviour
     {
 
-        [SerializeField] private Image cooldownProgressBar;
+        [SerializeField] private Image cooldownProgressBar1;
+        [SerializeField] private Image cooldownProgressBar2;
         [SerializeField] private Image levelProgressBar;
         [SerializeField] private TextMeshProUGUI comboTextField;
         
@@ -60,12 +61,13 @@ namespace F4B1.UI
 
         public void CooldownLevelChanged(float value)
         {
-            cooldownProgressBar.fillAmount = value;
+            cooldownProgressBar1.fillAmount = value;
+            cooldownProgressBar2.fillAmount = value;
         }
 
         public void ComboIncreased(int value)
         {
-            comboTextField.text = value + "";
+            comboTextField.text = "x" + value;
         }
         
     }
