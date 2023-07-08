@@ -32,7 +32,7 @@ namespace F4B1.UI
         
         private int itemCost;
         private int originalCost;
-        private int purchases;
+        private IntVariable purchases;
 
         private void OnEnable()
         {
@@ -51,6 +51,10 @@ namespace F4B1.UI
             itemCost = item.cost;
             originalCost = item.cost;
             
+            purchases = item.purchases;
+            if (purchases == null)
+                purchases = ScriptableObject.CreateInstance<IntVariable>();
+            
             CookieScoreChanged(coins.Value);
             
             button.onClick.AddListener(() => BuyItem(item.clickEvent));
@@ -66,8 +70,8 @@ namespace F4B1.UI
             if (coins.Value < itemCost) return;
             coins.Subtract(itemCost);
 
-            purchases++;
-            itemCost = Mathf.RoundToInt(originalCost * Mathf.Pow(multiplier, purchases));
+            purchases.Value++;
+            itemCost = Mathf.RoundToInt(originalCost * Mathf.Pow(multiplier, purchases.Value));
             costTextField.text = itemCost + "";
             
             clickEvent.Raise();

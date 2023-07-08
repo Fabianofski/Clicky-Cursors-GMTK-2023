@@ -24,39 +24,22 @@ namespace F4B1.Core.Cursor
         [SerializeField] private Vector2 bottomLeft;
         [SerializeField] private Vector2 topRight;
 
-        private LTBezierPath oldPath;
         private LTBezierPath path;
-        private LTBezierPath newPath;
 
-        private LTDescr activeAnimation;
-        
         private void Awake()
         {
-            var endPos = new Vector2(Random.Range(bottomLeft.x, topRight.x), Random.Range(bottomLeft.y, topRight.y));
-            var position = transform.position;
-            
-            oldPath = CreateBezierPath(position, endPos);
-            path = oldPath;
-            newPath = path;
             StartCoroutine(nameof(MoveToRandomPosition));
-        }
-
-        private void Update()
-        {
-            UpdateLineRendererPath();
         }
 
         private IEnumerator MoveToRandomPosition()
         {
             var endPos = new Vector2(Random.Range(bottomLeft.x, topRight.x), Random.Range(bottomLeft.y, topRight.y));
             
-            path = newPath;
-            newPath = CreateBezierPath(path.pts[3], endPos);
+            path = CreateBezierPath(transform.position, endPos);
             
             var distance = path.length;
-            activeAnimation = LeanTween.move(gameObject, path, distance / speed);
+            LeanTween.move(gameObject, path, distance / speed);
             yield return new WaitForSeconds(distance / speed);
-            oldPath = path;
 
             StartCoroutine(nameof(MoveToRandomPosition));
         }
@@ -95,43 +78,6 @@ namespace F4B1.Core.Cursor
             Gizmos.DrawLine(bottomLeft, new Vector2(topRight.x, bottomLeft.y));
             Gizmos.DrawLine(topRight, new Vector2(topRight.x, bottomLeft.y));
             Gizmos.DrawLine(topRight, new Vector2(bottomLeft.x, topRight.y));
-        }
-
-        private void UpdateLineRendererPath()
-        {
-            var currentTime = activeAnimation.passed / activeAnimation.time;
-            var targetStart = (activeAnimation.passed - pathLength) / activeAnimation.time;
-            var targetEnd = (activeAnimation.passed + pathLength) / activeAnimation.time;
-
-            var positions = new List<Vector3>();
-
-            if (targetStart < 0)
-                positions = positions.Concat(CalculateBezierCurveLine(oldPath, 1 + targetStart, 1, accuracy)).ToList();            
-            positions = positions.Concat(CalculateBezierCurveLine(path, 
-                                    Mathf.Max(targetStart, 0), 
-                                    Mathf.Min(targetEnd, 1), 
-                                           accuracy)).ToList();
-            if (targetEnd > 1)
-                positions = positions.Concat(CalculateBezierCurveLine(newPath, 0, 1 - targetEnd, accuracy)).ToList();
-
-            lineRenderer.positionCount = positions.Count;
-            lineRenderer.SetPositions(positions.ToArray());
-        }
-        
-        private Vector3[] CalculateBezierCurveLine(LTBezierPath bezierPath, float startTime, float endTime, int numPoints)
-        {
-            var points = new List<Vector3>();
-            float stepSize = bezierPath.length / numPoints;
-            
-            for (int i = Mathf.RoundToInt(startTime / stepSize); i <= numPoints; i++)
-            {
-                float t = i * stepSize;
-                if (t > endTime) return points.ToArray();
-                Vector3 point = bezierPath.point(t);
-                points.Add(point);
-            }
-
-            return points.ToArray();
         }
     }
 }

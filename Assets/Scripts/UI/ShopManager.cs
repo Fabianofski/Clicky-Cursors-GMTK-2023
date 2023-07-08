@@ -16,6 +16,7 @@ namespace F4B1.UI
     public class ShopItem
     {
         public VoidEvent clickEvent;
+        public IntVariable purchases;
         public string title;
         public int cost;
         public Sprite icon;
