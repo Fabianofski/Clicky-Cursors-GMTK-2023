@@ -9,31 +9,34 @@ using UnityAtoms.BaseAtoms;
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class AudioSlider : MonoBehaviour
+namespace F4B1.UI
 {
-    [SerializeField] private AudioMixer mixer;
-    [SerializeField] private float soundCooldown = .1f;
-    [SerializeField] private SoundEvent playSoundEvent;
-    [SerializeField] private Sound valueChangedSound;
-    private bool _soundAlreadyPlayed;
-
-    public void SetMixerVolume(float volume)
+    public class AudioSlider : MonoBehaviour
     {
-        PlayerPrefs.SetFloat(mixer.name, volume);
-        PlayerPrefs.Save();
+        [SerializeField] private AudioMixer mixer;
+        [SerializeField] private float soundCooldown = .1f;
+        [SerializeField] private SoundEvent playSoundEvent;
+        [SerializeField] private Sound valueChangedSound;
+        private bool _soundAlreadyPlayed;
 
-        volume = Mathf.Log(volume) * 20;
-        mixer.SetFloat("volume", volume);
+        public void SetMixerVolume(float volume)
+        {
+            PlayerPrefs.SetFloat(mixer.name, volume);
+            PlayerPrefs.Save();
 
-        if (_soundAlreadyPlayed || !valueChangedSound) return;
+            volume = Mathf.Log(volume) * 20;
+            mixer.SetFloat("volume", volume);
 
-        playSoundEvent.Raise(valueChangedSound);
-        _soundAlreadyPlayed = true;
-        Invoke(nameof(ResetSoundCooldown), soundCooldown);
-    }
+            if (_soundAlreadyPlayed || !valueChangedSound) return;
 
-    private void ResetSoundCooldown()
-    {
-        _soundAlreadyPlayed = false;
+            playSoundEvent.Raise(valueChangedSound);
+            _soundAlreadyPlayed = true;
+            Invoke(nameof(ResetSoundCooldown), soundCooldown);
+        }
+
+        private void ResetSoundCooldown()
+        {
+            _soundAlreadyPlayed = false;
+        }
     }
 }

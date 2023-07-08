@@ -11,62 +11,65 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class UIManager : MonoBehaviour
+namespace F4B1.UI
 {
-    [SerializeField] private BoolVariable pauseToggled;
-    [SerializeField] private InputAction pauseInputAction;
-    [SerializeField] private List<AtomBaseVariable> resetAtoms;
-
-    public BoolVariable PauseToggled
+    public class UIManager : MonoBehaviour
     {
-        set => pauseToggled = value;
-    }
+        [SerializeField] private BoolVariable pauseToggled;
+        [SerializeField] private InputAction pauseInputAction;
+        [SerializeField] private List<AtomBaseVariable> resetAtoms;
 
-    private void Awake()
-    {
-        pauseInputAction.performed += OnPause;
-    }
+        public BoolVariable PauseToggled
+        {
+            set => pauseToggled = value;
+        }
 
-    private void OnEnable()
-    {
-        pauseInputAction.Enable();
-    }
+        private void Awake()
+        {
+            pauseInputAction.performed += OnPause;
+        }
 
-    private void OnDisable()
-    {
-        pauseInputAction.Disable();
-    }
+        private void OnEnable()
+        {
+            pauseInputAction.Enable();
+        }
 
-    private void OnPause(InputAction.CallbackContext ctx)
-    {
-        pauseToggled.Value = !pauseToggled.Value;
-    }
+        private void OnDisable()
+        {
+            pauseInputAction.Disable();
+        }
 
-    public void LoadNextScene()
-    {
-        ResetAtoms();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
+        private void OnPause(InputAction.CallbackContext ctx)
+        {
+            pauseToggled.Value = !pauseToggled.Value;
+        }
 
-    public void LoadMenuScene()
-    {
-        ResetAtoms();
-        SceneManager.LoadScene(0);
-    }
+        public void LoadNextScene()
+        {
+            ResetAtoms();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
 
-    public void ReloadCurrentScene()
-    {
-        ResetAtoms();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
+        public void LoadMenuScene()
+        {
+            ResetAtoms();
+            SceneManager.LoadScene(0);
+        }
 
-    public void QuitApplication()
-    {
-        Application.Quit();
-    }
+        public void ReloadCurrentScene()
+        {
+            ResetAtoms();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
 
-    private void ResetAtoms()
-    {
-        foreach (var atom in resetAtoms) atom.Reset();
+        public void QuitApplication()
+        {
+            Application.Quit();
+        }
+
+        private void ResetAtoms()
+        {
+            foreach (var atom in resetAtoms) atom.Reset();
+        }
     }
 }

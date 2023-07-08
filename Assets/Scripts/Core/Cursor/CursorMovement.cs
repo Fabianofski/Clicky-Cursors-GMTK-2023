@@ -12,7 +12,7 @@ using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace F4B1.Core
+namespace F4B1.Core.Cursor
 {
     public class CursorMovement : MonoBehaviour
     {

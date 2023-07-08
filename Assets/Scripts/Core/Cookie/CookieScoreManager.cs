@@ -1,11 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using F4B1.Audio;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
-namespace F4B1
+namespace F4B1.Core.Cookie
 {
     public class CookieScoreManager : MonoBehaviour
     {

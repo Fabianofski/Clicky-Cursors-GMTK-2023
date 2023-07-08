@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace F4B1.Core
+namespace F4B1.Core.Cookie
 {
     public class CookieController : MonoBehaviour
     {

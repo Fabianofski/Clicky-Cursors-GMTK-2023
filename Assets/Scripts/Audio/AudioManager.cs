@@ -4,30 +4,32 @@
 //  * Distributed under the terms of the MIT license (cf. LICENSE.md file)
 //  **/
 
-using F4B1.Audio;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+namespace F4B1.Audio
 {
-    [SerializeField] private VoidEvent destroySoundEvent;
-
-    public void PlaySound(Sound sound)
+    public class AudioManager : MonoBehaviour
     {
-        var audioObject = new GameObject { name = sound.clip.name };
+        [SerializeField] private VoidEvent destroySoundEvent;
+
+        public void PlaySound(Sound sound)
+        {
+            var audioObject = new GameObject { name = sound.clip.name };
         
-        var source = audioObject.AddComponent<AudioSource>();
-        source.playOnAwake = false;
-        source.outputAudioMixerGroup = sound.outputAudioMixerGroup;
-        source.volume = sound.volume;
-        source.clip = sound.clip;
+            var source = audioObject.AddComponent<AudioSource>();
+            source.playOnAwake = false;
+            source.outputAudioMixerGroup = sound.outputAudioMixerGroup;
+            source.volume = sound.volume;
+            source.clip = sound.clip;
         
-        if (sound.dontDestroyOnLoad) DontDestroyOnLoad(audioObject);
-        if (sound.randomlyPitchSound)
-            source.pitch = Random.Range(sound.pitchBounds.x, sound.pitchBounds.y);
-        if (sound.destroySoundOnEvent) destroySoundEvent.Register(() => Destroy(audioObject));
+            if (sound.dontDestroyOnLoad) DontDestroyOnLoad(audioObject);
+            if (sound.randomlyPitchSound)
+                source.pitch = Random.Range(sound.pitchBounds.x, sound.pitchBounds.y);
+            if (sound.destroySoundOnEvent) destroySoundEvent.Register(() => Destroy(audioObject));
         
-        source.Play();
-        Destroy(audioObject, sound.clip.length * 2f);
+            source.Play();
+            Destroy(audioObject, sound.clip.length * 2f);
+        }
     }
 }
