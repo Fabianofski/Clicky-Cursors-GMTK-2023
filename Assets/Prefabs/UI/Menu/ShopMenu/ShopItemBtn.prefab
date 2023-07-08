@@ -141,6 +141,7 @@ MonoBehaviour:
   button: {fileID: 5601500175990234533}
   titleTextField: {fileID: 5469774465994383261}
   costTextField: {fileID: 2355680050780796996}
+  multiplier: 1.3
 --- !u!1 &960366676080722211
 GameObject:
   m_ObjectHideFlags: 0

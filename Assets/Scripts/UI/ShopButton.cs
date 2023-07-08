@@ -5,6 +5,7 @@
 //  * Distributed under the terms of the MIT license (cf. LICENSE.md file)
 //  **/
 
+using System;
 using TMPro;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
@@ -20,20 +21,32 @@ namespace F4B1.UI
         [SerializeField] private Button button;
         [SerializeField] private TextMeshProUGUI titleTextField;
         [SerializeField] private TextMeshProUGUI costTextField;
+
+        [SerializeField] private float multiplier;
+        
+        private int itemCost;
+        private int originalCost;
+        private int purchases;
         
         public void SetButtonInformation(string title, int cost, VoidEvent clickEvent)
         {
             titleTextField.text = title;
             costTextField.text = cost + "";
 
-            button.onClick.AddListener(() => BuyItem(cost, clickEvent));
+            itemCost = cost;
+            originalCost = cost;
+            
+            button.onClick.AddListener(() => BuyItem(clickEvent));
         }
 
-        private void BuyItem(int cost, VoidEvent clickEvent)
+        private void BuyItem(VoidEvent clickEvent)
         {
-            if (coins.Value < cost) return;
-            
-            coins.Subtract(cost);
+            if (coins.Value < itemCost) return;
+            coins.Subtract(itemCost);
+
+            purchases++;
+            itemCost = Mathf.RoundToInt(originalCost * Mathf.Pow(multiplier, purchases));
+            costTextField.text = itemCost + "";
             
             clickEvent.Raise();
         }
