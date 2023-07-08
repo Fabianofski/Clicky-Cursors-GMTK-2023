@@ -58,7 +58,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 3
-  m_Spacing: 5
+  m_Spacing: 2
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
@@ -160,6 +160,22 @@ PrefabInstance:
     - target: {fileID: 3066403608526985132, guid: 5ba3a6054d951b94c8e53e58c628cc8a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5367104870704982995, guid: 5ba3a6054d951b94c8e53e58c628cc8a, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.9803922
+      objectReference: {fileID: 0}
+    - target: {fileID: 5367104870704982995, guid: 5ba3a6054d951b94c8e53e58c628cc8a, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.9803922
+      objectReference: {fileID: 0}
+    - target: {fileID: 5367104870704982995, guid: 5ba3a6054d951b94c8e53e58c628cc8a, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.9803922
+      objectReference: {fileID: 0}
+    - target: {fileID: 5367104870704982995, guid: 5ba3a6054d951b94c8e53e58c628cc8a, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294638330
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ba3a6054d951b94c8e53e58c628cc8a, type: 3}
@@ -364,6 +380,22 @@ PrefabInstance:
     - target: {fileID: 4336505217438780059, guid: ada33447ff2e7244f9a8cd12b562f447, type: 3}
       propertyPath: m_Name
       value: RecipesShopTabButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6168102217577756944, guid: ada33447ff2e7244f9a8cd12b562f447, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.21176472
+      objectReference: {fileID: 0}
+    - target: {fileID: 6168102217577756944, guid: ada33447ff2e7244f9a8cd12b562f447, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.16078432
+      objectReference: {fileID: 0}
+    - target: {fileID: 6168102217577756944, guid: ada33447ff2e7244f9a8cd12b562f447, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.2392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 6168102217577756944, guid: ada33447ff2e7244f9a8cd12b562f447, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4281739581
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ada33447ff2e7244f9a8cd12b562f447, type: 3}
