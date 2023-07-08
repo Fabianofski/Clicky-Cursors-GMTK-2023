@@ -17,10 +17,10 @@ namespace F4B1.Core.Cookie
         
         public void IncreaseCookieSize()
         {
+            if (currentCookieSize >= cookies.Length - 1) return;
             cookies[currentCookieSize].SetActive(false);
             currentCookieSize++;
-            if(currentCookieSize < cookies.Length)
-                cookies[currentCookieSize].SetActive(true);
+            cookies[currentCookieSize].SetActive(true);
         }
         
     }

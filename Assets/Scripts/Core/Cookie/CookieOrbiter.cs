@@ -19,36 +19,51 @@ namespace F4B1.Core.Cookie
         [SerializeField] private float rowSpacing;
         [SerializeField] private GameObject orbitPrefab;
         [SerializeField] private IntVariable cookieOrbitAmount;
+        
+        [SerializeField] private float rotationSpeed = 10f;
+        [SerializeField] private float moveSpeed = 1f;
+        private float moveDistance;
 
         private void Awake()
         {
+            for (int i = 0; i < cookieOrbitAmount.Value; i++)
+                Instantiate(orbitPrefab, transform);
+            RedrawCookies();
+        }
+
+        void Update()
+        {
+            transform.Rotate(0f, 0f, rotationSpeed * Time.deltaTime);
+            moveDistance = Mathf.Abs(Mathf.Sin(Time.time));
             RedrawCookies();
         }
 
         public void AddNewCookieOrbit()
         {
             cookieOrbitAmount.Value++;
+            Instantiate(orbitPrefab, transform);
             RedrawCookies();
         }
 
         private void RedrawCookies()
         {
-            DestroyAllChildren();
-
             int rows = 0;
+            int childCount = transform.childCount;
             int cookies = 0;
 
             do
             {
-                cookies += SpawnCookies(radius + rowSpacing * rows, cookieOrbitAmount.Value - cookies);
+                cookies += PlaceCookies(radius + rowSpacing * rows, moveDistance * moveSpeed * (rows + 1), childCount - cookies, cookies);
                 rows++;
-            } while (cookies <= cookieOrbitAmount.Value);
+            } while (cookies <= childCount);
         }
 
-        private int SpawnCookies(float rad, int amount)
+        private int PlaceCookies(float rad, float offset, int amount, int index)
         {
             float cookiesPerCircumference = Mathf.FloorToInt(2 * Mathf.PI * rad / spacing);
             float angleStep = 360f / cookiesPerCircumference;
+
+            rad += offset;
             
             for (int i = 0; i < Mathf.Min(cookiesPerCircumference, amount); i++)
             {
@@ -56,10 +71,8 @@ namespace F4B1.Core.Cookie
                 float x = Mathf.Cos(angle) * rad;
                 float y = Mathf.Sin(angle) * rad;
 
-                Vector3 spawnPosition = transform.position + new Vector3(x, y, 0f);
-
-                GameObject spawnedObject = Instantiate(orbitPrefab, spawnPosition, Quaternion.identity);
-                spawnedObject.transform.SetParent(transform);
+                Vector3 spawnPosition = new Vector3(x, y, 0f);
+                transform.GetChild(index + i).localPosition = spawnPosition;
             }
 
             return Mathf.RoundToInt(cookiesPerCircumference);

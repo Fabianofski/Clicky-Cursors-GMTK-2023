@@ -121,6 +121,8 @@ MonoBehaviour:
   rowSpacing: 0.4
   orbitPrefab: {fileID: 2261482796824201326, guid: e941d329227ffdf48b715015b72fb463, type: 3}
   cookieOrbitAmount: {fileID: 11400000, guid: 1930b9690cbec664bb4c4b8f4430f495, type: 2}
+  rotationSpeed: 10
+  moveSpeed: 0.1
 --- !u!114 &8022368630170286203
 MonoBehaviour:
   m_ObjectHideFlags: 0
