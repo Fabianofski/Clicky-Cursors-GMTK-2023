@@ -32,6 +32,7 @@ namespace F4B1.UI
         
         private int itemCost;
         private int originalCost;
+        private string title;
         private IntVariable purchases;
 
         private void OnEnable()
@@ -41,13 +42,14 @@ namespace F4B1.UI
 
         public void SetButtonInformation(ShopItem item)
         {
-            titleTextField.text = item.title;
+            titleTextField.text = $"{item.title} (x0)";
             costTextField.text = item.cost + "";
             imageIcon.sprite = item.icon;
             
             descriptionTextField.text = item.description;
             effectTextField.text = item.effect;
 
+            title = item.title;
             itemCost = item.cost;
             originalCost = item.cost;
             
@@ -71,6 +73,7 @@ namespace F4B1.UI
             coins.Subtract(itemCost);
 
             purchases.Value++;
+            titleTextField.text = $"{title} (x{purchases.Value})";
             itemCost = Mathf.RoundToInt(originalCost * Mathf.Pow(multiplier, purchases.Value));
             costTextField.text = itemCost + "";
             

@@ -41,6 +41,7 @@ namespace F4B1.UI
 
         private void OnPause(InputAction.CallbackContext ctx)
         {
+            Time.timeScale = pauseToggled.Value ? 0 : 1;
             pauseToggled.Value = !pauseToggled.Value;
         }
 
