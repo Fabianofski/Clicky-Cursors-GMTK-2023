@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2d9749b98ba7c442a19e82490997f36, type: 3}
   m_Name: CookieSound
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 2030f3a4026016b4abab8d3a94458697, type: 3}
+  clip: {fileID: 8300000, guid: c4e2c2e6e8fa08a47a80654e8b2d9ddf, type: 3}
   outputAudioMixerGroup: {fileID: 24300002, guid: 71019aa9703cd684e9dee59de8d8c6d8, type: 2}
-  volume: 0.4
+  volume: 0.1
   dontDestroyOnLoad: 0
   destroySoundOnEvent: 0
   randomlyPitchSound: 1

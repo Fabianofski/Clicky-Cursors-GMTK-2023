@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -2413806693520163455, guid: 7f2ed0f47436693478b6a0106dd6cc4d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -225,6 +225,7 @@ MonoBehaviour:
   scoreAmount: 1
   critChance: 0
   cooldown: 1
+  increaseComboEvent: {fileID: 11400000, guid: 9067d784412aca949859d46266ab8720, type: 2}
   clickSoundEvent: {fileID: 11400000, guid: ca1eca7eb3b3c154293af562b7eb9d9a, type: 2}
   clickSounds:
   - {fileID: 11400000, guid: 8fa7e2f62ecb3684abf358ae44ddea98, type: 2}

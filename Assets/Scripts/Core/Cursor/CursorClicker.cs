@@ -27,6 +27,7 @@ namespace F4B1.Core
         [SerializeField] private float critChance;
         [SerializeField] private float cooldown;
         private float cooldownTimer;
+        [SerializeField] private IntEvent increaseComboEvent;
 
         [SerializeField] private SoundEvent clickSoundEvent;
         [SerializeField] private Sound[] clickSounds;
@@ -59,6 +60,7 @@ namespace F4B1.Core
             if (!col) return;
             
             col.GetComponent<CookieScoreManager>().Click(scoreAmount);
+            increaseComboEvent.Raise(1);
         }
 
         private void OnDrawGizmosSelected()
