@@ -32,8 +32,11 @@ namespace F4B1.Core
 
         private void Update()
         {
-            loadingBar.localScale = Vector3.one * cooldownTimer;
-            
+            if(cooldownTimer / cooldown > 0.6)
+                loadingBar.localScale = Vector3.zero;
+            else
+                loadingBar.localScale = Vector3.one * cooldownTimer;
+
             cooldownTimer -= Time.deltaTime;
             if (cooldownTimer > 0) return;
             
@@ -43,10 +46,12 @@ namespace F4B1.Core
 
         private void PerformClick()
         {
+            LeanTween.scale(gameObject, new Vector3(0.8f, 0.9f, 0.9f), 1f).setEasePunch();
+            
             Collider2D col = Physics2D.OverlapBox(cursorPos.position, hitBox, 0, mask);
             if (!col) return;
             
-            col.GetComponentInParent<CookieScoreManager>().Click(scoreAmount);
+            col.GetComponent<CookieScoreManager>().Click(scoreAmount);
         }
 
         private void OnDrawGizmosSelected()
