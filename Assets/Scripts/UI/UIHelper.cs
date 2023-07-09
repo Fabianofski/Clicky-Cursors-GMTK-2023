@@ -23,7 +23,7 @@ namespace F4B1.UI
 
         public void SetIntTextWithText(int value)
         {
-            textField.text = prefix + value + "\n" + suffix;
+            textField.text = prefix + value + suffix;
         }
         
     }

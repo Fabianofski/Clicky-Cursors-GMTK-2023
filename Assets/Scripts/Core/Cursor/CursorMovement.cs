@@ -17,7 +17,6 @@ namespace F4B1.Core.Cursor
     public class CursorMovement : MonoBehaviour
     {
         [SerializeField] private float speed;
-        [SerializeField] private LineRenderer lineRenderer;
         [SerializeField] private float pathLength;
         [SerializeField] private int accuracy;
         

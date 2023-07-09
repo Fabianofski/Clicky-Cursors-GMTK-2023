@@ -60,10 +60,9 @@ namespace F4B1.UI
 
         public void CookieScoreChanged(int value)
         {
-            var maxPurchasesNotReached = true;
-            if(shopItem != null)
-                maxPurchasesNotReached = shopItem.purchases.Value < shopItem.maxPurchases || shopItem.maxPurchases == -1;
-            button.interactable = value >= itemCost && maxPurchasesNotReached;
+            var maxPurchasesReached = shopItem != null && shopItem.purchases.Value >= shopItem.maxPurchases && shopItem.maxPurchases != -1;
+            if (maxPurchasesReached) return;
+            button.interactable = value >= itemCost;
         }
         
         private void BuyItem(VoidEvent clickEvent)
@@ -75,6 +74,13 @@ namespace F4B1.UI
             titleTextField.text = $"{shopItem.title} (x{shopItem.purchases.Value})";
             itemCost = Mathf.RoundToInt(shopItem.cost * Mathf.Pow(multiplier, shopItem.purchases.Value));
             costTextField.text = itemCost + "";
+            
+            var maxPurchasesReached = shopItem.purchases.Value >= shopItem.maxPurchases && shopItem.maxPurchases != -1;
+            if (maxPurchasesReached)
+            {
+                costTextField.text = "MAX";
+                button.interactable = false;
+            }
             
             clickEvent.Raise();
         }
