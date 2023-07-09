@@ -5,6 +5,7 @@
 //  * Distributed under the terms of the MIT license (cf. LICENSE.md file)
 //  **/
 
+using F4B1.Audio;
 using TMPro;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
@@ -28,6 +29,11 @@ namespace F4B1.UI
         [SerializeField] private TextMeshProUGUI effectTextField;
         
         [SerializeField] private float multiplier;
+
+        [SerializeField] private SoundEvent soundEvent;
+        [SerializeField] private Sound buySound;
+        [SerializeField] private Sound clickSound;
+        
         
         private int itemCost;
         private ShopItem shopItem;
@@ -69,6 +75,8 @@ namespace F4B1.UI
             if (coins.Value < itemCost) return;
             shopItem.purchases.Value++;
             coins.Subtract(itemCost);
+            soundEvent.Raise(buySound);
+            soundEvent.Raise(clickSound);
 
             titleTextField.text = $"{shopItem.title} (x{shopItem.purchases.Value})";
             itemCost = Mathf.RoundToInt(shopItem.cost * Mathf.Pow(multiplier, shopItem.purchases.Value));

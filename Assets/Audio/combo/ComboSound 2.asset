@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2d9749b98ba7c442a19e82490997f36, type: 3}
-  m_Name: ClickSound
+  m_Name: ComboSound 2
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 19d1c9a2bac60da4598ff07ec1dd9abf, type: 3}
+  clip: {fileID: 8300000, guid: 46a33f407b19c54468638c560aa90540, type: 3}
   outputAudioMixerGroup: {fileID: 24300002, guid: 71019aa9703cd684e9dee59de8d8c6d8, type: 2}
-  volume: 1
-  dontDestroyOnLoad: 1
+  volume: 0.1
+  dontDestroyOnLoad: 0
   destroySoundOnEvent: 0
-  randomlyPitchSound: 0
-  pitchBounds: {x: 1, y: 1}
+  randomlyPitchSound: 1
+  pitchBounds: {x: 1.04, y: 1.04}

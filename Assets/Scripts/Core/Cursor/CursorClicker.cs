@@ -30,6 +30,8 @@ namespace F4B1.Core.Cursor
 
         [SerializeField] private SoundEvent clickSoundEvent;
         [SerializeField] private Sound[] clickSounds;
+
+        private LTDescr activeScaleTween;
         
         private void Awake()
         {
@@ -52,7 +54,10 @@ namespace F4B1.Core.Cursor
 
         private void PerformClick()
         {
-            LeanTween.scale(gameObject, new Vector3(0.6f, 0.7f, 0.7f), 0.3f).setEasePunch();
+            gameObject.transform.localScale = Vector3.one;
+            if(activeScaleTween != null)
+                LeanTween.cancel(activeScaleTween.id);
+            activeScaleTween = LeanTween.scale(gameObject, new Vector3(0.6f, 0.7f, 0.7f), 0.3f).setEasePunch();
             clickSoundEvent.Raise(clickSounds[Random.Range(0, clickSounds.Length - 1)]);
             
             Collider2D col = Physics2D.OverlapBox(cursorPos.position, hitBox, 0, mask);

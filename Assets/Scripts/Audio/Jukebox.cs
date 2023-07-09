@@ -4,52 +4,59 @@
 //  * Distributed under the terms of the MIT license (cf. LICENSE.md file)
 //  **/
 
+using System;
 using System.Collections;
 using UnityEngine;
 
 namespace F4B1.Audio
 {
+    [Serializable]
+    public class MusicTrack
+    {
+        public AudioSource audioSource;
+        public int comboScore;
+    }
+    
     public class Jukebox : MonoBehaviour
     {
         [SerializeField] private float fadeTime;
-        private AudioSource _audioSource;
-        private string _currentlyPlaying = "";
-
+        [SerializeField] private MusicTrack[] layers;
+        private float volume;
+        
         private void Awake()
         {
-            _audioSource = GetComponent<AudioSource>();
-            if (GameObject.FindGameObjectsWithTag("JukeBox").Length > 1)
-                Destroy(gameObject);
-            DontDestroyOnLoad(gameObject);
+            volume = layers[0].audioSource.volume;
+            SwitchTrack(0);
         }
 
-        public void SwitchTrack(Sound sound)
+        public void SwitchTrack(int comboValue)
         {
-            if (_currentlyPlaying.Equals(sound.clip.name)) return;
-            _currentlyPlaying = sound.clip.name;
-            if (_audioSource.isPlaying)
+            bool layerFound = false;
+            foreach (var layer in layers)
             {
-                StartCoroutine(FadeOutAndSwitchTrack(_audioSource, sound.clip, fadeTime));
-            }
-            else
-            {
-                _audioSource.clip = sound.clip;
-                _audioSource.Play();
+                if (layer.comboScore > comboValue || layerFound)
+                {
+                    layer.audioSource.volume = 0;
+                    continue;
+                }
+
+                layerFound = true;
+                layer.audioSource.volume = volume;
             }
         }
 
-        private static IEnumerator FadeOutAndSwitchTrack(AudioSource audioSource, AudioClip newClip, float fadeTime)
+        private static IEnumerator FadeInTrack(AudioSource audioSource, float fadeTime)
         {
             var startVolume = audioSource.volume;
+            audioSource.volume = 0;
 
-            while (audioSource.volume > 0)
+            while (audioSource.volume < startVolume)
             {
-                audioSource.volume -= startVolume * Time.deltaTime / fadeTime;
+                audioSource.volume += startVolume * Time.deltaTime / fadeTime;
                 yield return null;
             }
 
             audioSource.volume = startVolume;
-            audioSource.clip = newClip;
             audioSource.Play();
         }
     }

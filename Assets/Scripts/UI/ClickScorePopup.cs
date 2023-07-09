@@ -17,6 +17,9 @@ namespace F4B1.UI
         [SerializeField] private float tweenTime;
         
         [SerializeField] private TextMeshProUGUI textField;
+        
+        [SerializeField] private Gradient gradient;
+        [SerializeField] private int maxScoreColor;
 
         private void OnEnable()
         {
@@ -35,9 +38,13 @@ namespace F4B1.UI
             Destroy(transform.parent.gameObject, tweenTime + 0.1f);
         }
 
-        public void SetText(string text)
+        public void SetNumber(int value)
         {
-            textField.text = text;
+            textField.text = NumberFormatter.FormatNumberWithLetters(value);
+            var alpha = textField.color.a;
+            var color = gradient.Evaluate(Mathf.Min(1, value / (float) maxScoreColor));
+            color.a = alpha;
+            textField.color = color;
         }
 
         private void UpdateAlpha(float value)

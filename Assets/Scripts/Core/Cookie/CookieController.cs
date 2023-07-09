@@ -6,24 +6,33 @@ namespace F4B1.Core.Cookie
 {
     public class CookieController : MonoBehaviour
     {
-        private Vector2 mousePos;
+        private Vector2 targetPos;
         [SerializeField] private float speed;
         [SerializeField] private Vector2 leftLowerBoundaryCorner;
         [SerializeField] private Vector2 rightUpperBoundaryCorner;
+        private bool lockCookie;
 
         public void OnPositionChange(InputValue value)
         {
             if (Camera.main == null) return;
             
-            mousePos = Camera.main.ScreenToWorldPoint(value.Get<Vector2>());
-            mousePos = new Vector2(
-                Math.Clamp(mousePos.x, leftLowerBoundaryCorner.x, rightUpperBoundaryCorner.x),
-                Math.Clamp(mousePos.y, leftLowerBoundaryCorner.y, rightUpperBoundaryCorner.y));
+            targetPos = Camera.main.ScreenToWorldPoint(value.Get<Vector2>());
+            targetPos = new Vector2(
+                Math.Clamp(targetPos.x, leftLowerBoundaryCorner.x, rightUpperBoundaryCorner.x),
+                Math.Clamp(targetPos.y, leftLowerBoundaryCorner.y, rightUpperBoundaryCorner.y));
+
+            if (lockCookie)
+                targetPos = transform.position;
+        }
+
+        public void OnLockCookie(InputValue value)
+        {
+            lockCookie = value.isPressed;
         }
 
         private void Update()
         {
-            transform.position = Vector2.MoveTowards(transform.position, mousePos, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
         }
 
         public void OnDrawGizmos()

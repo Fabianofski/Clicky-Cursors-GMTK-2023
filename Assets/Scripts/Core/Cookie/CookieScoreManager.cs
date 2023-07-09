@@ -13,16 +13,22 @@ namespace F4B1.Core.Cookie
         [SerializeField] private IntVariable currentComboVariable;
         
         [SerializeField] private GameObject scorePopupText;
+        private LTDescr activeScaleTween;
 
         public void Click(int score, Vector2 pos)
         {
             var calculatedScore = score * Mathf.Max(1, currentComboVariable.Value);
             playerScoreVariable.Add(calculatedScore);
             soundEvent.Raise(cookieSound);
-            LeanTween.scale(gameObject, new Vector3(0.9f, 0.9f, 0.9f), 1f).setEasePunch();
+            
+            gameObject.transform.localScale = Vector3.one;
+            
+            if(activeScaleTween != null)
+                LeanTween.cancel(activeScaleTween.id);
+            activeScaleTween = LeanTween.scale(gameObject, new Vector3(0.9f, 0.9f, 0.9f), 1f).setEasePunch();
 
             GameObject go = Instantiate(scorePopupText, pos, Quaternion.identity);
-            go.GetComponentInChildren<ClickScorePopup>().SetText(NumberFormatter.FormatNumberWithLetters(calculatedScore));
+            go.GetComponentInChildren<ClickScorePopup>().SetNumber(calculatedScore);
         }
         
     }
