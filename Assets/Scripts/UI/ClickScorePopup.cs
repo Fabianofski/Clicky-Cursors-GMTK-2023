@@ -23,8 +23,6 @@ namespace F4B1.UI
 
         private void OnEnable()
         {
-            transform.localScale = Vector3.zero;
-
             LeanTween.scale(gameObject, Vector3.one, tweenTime  / 2).setEase(tweenType).setOnComplete(() =>
             {
                 LeanTween.scale(gameObject, Vector3.zero, tweenTime  / 2).setEase(tweenType);

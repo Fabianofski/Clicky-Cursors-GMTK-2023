@@ -55,9 +55,21 @@ namespace F4B1.Core.Cursor
         private void PerformClick()
         {
             gameObject.transform.localScale = Vector3.one;
-            if(activeScaleTween != null)
+            if (activeScaleTween != null && LeanTween.isTweening(activeScaleTween.id))
+            {
                 LeanTween.cancel(activeScaleTween.id);
-            activeScaleTween = LeanTween.scale(gameObject, new Vector3(0.6f, 0.7f, 0.7f), 0.3f).setEasePunch();
+                activeScaleTween.setOnComplete(() =>
+                {
+                    gameObject.transform.localScale = Vector3.one;
+                    activeScaleTween = LeanTween.scale(gameObject, new Vector3(0.6f, 0.7f, 0.7f), Mathf.Min(0.3f, cooldown / 2)).setEasePunch();
+                });
+            }
+            else
+            {
+                gameObject.transform.localScale = Vector3.one;
+                activeScaleTween = LeanTween.scale(gameObject, new Vector3(0.6f, 0.7f, 0.7f), Mathf.Min(0.3f, cooldown / 2)).setEasePunch();
+            }
+
             clickSoundEvent.Raise(clickSounds[Random.Range(0, clickSounds.Length - 1)]);
             
             Collider2D col = Physics2D.OverlapBox(cursorPos.position, hitBox, 0, mask);

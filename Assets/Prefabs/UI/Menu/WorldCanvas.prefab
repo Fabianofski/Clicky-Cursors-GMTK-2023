@@ -292,7 +292,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 367685852741027413}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 5.8061457}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -351,7 +351,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &367685852741027412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1010,7 +1010,6 @@ MonoBehaviour:
   cooldownProgressBar1: {fileID: 367685853574245077}
   cooldownProgressBar2: {fileID: 367685852815377447}
   levelProgressBar: {fileID: 367685851936332149}
-  maxLevelProgressColor: 0
   levelProgressBarGradient:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}
@@ -1040,7 +1039,6 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  maxCooldownProgressColor: 0
   cooldownProgressBarGradient:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}

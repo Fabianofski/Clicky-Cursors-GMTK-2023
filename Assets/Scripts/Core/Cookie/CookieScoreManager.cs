@@ -21,11 +21,22 @@ namespace F4B1.Core.Cookie
             playerScoreVariable.Add(calculatedScore);
             soundEvent.Raise(cookieSound);
             
-            gameObject.transform.localScale = Vector3.one;
             
-            if(activeScaleTween != null)
+            if (activeScaleTween != null && LeanTween.isTweening(activeScaleTween.id))
+            {
                 LeanTween.cancel(activeScaleTween.id);
-            activeScaleTween = LeanTween.scale(gameObject, new Vector3(0.9f, 0.9f, 0.9f), 1f).setEasePunch();
+                activeScaleTween.setOnComplete(() =>
+                {
+                    gameObject.transform.localScale = Vector3.one;
+                    activeScaleTween = LeanTween.scale(gameObject, new Vector3(0.9f, 0.9f, 0.9f), 1f).setEasePunch();
+                });
+            }
+            else
+            {
+                gameObject.transform.localScale = Vector3.one;
+                activeScaleTween = LeanTween.scale(gameObject, new Vector3(0.9f, 0.9f, 0.9f), 1f).setEasePunch();
+            }
+
 
             GameObject go = Instantiate(scorePopupText, pos, Quaternion.identity);
             go.GetComponentInChildren<ClickScorePopup>().SetNumber(calculatedScore);

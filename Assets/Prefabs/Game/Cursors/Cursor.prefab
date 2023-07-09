@@ -108,7 +108,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 610250394935503747}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.144, y: 0.258, z: 0}
+  m_LocalPosition: {x: -0.112, y: 0.142, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -216,7 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursorPos: {fileID: 610250394935503746}
-  hitBox: {x: 0.5, y: 0.5}
+  hitBox: {x: 0.59, y: 0.68}
   mask:
     serializedVersion: 2
     m_Bits: 64
@@ -244,7 +244,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  pathLength: 3
-  accuracy: 200
   bottomLeft: {x: -8.5, y: -4.5}
   topRight: {x: 4.5, y: 4.5}
