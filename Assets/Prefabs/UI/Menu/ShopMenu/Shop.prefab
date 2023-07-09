@@ -143,7 +143,7 @@ MonoBehaviour:
     icon: {fileID: 21300000, guid: 88ee7a5e95be6af40b6b62e2a534ae7d, type: 3}
     description: A friendly grandma who buys cookies off the store and passes them
       off as her own.
-    effect: (NUMBER) cookies/second
+    effect: 2 cookies/second
   - clickEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
     purchases: {fileID: 11400000, guid: 626096e57a4175f4b88fc96f47eff48a, type: 2}
     maxPurchases: -1
@@ -152,7 +152,7 @@ MonoBehaviour:
     icon: {fileID: 21300000, guid: 997dac1c0788dca46953389499abb2c0, type: 3}
     description: 'Farmland where you can grow everything you need: wheat, milk, chocolate
       chips...'
-    effect: (NUMBER) cookies/second
+    effect: 10 cookies/second
   - clickEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
     purchases: {fileID: 11400000, guid: c62acf752e78caf44b6d71b20e5475b9, type: 2}
     maxPurchases: -1
@@ -160,7 +160,7 @@ MonoBehaviour:
     cost: 3000
     icon: {fileID: 21300000, guid: 5678fe26c24001c4c85d912aadc7f63f, type: 3}
     description: Nothing like the warm, friendly touch of heavy machinery!
-    effect: (NUMBER) cookies/second
+    effect: 100 cookies/second
   - clickEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
     purchases: {fileID: 11400000, guid: 6a5a485be745561459cde89b3e3f78fd, type: 2}
     maxPurchases: -1
@@ -169,7 +169,7 @@ MonoBehaviour:
     icon: {fileID: 21300000, guid: 594f6f619efbadd4f85f31e0fddb40c3, type: 3}
     description: Did you know that you can sell precious gems for more cookies? It's
       true!
-    effect: (NUMBER) cookies/second
+    effect: 500 cookies/second
   - clickEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
     purchases: {fileID: 11400000, guid: 491243dee127ca141b65c5fd9c52ad62, type: 2}
     maxPurchases: -1
@@ -177,7 +177,7 @@ MonoBehaviour:
     cost: 50000
     icon: {fileID: 21300000, guid: f3dac124485bab542a27c400a9a89760, type: 3}
     description: Even Martians need a lil' choc chip in their lives...
-    effect: (NUMBER) cookies/second
+    effect: 2000 cookies/second
   - clickEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
     purchases: {fileID: 11400000, guid: 82b499fc89b534440900e74356626a95, type: 2}
     maxPurchases: -1
@@ -185,7 +185,7 @@ MonoBehaviour:
     cost: 200000
     icon: {fileID: 21300000, guid: 996b146e2b749f74da5a355cf8249566, type: 3}
     description: Steal cookies from other games involving cookies and/or clicking!
-    effect: (NUMBER) cookies/second
+    effect: 6000 cookies/second
   recipesItems:
   - clickEvent: {fileID: 0}
     purchases: {fileID: 11400000, guid: 929fb63194142e84fa60791a554f89a5, type: 2}
@@ -211,7 +211,7 @@ MonoBehaviour:
     cost: 400
     icon: {fileID: 21300000, guid: 320b6e821ee74614e80617a4ec4762f2, type: 3}
     description: Double the recipe, double the cookie!
-    effect: Cookie increases in size.
+    effect: Cookie increases in size but is slower.
   hardwareItems:
   - clickEvent: {fileID: 11400000, guid: 4011495a992637e47aaddeb7a413f0f3, type: 2}
     purchases: {fileID: 11400000, guid: cdbc6e3aa8c53e94a8ddb3a1e80738f9, type: 2}
@@ -220,7 +220,7 @@ MonoBehaviour:
     cost: 10
     icon: {fileID: 21300000, guid: 14359936588c7a64f95af5d097ecd2e6, type: 3}
     description: It was on discount.
-    effect: (NUMBER) clicks/second, slowest.
+    effect: 0.66 clicks/s, 1 cookie/click, slowest.
   - clickEvent: {fileID: 11400000, guid: 4c5fc66ecffc2194080250643763dee7, type: 2}
     purchases: {fileID: 11400000, guid: a7778c818d34a4e4ebb377db69344f1e, type: 2}
     maxPurchases: -1
@@ -228,7 +228,7 @@ MonoBehaviour:
     cost: 100
     icon: {fileID: 21300000, guid: 6a24f28a0ae21114e816b0f2707f3f3e, type: 3}
     description: Very wise gentleman, but not as sharp as he used to be...
-    effect: (NUMBER) clicks/second, slow.
+    effect: 0.66 clicks/s, 2 cookies/click, slow.
   - clickEvent: {fileID: 11400000, guid: 5d0de2c33f964924f9ff4e9844ec4ae3, type: 2}
     purchases: {fileID: 11400000, guid: 0c8ffde7d1d056f429db343877dc1257, type: 2}
     maxPurchases: -1
@@ -236,7 +236,7 @@ MonoBehaviour:
     cost: 500
     icon: {fileID: 21300000, guid: 2cf75f664aec62e42aef63254505fa24, type: 3}
     description: Ol' reliable.
-    effect: (NUMBER) clicks/second, average.
+    effect: 1.25 clicks/s, 3 cookies/click, average.
   - clickEvent: {fileID: 11400000, guid: 50a39d075862c5347b0b54e5801ea5ba, type: 2}
     purchases: {fileID: 11400000, guid: 6e3fdc0ed323cd444bf6b01194f72d8b, type: 2}
     maxPurchases: -1
@@ -244,7 +244,7 @@ MonoBehaviour:
     cost: 3000
     icon: {fileID: 21300000, guid: 7adad2b47ad7f7e4d8ebb269597cd767, type: 3}
     description: Full of youthful energy!
-    effect: (NUMBER) clicks/second, fast.
+    effect: 2 clicks/s, 3 cookies/click, fast.
   - clickEvent: {fileID: 11400000, guid: 65333b55bab985547aa38598e0b4cdef, type: 2}
     purchases: {fileID: 11400000, guid: cecc3c66db93aa747b6c2e5bc4af94f5, type: 2}
     maxPurchases: -1
@@ -252,7 +252,7 @@ MonoBehaviour:
     cost: 10000
     icon: {fileID: 21300000, guid: 3810a32a44cbe24478e5069da5196833, type: 3}
     description: Precision-machined to optimise CPS (cookies per second).
-    effect: (NUMBER) clicks/second, fast.
+    effect: 3.33 clicks/s, 5 cookies/click, fast.
   - clickEvent: {fileID: 11400000, guid: fca3fc5e4366563468397d484fd2c0dd, type: 2}
     purchases: {fileID: 11400000, guid: f3a680e53bf01334ca0d9abd65c1168c, type: 2}
     maxPurchases: -1
@@ -260,7 +260,7 @@ MonoBehaviour:
     cost: 50000
     icon: {fileID: 21300000, guid: 2a0e99cede2d58944915b418d6ff700f, type: 3}
     description: Hey! This guy is cheating!
-    effect: (NUMBER) clicks/second, fastest.
+    effect: 2 clicks/s, 20 cookies/click, fastest.
 --- !u!1001 &2519963141478151375
 PrefabInstance:
   m_ObjectHideFlags: 0
