@@ -217,7 +217,7 @@ MonoBehaviour:
     purchases: {fileID: 11400000, guid: cdbc6e3aa8c53e94a8ddb3a1e80738f9, type: 2}
     maxPurchases: -1
     title: Broken Cursor
-    cost: 60
+    cost: 10
     icon: {fileID: 21300000, guid: 14359936588c7a64f95af5d097ecd2e6, type: 3}
     description: It was on discount.
     effect: (NUMBER) clicks/second, slowest.
@@ -225,7 +225,7 @@ MonoBehaviour:
     purchases: {fileID: 11400000, guid: a7778c818d34a4e4ebb377db69344f1e, type: 2}
     maxPurchases: -1
     title: Grandpa Cursors
-    cost: 200
+    cost: 100
     icon: {fileID: 21300000, guid: 6a24f28a0ae21114e816b0f2707f3f3e, type: 3}
     description: Very wise gentleman, but not as sharp as he used to be...
     effect: (NUMBER) clicks/second, slow.
@@ -233,7 +233,7 @@ MonoBehaviour:
     purchases: {fileID: 11400000, guid: 0c8ffde7d1d056f429db343877dc1257, type: 2}
     maxPurchases: -1
     title: Normal Cursor
-    cost: 1000
+    cost: 500
     icon: {fileID: 21300000, guid: 2cf75f664aec62e42aef63254505fa24, type: 3}
     description: Ol' reliable.
     effect: (NUMBER) clicks/second, average.
