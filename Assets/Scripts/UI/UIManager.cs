@@ -19,13 +19,9 @@ namespace F4B1.UI
         [SerializeField] private InputAction pauseInputAction;
         [SerializeField] private List<AtomBaseVariable> resetAtoms;
 
-        public BoolVariable PauseToggled
-        {
-            set => pauseToggled = value;
-        }
-
         private void Awake()
         {
+            Time.timeScale = 0;
             pauseInputAction.performed += OnPause;
         }
 
@@ -41,8 +37,12 @@ namespace F4B1.UI
 
         private void OnPause(InputAction.CallbackContext ctx)
         {
-            Time.timeScale = pauseToggled.Value ? 0 : 1;
             pauseToggled.Value = !pauseToggled.Value;
+        }
+
+        public void PauseToggled()
+        {
+            Time.timeScale = pauseToggled.Value ? 0 : 1;
         }
 
         public void LoadNextScene()

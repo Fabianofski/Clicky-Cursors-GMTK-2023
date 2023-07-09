@@ -101,23 +101,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6016430111722829154, guid: 00bc882bfdb47eb4d95e2569a96267cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6016430111722829154, guid: 00bc882bfdb47eb4d95e2569a96267cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 11400000, guid: 3c082f71806c1314198df9e88a5b3e16, type: 2}
+      objectReference: {fileID: 11400000, guid: f85b82cdd999f924ab81d3f0ddc0eecc, type: 2}
     - target: {fileID: 6016430111722829154, guid: 00bc882bfdb47eb4d95e2569a96267cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6016430111722829154, guid: 00bc882bfdb47eb4d95e2569a96267cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Raise
+      value: set_Value
       objectReference: {fileID: 0}
     - target: {fileID: 6016430111722829154, guid: 00bc882bfdb47eb4d95e2569a96267cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityAtoms.BaseAtoms.VoidEvent, UnityAtoms.UnityAtomsBaseAtoms.Runtime
+      value: UnityAtoms.AtomVariable`5[[System.Boolean, mscorlib
+      objectReference: {fileID: 0}
+    - target: {fileID: 6016430111722829154, guid: 00bc882bfdb47eb4d95e2569a96267cc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6016430111722829154, guid: 00bc882bfdb47eb4d95e2569a96267cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

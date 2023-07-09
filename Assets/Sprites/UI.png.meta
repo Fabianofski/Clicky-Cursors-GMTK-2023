@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -145,9 +145,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 151
-        width: 70
-        height: 19
+        y: 300
+        width: 140
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,10 +165,10 @@ TextureImporter:
       name: Start_Selected
       rect:
         serializedVersion: 2
-        x: 71
-        y: 151
-        width: 70
-        height: 19
+        x: 140
+        y: 300
+        width: 140
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,10 +186,10 @@ TextureImporter:
       name: Start_Clicked
       rect:
         serializedVersion: 2
-        x: 142
-        y: 151
-        width: 70
-        height: 19
+        x: 280
+        y: 300
+        width: 140
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,9 +208,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 109
-        width: 70
-        height: 20
+        y: 220
+        width: 140
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,10 +228,10 @@ TextureImporter:
       name: Options_Selected
       rect:
         serializedVersion: 2
-        x: 71
-        y: 109
-        width: 70
-        height: 20
+        x: 140
+        y: 220
+        width: 140
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -249,10 +249,10 @@ TextureImporter:
       name: Options_Clicked
       rect:
         serializedVersion: 2
-        x: 142
-        y: 109
-        width: 70
-        height: 20
+        x: 280
+        y: 220
+        width: 140
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,9 +271,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 88
-        width: 70
-        height: 20
+        y: 180
+        width: 140
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -291,10 +291,10 @@ TextureImporter:
       name: Quit_Selected
       rect:
         serializedVersion: 2
-        x: 71
-        y: 88
-        width: 70
-        height: 20
+        x: 140
+        y: 180
+        width: 140
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -312,10 +312,10 @@ TextureImporter:
       name: Quit_Clicked
       rect:
         serializedVersion: 2
-        x: 142
-        y: 88
-        width: 70
-        height: 20
+        x: 280
+        y: 180
+        width: 140
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -334,12 +334,12 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 33
-        width: 112
-        height: 12
+        y: 66
+        width: 224
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 4, y: 2, z: 4, w: 2}
+      border: {x: 8, y: 4, z: 8, w: 4}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -355,9 +355,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 19
-        width: 112
-        height: 12
+        y: 38
+        width: 224
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -376,9 +376,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 18
-        height: 18
+        y: 1
+        width: 36
+        height: 36
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -396,10 +396,10 @@ TextureImporter:
       name: Handle_Selected
       rect:
         serializedVersion: 2
-        x: 19
-        y: 0
-        width: 18
-        height: 18
+        x: 38
+        y: 1
+        width: 36
+        height: 36
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -417,10 +417,10 @@ TextureImporter:
       name: Handle_Clicked
       rect:
         serializedVersion: 2
-        x: 38
-        y: 0
-        width: 18
-        height: 18
+        x: 76
+        y: 1
+        width: 36
+        height: 36
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -439,9 +439,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 130
-        width: 70
-        height: 20
+        y: 260
+        width: 140
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -459,10 +459,10 @@ TextureImporter:
       name: Continue_Selected
       rect:
         serializedVersion: 2
-        x: 71
-        y: 130
-        width: 70
-        height: 20
+        x: 140
+        y: 260
+        width: 140
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -480,10 +480,10 @@ TextureImporter:
       name: Continue_Clicked
       rect:
         serializedVersion: 2
-        x: 142
-        y: 130
-        width: 70
-        height: 20
+        x: 280
+        y: 260
+        width: 140
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -502,9 +502,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 67
-        width: 70
-        height: 20
+        y: 140
+        width: 140
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -522,10 +522,10 @@ TextureImporter:
       name: Back_Selected
       rect:
         serializedVersion: 2
-        x: 71
-        y: 67
-        width: 70
-        height: 20
+        x: 140
+        y: 140
+        width: 140
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -543,10 +543,10 @@ TextureImporter:
       name: Back_Clicked
       rect:
         serializedVersion: 2
-        x: 142
-        y: 67
-        width: 69
-        height: 20
+        x: 280
+        y: 140
+        width: 140
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -565,9 +565,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 46
-        width: 70
-        height: 20
+        y: 100
+        width: 140
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -585,10 +585,10 @@ TextureImporter:
       name: Menu_Selected
       rect:
         serializedVersion: 2
-        x: 71
-        y: 46
-        width: 70
-        height: 20
+        x: 140
+        y: 100
+        width: 140
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -606,10 +606,10 @@ TextureImporter:
       name: Menu_Clicked
       rect:
         serializedVersion: 2
-        x: 142
-        y: 46
-        width: 70
-        height: 20
+        x: 280
+        y: 100
+        width: 140
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
