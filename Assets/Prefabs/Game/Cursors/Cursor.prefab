@@ -221,9 +221,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   loadingBar: {fileID: 610250394231463628}
-  scoreAmount: 1
+  scoreAmount: 3
   critChance: 0
-  cooldown: 1
+  cooldown: 0.8
   increaseComboEvent: {fileID: 11400000, guid: 9067d784412aca949859d46266ab8720, type: 2}
   clickSoundEvent: {fileID: 11400000, guid: ca1eca7eb3b3c154293af562b7eb9d9a, type: 2}
   clickSounds:

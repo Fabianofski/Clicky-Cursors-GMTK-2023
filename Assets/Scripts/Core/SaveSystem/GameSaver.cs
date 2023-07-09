@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace F4B1.Core.SaveSystem
 {
@@ -37,6 +38,11 @@ namespace F4B1.Core.SaveSystem
             loaded = true;
         }
 
+        public void ClearData()
+        {
+            PlayerPrefs.DeleteKey("clickyCursorData");
+        }
+
         private void LoadGame()
         {
             var data = SaveManager.LoadGame();
@@ -49,6 +55,14 @@ namespace F4B1.Core.SaveSystem
             BuyItems(cursorItems, data.cursorItems);
         }
 
+        private void ClearItems(SaveItem[] items)
+        {
+            foreach (var saveItem in items)
+            {
+                saveItem.count.Reset();
+            }
+        }
+        
         private void BuyItems(SaveItem[] items, Dictionary<string, int> dict)
         {
             foreach (var saveItem in items)

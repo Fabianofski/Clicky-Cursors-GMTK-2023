@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: cbc6162db1eb43044a1b6a22dd996234, type: 3}
+    - target: {fileID: 610250395027955961, guid: 01ad2f1d110a6824f91f4fa41b5125b0, type: 3}
+      propertyPath: cooldown
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 610250395027955963, guid: 01ad2f1d110a6824f91f4fa41b5125b0, type: 3}
       propertyPath: m_RootOrder
       value: 0

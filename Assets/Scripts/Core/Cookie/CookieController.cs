@@ -16,7 +16,7 @@ namespace F4B1.Core.Cookie
         [SerializeField] private IntVariable sizeUpgrade;
         [SerializeField] private float originalSpeed = 2;
         [SerializeField] private float speedMultiplier = 1.1f;
-        private float speed => originalSpeed * Mathf.Pow(speedMultiplier, speedUpgrade.Value) / sizeUpgrade.Value;
+        private float speed => originalSpeed * Mathf.Pow(speedMultiplier, speedUpgrade.Value) / (sizeUpgrade.Value + 1);
 
         public void OnPositionChange(InputValue value)
         {
