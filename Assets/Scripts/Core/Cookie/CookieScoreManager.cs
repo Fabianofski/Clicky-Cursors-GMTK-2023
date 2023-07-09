@@ -22,7 +22,7 @@ namespace F4B1.Core.Cookie
             LeanTween.scale(gameObject, new Vector3(0.9f, 0.9f, 0.9f), 1f).setEasePunch();
 
             GameObject go = Instantiate(scorePopupText, pos, Quaternion.identity);
-            go.GetComponentInChildren<ClickScorePopup>().SetText(calculatedScore + "");
+            go.GetComponentInChildren<ClickScorePopup>().SetText(NumberFormatter.FormatNumberWithLetters(calculatedScore));
         }
         
     }

@@ -5,7 +5,6 @@
 //  * Distributed under the terms of the MIT license (cf. LICENSE.md file)
 //  **/
 
-using System;
 using TMPro;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
@@ -41,7 +40,7 @@ namespace F4B1.UI
         public void SetButtonInformation(ShopItem item)
         {
             titleTextField.text = $"{item.title} (x0)";
-            costTextField.text = item.cost + "";
+            costTextField.text = NumberFormatter.FormatNumberWithLetters(item.cost);
             imageIcon.sprite = item.icon;
             
             descriptionTextField.text = item.description;
@@ -73,7 +72,7 @@ namespace F4B1.UI
 
             titleTextField.text = $"{shopItem.title} (x{shopItem.purchases.Value})";
             itemCost = Mathf.RoundToInt(shopItem.cost * Mathf.Pow(multiplier, shopItem.purchases.Value));
-            costTextField.text = itemCost + "";
+            costTextField.text = NumberFormatter.FormatNumberWithLetters(itemCost);
             
             var maxPurchasesReached = shopItem.purchases.Value >= shopItem.maxPurchases && shopItem.maxPurchases != -1;
             if (maxPurchasesReached)

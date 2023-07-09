@@ -18,7 +18,7 @@ namespace F4B1.UI
         
         public void SetIntText(int value)
         {
-            textField.text = value + "";
+            textField.text = NumberFormatter.FormatNumberWithLetters(value);
         }
 
         public void SetIntTextWithText(int value)
