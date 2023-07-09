@@ -38,7 +38,7 @@ namespace F4B1.UI
         [SerializeField] private ShopItem[] recipesItems;
         [SerializeField] private ShopItem[] hardwareItems;
 
-        private void Awake()
+        private void Start()
         {
             InstantiateShopItems(hardwareItems, hardwareTab);
             InstantiateShopItems(recipesItems, recipesTab);

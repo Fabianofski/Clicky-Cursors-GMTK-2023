@@ -128,6 +128,96 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1372981876578033425, guid: 3b4acb2f1cb25a34a93c131393fceacb, type: 3}
   m_PrefabInstance: {fileID: 1591890439949174803}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &472555675
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 472555677}
+  - component: {fileID: 472555676}
+  m_Layer: 0
+  m_Name: SaveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &472555676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472555675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9499170bf5bf4632a088f7490ed8c35f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingItems:
+  - id: grandma
+    count: {fileID: 11400000, guid: afc1d918cba5b0d49b56e670d5bc93ba, type: 2}
+    purchaseEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
+  - id: industry
+    count: {fileID: 11400000, guid: c62acf752e78caf44b6d71b20e5475b9, type: 2}
+    purchaseEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
+  - id: quarry
+    count: {fileID: 11400000, guid: 6a5a485be745561459cde89b3e3f78fd, type: 2}
+    purchaseEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
+  - id: spacecraft
+    count: {fileID: 11400000, guid: 491243dee127ca141b65c5fd9c52ad62, type: 2}
+    purchaseEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
+  - id: steading
+    count: {fileID: 11400000, guid: 626096e57a4175f4b88fc96f47eff48a, type: 2}
+    purchaseEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
+  - id: vortex
+    count: {fileID: 11400000, guid: 82b499fc89b534440900e74356626a95, type: 2}
+    purchaseEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
+  recipeItems:
+  - id: orbits
+    count: {fileID: 11400000, guid: 1930b9690cbec664bb4c4b8f4430f495, type: 2}
+    purchaseEvent: {fileID: 11400000, guid: 954feb5dd3e718d45a64f8cea0e7e6c4, type: 2}
+  - id: size
+    count: {fileID: 11400000, guid: 89bfed2e9c57d0e4db08e7fc097b0cc4, type: 2}
+    purchaseEvent: {fileID: 11400000, guid: acca1637f03a0ac46a9db6d6ca298a2e, type: 2}
+  cursorItems:
+  - id: broken
+    count: {fileID: 11400000, guid: cdbc6e3aa8c53e94a8ddb3a1e80738f9, type: 2}
+    purchaseEvent: {fileID: 11400000, guid: 4011495a992637e47aaddeb7a413f0f3, type: 2}
+  - id: grandpa
+    count: {fileID: 11400000, guid: a7778c818d34a4e4ebb377db69344f1e, type: 2}
+    purchaseEvent: {fileID: 11400000, guid: 4c5fc66ecffc2194080250643763dee7, type: 2}
+  - id: baby
+    count: {fileID: 11400000, guid: 6e3fdc0ed323cd444bf6b01194f72d8b, type: 2}
+    purchaseEvent: {fileID: 11400000, guid: 50a39d075862c5347b0b54e5801ea5ba, type: 2}
+  - id: normal
+    count: {fileID: 11400000, guid: 0c8ffde7d1d056f429db343877dc1257, type: 2}
+    purchaseEvent: {fileID: 11400000, guid: 5d0de2c33f964924f9ff4e9844ec4ae3, type: 2}
+  - id: pro
+    count: {fileID: 11400000, guid: f3a680e53bf01334ca0d9abd65c1168c, type: 2}
+    purchaseEvent: {fileID: 11400000, guid: fca3fc5e4366563468397d484fd2c0dd, type: 2}
+  - id: robo
+    count: {fileID: 11400000, guid: cecc3c66db93aa747b6c2e5bc4af94f5, type: 2}
+    purchaseEvent: {fileID: 11400000, guid: 65333b55bab985547aa38598e0b4cdef, type: 2}
+  coins: {fileID: 11400000, guid: 99a2605f7a5768c44a5fb61ffbff67ff, type: 2}
+--- !u!4 &472555677
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472555675}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1555,10 +1645,6 @@ PrefabInstance:
     - target: {fileID: 1489668393465666125, guid: 3b335c984a0b17b4facaf2d00d81419a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5649891096790916901, guid: 3b335c984a0b17b4facaf2d00d81419a, type: 3}
-      propertyPath: buildingItems.Array.data[0].maxPurchases
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b335c984a0b17b4facaf2d00d81419a, type: 3}

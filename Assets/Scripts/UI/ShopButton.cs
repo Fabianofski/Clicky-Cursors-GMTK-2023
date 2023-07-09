@@ -5,6 +5,7 @@
 //  * Distributed under the terms of the MIT license (cf. LICENSE.md file)
 //  **/
 
+using System;
 using F4B1.Audio;
 using TMPro;
 using UnityAtoms.BaseAtoms;
@@ -45,19 +46,15 @@ namespace F4B1.UI
 
         public void SetButtonInformation(ShopItem item)
         {
-            titleTextField.text = $"{item.title} (x0)";
-            costTextField.text = NumberFormatter.FormatNumberWithLetters(item.cost);
-            imageIcon.sprite = item.icon;
-            
-            descriptionTextField.text = item.description;
-            effectTextField.text = item.effect;
-
+            if (item.purchases == null)
+                item.purchases = ScriptableObject.CreateInstance<IntVariable>();
             shopItem = item;
             itemCost = item.cost;
             
-            if (item.purchases == null)
-                item.purchases = ScriptableObject.CreateInstance<IntVariable>();
+            descriptionTextField.text = item.description;
+            effectTextField.text = item.effect;
             
+            UpdateTextFields();
             CookieScoreChanged(coins.Value);
             
             button.onClick.AddListener(() => BuyItem(item.clickEvent));
@@ -77,7 +74,15 @@ namespace F4B1.UI
             coins.Subtract(itemCost);
             soundEvent.Raise(buySound);
             soundEvent.Raise(clickSound);
+            
+            UpdateTextFields();
+            
+            clickEvent.Raise();
+        }
 
+        private void UpdateTextFields()
+        {
+            imageIcon.sprite = shopItem.icon;
             titleTextField.text = $"{shopItem.title} (x{shopItem.purchases.Value})";
             itemCost = Mathf.RoundToInt(shopItem.cost * Mathf.Pow(multiplier, shopItem.purchases.Value));
             costTextField.text = NumberFormatter.FormatNumberWithLetters(itemCost);
@@ -88,8 +93,6 @@ namespace F4B1.UI
                 costTextField.text = "MAX";
                 button.interactable = false;
             }
-            
-            clickEvent.Raise();
         }
     }
 }

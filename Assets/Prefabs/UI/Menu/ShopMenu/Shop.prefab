@@ -188,7 +188,7 @@ MonoBehaviour:
     effect: (NUMBER) cookies/second
   recipesItems:
   - clickEvent: {fileID: 11400000, guid: acca1637f03a0ac46a9db6d6ca298a2e, type: 2}
-    purchases: {fileID: 0}
+    purchases: {fileID: 11400000, guid: 89bfed2e9c57d0e4db08e7fc097b0cc4, type: 2}
     maxPurchases: 3
     title: Extra Dough
     cost: 40
@@ -196,7 +196,7 @@ MonoBehaviour:
     description: Double the recipe, double the cookie!
     effect: Cookie increases in size.
   - clickEvent: {fileID: 11400000, guid: 954feb5dd3e718d45a64f8cea0e7e6c4, type: 2}
-    purchases: {fileID: 0}
+    purchases: {fileID: 11400000, guid: 1930b9690cbec664bb4c4b8f4430f495, type: 2}
     maxPurchases: -1
     title: Cooking in Batches
     cost: 80
@@ -214,7 +214,7 @@ MonoBehaviour:
     effect: Cookie follows your mouse faster.
   hardwareItems:
   - clickEvent: {fileID: 11400000, guid: 4011495a992637e47aaddeb7a413f0f3, type: 2}
-    purchases: {fileID: 0}
+    purchases: {fileID: 11400000, guid: cdbc6e3aa8c53e94a8ddb3a1e80738f9, type: 2}
     maxPurchases: -1
     title: Broken Cursor
     cost: 5
@@ -222,7 +222,7 @@ MonoBehaviour:
     description: It was on discount.
     effect: (NUMBER) clicks/second, slowest.
   - clickEvent: {fileID: 11400000, guid: 4c5fc66ecffc2194080250643763dee7, type: 2}
-    purchases: {fileID: 0}
+    purchases: {fileID: 11400000, guid: a7778c818d34a4e4ebb377db69344f1e, type: 2}
     maxPurchases: -1
     title: Grandpa Cursors
     cost: 10
@@ -230,7 +230,7 @@ MonoBehaviour:
     description: Very wise gentleman, but not as sharp as he used to be...
     effect: (NUMBER) clicks/second, slow.
   - clickEvent: {fileID: 11400000, guid: 5d0de2c33f964924f9ff4e9844ec4ae3, type: 2}
-    purchases: {fileID: 0}
+    purchases: {fileID: 11400000, guid: 0c8ffde7d1d056f429db343877dc1257, type: 2}
     maxPurchases: -1
     title: Normal Cursor
     cost: 50
@@ -238,7 +238,7 @@ MonoBehaviour:
     description: Ol' reliable.
     effect: (NUMBER) clicks/second, average.
   - clickEvent: {fileID: 11400000, guid: 50a39d075862c5347b0b54e5801ea5ba, type: 2}
-    purchases: {fileID: 0}
+    purchases: {fileID: 11400000, guid: 6e3fdc0ed323cd444bf6b01194f72d8b, type: 2}
     maxPurchases: -1
     title: Baby Cursor
     cost: 50
@@ -246,7 +246,7 @@ MonoBehaviour:
     description: Full of youthful energy!
     effect: (NUMBER) clicks/second, fast.
   - clickEvent: {fileID: 11400000, guid: 65333b55bab985547aa38598e0b4cdef, type: 2}
-    purchases: {fileID: 0}
+    purchases: {fileID: 11400000, guid: cecc3c66db93aa747b6c2e5bc4af94f5, type: 2}
     maxPurchases: -1
     title: Robot Cursor
     cost: 40
@@ -254,7 +254,7 @@ MonoBehaviour:
     description: Precision-machined to optimise CPS (cookies per second).
     effect: (NUMBER) clicks/second, fast.
   - clickEvent: {fileID: 11400000, guid: fca3fc5e4366563468397d484fd2c0dd, type: 2}
-    purchases: {fileID: 0}
+    purchases: {fileID: 11400000, guid: f3a680e53bf01334ca0d9abd65c1168c, type: 2}
     maxPurchases: -1
     title: Pro Cursor
     cost: 50
