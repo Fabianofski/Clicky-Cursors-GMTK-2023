@@ -6,6 +6,7 @@
 //  **/
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityAtoms.BaseAtoms;
@@ -30,12 +31,22 @@ namespace F4B1.Core.SaveSystem
         [SerializeField] private IntVariable coins;
         private SaveManager saveManager;
 
+        [SerializeField] private float autoSaveTime = 5;
+
         private void Awake()
         {
             saveManager = new SaveManager();
             
-            // SaveGame();
             LoadGame();
+            StartCoroutine(nameof(AutoSave));
+        }
+
+        private IEnumerator AutoSave()
+        {
+            yield return new WaitForSeconds(autoSaveTime);
+            SaveGame();
+            
+            StartCoroutine(nameof(AutoSave));
         }
 
 
