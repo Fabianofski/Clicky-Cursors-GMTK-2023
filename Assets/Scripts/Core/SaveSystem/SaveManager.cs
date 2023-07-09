@@ -13,19 +13,20 @@ namespace F4B1.Core.SaveSystem
 {
     public class SaveManager
     {
-        public void SaveGame(SaveData data)
+        private const string saveKey = "clickyCursorData";
+        
+        public static void SaveGame(SaveData data)
         {
             string json = JsonConvert.SerializeObject(data);
-            string savePath = Path.Combine(Application.persistentDataPath, "clickyCursor.json");
-            File.WriteAllText(savePath, json);
+            PlayerPrefs.SetString(saveKey, json);
+            PlayerPrefs.Save();
         }
 
-        public SaveData LoadGame()
+        public static SaveData LoadGame()
         {
-            string savePath = Path.Combine(Application.persistentDataPath, "clickyCursor.json");
-            if (File.Exists(savePath))
+            if (PlayerPrefs.HasKey(saveKey))
             {
-                string json = File.ReadAllText(savePath);
+                string json = PlayerPrefs.GetString(saveKey);
                 return JsonConvert.DeserializeObject<SaveData>(json);
             }
             

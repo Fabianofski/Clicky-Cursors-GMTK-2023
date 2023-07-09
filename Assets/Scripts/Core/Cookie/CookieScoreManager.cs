@@ -13,6 +13,7 @@ namespace F4B1.Core.Cookie
         [SerializeField] private IntVariable currentComboVariable;
         
         [SerializeField] private GameObject scorePopupText;
+
         private LTDescr activeScaleTween;
 
         public void Click(int score, Vector2 pos)
@@ -20,23 +21,6 @@ namespace F4B1.Core.Cookie
             var calculatedScore = score * Mathf.Max(1, currentComboVariable.Value);
             playerScoreVariable.Add(calculatedScore);
             soundEvent.Raise(cookieSound);
-            
-            
-            if (activeScaleTween != null && LeanTween.isTweening(activeScaleTween.id))
-            {
-                LeanTween.cancel(activeScaleTween.id);
-                activeScaleTween.setOnComplete(() =>
-                {
-                    gameObject.transform.localScale = Vector3.one;
-                    activeScaleTween = LeanTween.scale(gameObject, new Vector3(0.9f, 0.9f, 0.9f), 1f).setEasePunch();
-                });
-            }
-            else
-            {
-                gameObject.transform.localScale = Vector3.one;
-                activeScaleTween = LeanTween.scale(gameObject, new Vector3(0.9f, 0.9f, 0.9f), 1f).setEasePunch();
-            }
-
 
             GameObject go = Instantiate(scorePopupText, pos, Quaternion.identity);
             go.GetComponentInChildren<ClickScorePopup>().SetNumber(calculatedScore);

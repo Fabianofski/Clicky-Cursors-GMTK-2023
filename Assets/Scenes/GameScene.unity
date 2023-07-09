@@ -138,6 +138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 472555677}
   - component: {fileID: 472555676}
+  - component: {fileID: 472555678}
   m_Layer: 0
   m_Name: SaveManager
   m_TagString: Untagged
@@ -160,48 +161,36 @@ MonoBehaviour:
   buildingItems:
   - id: grandma
     count: {fileID: 11400000, guid: afc1d918cba5b0d49b56e670d5bc93ba, type: 2}
-    purchaseEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
   - id: industry
     count: {fileID: 11400000, guid: c62acf752e78caf44b6d71b20e5475b9, type: 2}
-    purchaseEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
   - id: quarry
     count: {fileID: 11400000, guid: 6a5a485be745561459cde89b3e3f78fd, type: 2}
-    purchaseEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
   - id: spacecraft
     count: {fileID: 11400000, guid: 491243dee127ca141b65c5fd9c52ad62, type: 2}
-    purchaseEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
   - id: steading
     count: {fileID: 11400000, guid: 626096e57a4175f4b88fc96f47eff48a, type: 2}
-    purchaseEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
   - id: vortex
     count: {fileID: 11400000, guid: 82b499fc89b534440900e74356626a95, type: 2}
-    purchaseEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
   recipeItems:
   - id: orbits
     count: {fileID: 11400000, guid: 1930b9690cbec664bb4c4b8f4430f495, type: 2}
-    purchaseEvent: {fileID: 11400000, guid: 954feb5dd3e718d45a64f8cea0e7e6c4, type: 2}
   - id: size
     count: {fileID: 11400000, guid: 89bfed2e9c57d0e4db08e7fc097b0cc4, type: 2}
-    purchaseEvent: {fileID: 11400000, guid: acca1637f03a0ac46a9db6d6ca298a2e, type: 2}
+  - id: speed
+    count: {fileID: 11400000, guid: 929fb63194142e84fa60791a554f89a5, type: 2}
   cursorItems:
   - id: broken
     count: {fileID: 11400000, guid: cdbc6e3aa8c53e94a8ddb3a1e80738f9, type: 2}
-    purchaseEvent: {fileID: 11400000, guid: 4011495a992637e47aaddeb7a413f0f3, type: 2}
   - id: grandpa
     count: {fileID: 11400000, guid: a7778c818d34a4e4ebb377db69344f1e, type: 2}
-    purchaseEvent: {fileID: 11400000, guid: 4c5fc66ecffc2194080250643763dee7, type: 2}
   - id: baby
     count: {fileID: 11400000, guid: 6e3fdc0ed323cd444bf6b01194f72d8b, type: 2}
-    purchaseEvent: {fileID: 11400000, guid: 50a39d075862c5347b0b54e5801ea5ba, type: 2}
   - id: normal
     count: {fileID: 11400000, guid: 0c8ffde7d1d056f429db343877dc1257, type: 2}
-    purchaseEvent: {fileID: 11400000, guid: 5d0de2c33f964924f9ff4e9844ec4ae3, type: 2}
   - id: pro
     count: {fileID: 11400000, guid: f3a680e53bf01334ca0d9abd65c1168c, type: 2}
-    purchaseEvent: {fileID: 11400000, guid: fca3fc5e4366563468397d484fd2c0dd, type: 2}
   - id: robo
     count: {fileID: 11400000, guid: cecc3c66db93aa747b6c2e5bc4af94f5, type: 2}
-    purchaseEvent: {fileID: 11400000, guid: 65333b55bab985547aa38598e0b4cdef, type: 2}
   coins: {fileID: 11400000, guid: 99a2605f7a5768c44a5fb61ffbff67ff, type: 2}
 --- !u!4 &472555677
 Transform:
@@ -218,6 +207,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &472555678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472555675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050ff37b5550f4b7e9bdf8b985aff484, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _developerDescription: 
+  _unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 472555676}
+        m_TargetAssemblyTypeName: F4B1.Core.SaveSystem.GameSaver, Assembly-CSharp
+        m_MethodName: SaveGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _actionResponses: []
+  _conditions: []
+  _operator: 0
+  _replayEventBufferOnRegister: 1
+  _eventReference:
+    _usage: 0
+    _event: {fileID: 11400000, guid: cd71e9687cf5c7c418d3492499498366, type: 2}
+    _eventInstancer: {fileID: 0}
+    _variable: {fileID: 0}
+    _variableInstancer: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,6 +599,12 @@ MonoBehaviour:
   greenCursor: {fileID: 143627787730368964, guid: 999f144e0719b1947b8838288e97a13d, type: 3}
   proCursor: {fileID: 2151492730770399572, guid: 9d875b71b8f59d14fa3361e05776d74e, type: 3}
   roboCursor: {fileID: 3733340706874805159, guid: cc62762fdd5323449a5f95260665b267, type: 3}
+  brokenCursorCount: {fileID: 11400000, guid: cdbc6e3aa8c53e94a8ddb3a1e80738f9, type: 2}
+  grandpaCursorCount: {fileID: 11400000, guid: a7778c818d34a4e4ebb377db69344f1e, type: 2}
+  normalCursorCount: {fileID: 11400000, guid: 0c8ffde7d1d056f429db343877dc1257, type: 2}
+  greenCursorCount: {fileID: 11400000, guid: 6e3fdc0ed323cd444bf6b01194f72d8b, type: 2}
+  proCursorCount: {fileID: 11400000, guid: f3a680e53bf01334ca0d9abd65c1168c, type: 2}
+  roboCursorCount: {fileID: 11400000, guid: cecc3c66db93aa747b6c2e5bc4af94f5, type: 2}
 --- !u!4 &1184300345
 Transform:
   m_ObjectHideFlags: 0

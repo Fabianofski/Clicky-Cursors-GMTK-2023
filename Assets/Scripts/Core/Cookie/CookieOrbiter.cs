@@ -24,7 +24,7 @@ namespace F4B1.Core.Cookie
         [SerializeField] private float moveSpeed = 1f;
         private float moveDistance;
 
-        private void Awake()
+        private void Start()
         {
             for (int i = 0; i < cookieOrbitAmount.Value; i++)
                 Instantiate(orbitPrefab, transform);

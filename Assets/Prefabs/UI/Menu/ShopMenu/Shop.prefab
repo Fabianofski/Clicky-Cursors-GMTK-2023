@@ -203,11 +203,11 @@ MonoBehaviour:
     icon: {fileID: 21300000, guid: 3636277b754ee5a4381095fb12c0ad2e, type: 3}
     description: Why waste dough bake lot cookie when many small cookie do trick?
     effect: Extra mini-cookies that orbit around the big one.
-  - clickEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
-    purchases: {fileID: 0}
+  - clickEvent: {fileID: 0}
+    purchases: {fileID: 11400000, guid: 929fb63194142e84fa60791a554f89a5, type: 2}
     maxPurchases: -1
     title: 'Faster Oven:'
-    cost: 200
+    cost: 1
     icon: {fileID: 21300000, guid: 59b6cce487239ce42ba29886daceabe4, type: 3}
     description: "Baking at 190\xBAC for 10 minutes is the same as baking at 1900\xBAC
       for 1 minute!"

@@ -20,7 +20,6 @@ namespace F4B1.Core.SaveSystem
     {
         public string id;
         public IntVariable count;
-        public VoidEvent purchaseEvent;
     }
     
     public class GameSaver : MonoBehaviour
@@ -29,30 +28,18 @@ namespace F4B1.Core.SaveSystem
         [SerializeField] private SaveItem[] recipeItems;
         [SerializeField] private SaveItem[] cursorItems;
         [SerializeField] private IntVariable coins;
-        private SaveManager saveManager;
 
-        [SerializeField] private float autoSaveTime = 5;
+        private bool loaded;
 
         private void Awake()
         {
-            saveManager = new SaveManager();
-            
             LoadGame();
-            StartCoroutine(nameof(AutoSave));
+            loaded = true;
         }
-
-        private IEnumerator AutoSave()
-        {
-            yield return new WaitForSeconds(autoSaveTime);
-            SaveGame();
-            
-            StartCoroutine(nameof(AutoSave));
-        }
-
 
         private void LoadGame()
         {
-            var data = saveManager.LoadGame();
+            var data = SaveManager.LoadGame();
             if (data == null) return;
 
             coins.SetValue(data.coins);
@@ -67,15 +54,13 @@ namespace F4B1.Core.SaveSystem
             foreach (var saveItem in items)
             {
                 saveItem.count.SetValue(dict[saveItem.id]);
-                for (int i = 0; i < dict[saveItem.id]; i++)
-                {
-                    saveItem.purchaseEvent.Raise();
-                }
             }
         }
         
-        private void SaveGame()
+        public void SaveGame()
         {
+            if (!loaded) return;
+            
             var data = new SaveData
             {
                 buildingItems = CreateDictionary(buildingItems),
@@ -83,7 +68,7 @@ namespace F4B1.Core.SaveSystem
                 cursorItems = CreateDictionary(cursorItems),
                 coins = coins.Value
             };
-            saveManager.SaveGame(data);
+            SaveManager.SaveGame(data);
         }
 
         private Dictionary<string, int> CreateDictionary(SaveItem[] items)

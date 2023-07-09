@@ -58,7 +58,7 @@ namespace F4B1.UI
         {
             if (activePulseTween != null && LeanTween.isTweening(activeScaleTween.id))
             {
-                LeanTween.cancel(activePulseTween.id);
+                LeanTween.cancel(activePulseTween.uniqueId);
                 yield return null;
             }
             comboTextParent.transform.localScale = Vector3.one;
@@ -126,7 +126,7 @@ namespace F4B1.UI
             {
                 if (activeScaleTween != null && LeanTween.isTweening(activeScaleTween.id))
                 {
-                    LeanTween.cancel(activeScaleTween.id);
+                    LeanTween.cancel(activeScaleTween.uniqueId);
                     activeScaleTween.setOnComplete(() =>
                     {
                         gameObject.transform.localScale = Vector3.one;

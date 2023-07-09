@@ -1,4 +1,5 @@
 using System;
+using UnityAtoms.BaseAtoms;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,10 +8,16 @@ namespace F4B1.Core.Cookie
     public class CookieController : MonoBehaviour
     {
         private Vector2 targetPos;
-        [SerializeField] private float speed;
         [SerializeField] private Vector2 leftLowerBoundaryCorner;
         [SerializeField] private Vector2 rightUpperBoundaryCorner;
         private bool lockCookie;
+
+        [SerializeField] private IntVariable speedUpgrade;
+        [SerializeField] private IntVariable sizeUpgrade;
+        [SerializeField] private float originalSpeed = 2;
+        [SerializeField] private float speedMultiplier = 1.1f;
+        // levelUpAmount * Mathf.Pow(levelUpMultiplier, combo.Value)
+        private float speed => originalSpeed * Mathf.Pow(speedMultiplier, speedUpgrade.Value) / sizeUpgrade.Value;
 
         public void OnPositionChange(InputValue value)
         {

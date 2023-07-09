@@ -5,6 +5,8 @@
 //  * Distributed under the terms of the MIT license (cf. LICENSE.md file)
 //  **/
 
+using System;
+using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
 namespace F4B1.Core.Cookie
@@ -13,14 +15,25 @@ namespace F4B1.Core.Cookie
     {
 
         [SerializeField] private GameObject[] cookies;
-        private int currentCookieSize;
-        
+        [SerializeField] private IntVariable currentCookieSize;
+
+        private void Start()
+        {
+            SetCookiesActive();
+        }
+
         public void IncreaseCookieSize()
         {
-            if (currentCookieSize >= cookies.Length - 1) return;
-            cookies[currentCookieSize].SetActive(false);
-            currentCookieSize++;
-            cookies[currentCookieSize].SetActive(true);
+            SetCookiesActive();
+        }
+
+        private void SetCookiesActive()
+        {
+            for (var index = 0; index < cookies.Length; index++)
+            {
+                var cookie = cookies[index];
+                cookie.SetActive(index == currentCookieSize.Value);
+            }
         }
         
     }

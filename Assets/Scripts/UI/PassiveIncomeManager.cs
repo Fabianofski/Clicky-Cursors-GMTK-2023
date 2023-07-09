@@ -28,6 +28,11 @@ namespace F4B1.UI
         [SerializeField] private IntVariable coins;
         [SerializeField] private PassiveIncomeItem[] passiveIncomeItems;
 
+        private void Start()
+        {
+            CalculateTotalPassiveIncome();
+        }
+
         public void CalculateTotalPassiveIncome()
         {
             var passiveIncome = passiveIncomeItems.Sum(passiveIncomeItem => passiveIncomeItem.income * passiveIncomeItem.countVariable.Value);

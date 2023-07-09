@@ -77,7 +77,7 @@ namespace F4B1.UI
             
             UpdateTextFields();
             
-            clickEvent.Raise();
+            if(clickEvent) clickEvent.Raise();
         }
 
         private void UpdateTextFields()

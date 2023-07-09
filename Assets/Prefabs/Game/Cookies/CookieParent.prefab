@@ -51,9 +51,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e32176742869762498cde194f3c21870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
   leftLowerBoundaryCorner: {x: -8.5, y: -4.5}
   rightUpperBoundaryCorner: {x: 4.5, y: 4.5}
+  speedUpgrade: {fileID: 11400000, guid: 929fb63194142e84fa60791a554f89a5, type: 2}
+  sizeUpgrade: {fileID: 11400000, guid: 89bfed2e9c57d0e4db08e7fc097b0cc4, type: 2}
+  speedUpgrades:
+  - 2
+  - 4
+  - 6
+  - 8
 --- !u!114 &4358418897413349634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,6 +107,7 @@ MonoBehaviour:
   - {fileID: 6115131011321728108}
   - {fileID: 2718780022026400329}
   - {fileID: 5354805332249678469}
+  currentCookieSize: {fileID: 11400000, guid: 89bfed2e9c57d0e4db08e7fc097b0cc4, type: 2}
 --- !u!114 &5274307163154350855
 MonoBehaviour:
   m_ObjectHideFlags: 0
