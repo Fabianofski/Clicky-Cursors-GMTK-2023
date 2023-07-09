@@ -1,11 +1,11 @@
-# Golf, yes? - WOWIE JAM 2022
+# Clicky Cursors - GMTK Jam 2023
 
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
 
 This game was made for the [GMTK JAM 2023](https://itch.io/jam/gmtk-2023) hosted by Game Makers Toolkit.  
-\<Game Description\>
+Clicky Cursors is a clicker game where you're the one getting clicked! Move a cookie around to be under the cursor(s), buy buildings to passively increase your cookie production, and play around with a variety of cursors with different stats!
 
 ### Built With
 
@@ -18,7 +18,7 @@ This game was made for the [GMTK JAM 2023](https://itch.io/jam/gmtk-2023) hosted
 ## Getting Started
 
 If you want to try out the game you can play it in web or download it for Mac, Windows or Linux right here:<br/>
-[https://f4b1.itch.io/undefined](https://f4b1.itch.io/undefined)
+[https://f4b1.itch.io/clicky-cursors](https://f4b1.itch.io/clicky-cursors)
 
 To open the project do the following:
 
