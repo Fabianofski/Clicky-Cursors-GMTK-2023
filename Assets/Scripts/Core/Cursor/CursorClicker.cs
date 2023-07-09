@@ -58,7 +58,7 @@ namespace F4B1.Core.Cursor
             Collider2D col = Physics2D.OverlapBox(cursorPos.position, hitBox, 0, mask);
             if (!col) return;
             
-            col.GetComponent<CookieScoreManager>().Click(scoreAmount);
+            col.GetComponent<CookieScoreManager>().Click(scoreAmount, cursorPos.position);
             increaseComboEvent.Raise(1);
         }
 

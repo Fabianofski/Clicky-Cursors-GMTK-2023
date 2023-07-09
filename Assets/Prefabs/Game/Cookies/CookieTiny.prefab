@@ -117,3 +117,5 @@ MonoBehaviour:
   soundEvent: {fileID: 11400000, guid: ca1eca7eb3b3c154293af562b7eb9d9a, type: 2}
   cookieSound: {fileID: 11400000, guid: 1726a62d44d4ab944bf9992c9866c235, type: 2}
   playerScoreVariable: {fileID: 11400000, guid: 99a2605f7a5768c44a5fb61ffbff67ff, type: 2}
+  currentComboVariable: {fileID: 11400000, guid: 8fbbd8868feb55145a773c9cf8c5e624, type: 2}
+  scorePopupText: {fileID: 4399874285742653116, guid: 87e0dc3c064a61042b2cbfeb0ac9adea, type: 3}
