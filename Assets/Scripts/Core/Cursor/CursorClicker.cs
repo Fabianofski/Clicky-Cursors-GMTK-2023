@@ -30,7 +30,7 @@ namespace F4B1.Core.Cursor
 
         private void Awake()
         {
-            cooldownTimer = cooldown;
+            cooldownTimer = cooldown + Random.Range(0f, 1f) * cooldown;
         }
 
         private void Update()

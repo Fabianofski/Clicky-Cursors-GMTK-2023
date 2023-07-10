@@ -23,7 +23,10 @@ namespace F4B1.Core.Cursor
 
         private void Awake()
         {
-            StartCoroutine(nameof(MoveToRandomPosition));
+            var startPos = new Vector2(Random.Range(bottomLeft.x, topRight.x), Random.Range(bottomLeft.y, topRight.y));
+            transform.position = startPos;
+            
+            MoveToRandomPosition();
         }
 
         private void OnDrawGizmosSelected()
@@ -36,17 +39,14 @@ namespace F4B1.Core.Cursor
             Gizmos.DrawLine(topRight, new Vector2(bottomLeft.x, topRight.y));
         }
 
-        private IEnumerator MoveToRandomPosition()
+        private void MoveToRandomPosition()
         {
             var endPos = new Vector2(Random.Range(bottomLeft.x, topRight.x), Random.Range(bottomLeft.y, topRight.y));
 
             path = CreateBezierPath(transform.position, endPos);
 
             var distance = path.length;
-            LeanTween.move(gameObject, path, distance / speed);
-            yield return new WaitForSeconds(distance / speed);
-
-            StartCoroutine(nameof(MoveToRandomPosition));
+            LeanTween.move(gameObject, path, distance / speed).setOnComplete(MoveToRandomPosition);
         }
 
         private LTBezierPath CreateBezierPath(Vector3 startPos, Vector3 endPos)

@@ -47,23 +47,21 @@ namespace F4B1.UI
         [SerializeField] private ComboSounds[] comboSounds;
         [SerializeField] private Sound loosingComboSound;
         [SerializeField] private float extraPitch;
-        private LTDescr activePulseTween;
-        private LTDescr activeScaleTween;
 
         private LTDescr activeTween;
         private int lastComboValue;
 
-        private IEnumerator Pulse()
-        {
-            if (activePulseTween != null && LeanTween.isTweening(activeScaleTween.id))
-            {
-                LeanTween.cancel(activePulseTween.uniqueId);
-                yield return null;
-            }
 
+        private void Awake()
+        {
+            LeanTween.init(100000);
+        }
+
+        private void Pulse()
+        {
             comboTextParent.transform.localScale = Vector3.one;
             var amount = 1 + Mathf.Min(maxPulseAmount, pulseAmount * lastComboValue);
-            activePulseTween = LeanTween.scale(comboTextParent, Vector3.one * amount, pulseDuration)
+            LeanTween.scale(comboTextParent, Vector3.one * amount, pulseDuration)
                 .setEasePunch();
         }
 
@@ -117,21 +115,8 @@ namespace F4B1.UI
         {
             if (lastComboValue < value)
             {
-                if (activeScaleTween != null && LeanTween.isTweening(activeScaleTween.id))
-                {
-                    LeanTween.cancel(activeScaleTween.uniqueId);
-                    activeScaleTween.setOnComplete(() =>
-                    {
-                        gameObject.transform.localScale = Vector3.one;
-                        activeScaleTween = LeanTween.scale(gameObject, Vector3.one * scaleAmount, scaleTime)
-                            .setEasePunch();
-                    });
-                }
-                else
-                {
-                    gameObject.transform.localScale = Vector3.one;
-                    activeScaleTween = LeanTween.scale(gameObject, Vector3.one * scaleAmount, scaleTime).setEasePunch();
-                }
+                gameObject.transform.localScale = Vector3.one;
+                LeanTween.scale(gameObject, Vector3.one * scaleAmount, scaleTime).setEasePunch();
 
                 foreach (var comboSound in comboSounds)
                 {
@@ -146,9 +131,7 @@ namespace F4B1.UI
                 }
             }
             else if (value > lastComboValue)
-            {
                 soundEvent.Raise(loosingComboSound);
-            }
 
             comboTextField.text = "x" + value;
 
