@@ -5,7 +5,6 @@
 //  * Distributed under the terms of the MIT license (cf. LICENSE.md file)
 //  **/
 
-using System;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
@@ -13,16 +12,17 @@ namespace F4B1.Core.Cursor
 {
     public class CursorManager : MonoBehaviour
     {
-        [Header("Cursors")]
-        [SerializeField] private GameObject brokenCursor;
+        [Header("Cursors")] [SerializeField] private GameObject brokenCursor;
+
         [SerializeField] private GameObject grandpaCursor;
         [SerializeField] private GameObject normalCursor;
         [SerializeField] private GameObject greenCursor;
         [SerializeField] private GameObject proCursor;
         [SerializeField] private GameObject roboCursor;
-        
-        [Header("Cursor Count")]
-        [SerializeField] private IntVariable brokenCursorCount;
+
+        [Header("Cursor Count")] [SerializeField]
+        private IntVariable brokenCursorCount;
+
         [SerializeField] private IntVariable grandpaCursorCount;
         [SerializeField] private IntVariable normalCursorCount;
         [SerializeField] private IntVariable greenCursorCount;
@@ -43,27 +43,27 @@ namespace F4B1.Core.Cursor
         {
             InstantiateCursor(brokenCursor);
         }
-        
+
         public void BuyGrandpaCursor()
         {
             InstantiateCursor(grandpaCursor);
         }
-        
+
         public void BuyNormalCursor()
         {
             InstantiateCursor(normalCursor);
         }
-        
+
         public void BuyGreenCursor()
         {
             InstantiateCursor(greenCursor);
         }
-        
+
         public void BuyProCursor()
         {
             InstantiateCursor(proCursor);
         }
-        
+
         public void BuyRoboCursor()
         {
             InstantiateCursor(roboCursor);

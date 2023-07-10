@@ -5,7 +5,6 @@
 //  * Distributed under the terms of the MIT license (cf. LICENSE.md file)
 //  **/
 
-using System;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
@@ -13,13 +12,10 @@ namespace F4B1.Core.Cookie
 {
     public class ComboManager : MonoBehaviour
     {
-
         [SerializeField] private IntVariable combo;
         [SerializeField] private float comboCooldown;
         [SerializeField] private float comboCooldownMultiplier;
-        private float comboCooldownTimer;
-        private float comboCooldownTimerPassed;
-        
+
         [SerializeField] private float levelUpAmount;
         [SerializeField] private float levelUpMultiplier;
         [SerializeField] private float comboLevelUp;
@@ -27,6 +23,8 @@ namespace F4B1.Core.Cookie
 
         [SerializeField] private FloatEvent cooldownProgress;
         [SerializeField] private FloatEvent levelUpProgress;
+        private float comboCooldownTimer;
+        private float comboCooldownTimerPassed;
 
         private void Awake()
         {
@@ -53,7 +51,7 @@ namespace F4B1.Core.Cookie
         {
             comboCooldownTimer = comboCooldown * (1 / Mathf.Pow(comboCooldownMultiplier, combo.Value));
             comboCooldownTimerPassed = comboCooldownTimer;
-            
+
             comboLevelUp = Mathf.CeilToInt(levelUpAmount * Mathf.Pow(levelUpMultiplier, combo.Value));
             comboLevelAmount += amount;
             levelUpProgress.Raise(comboLevelAmount / comboLevelUp);

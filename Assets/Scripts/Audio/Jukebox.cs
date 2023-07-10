@@ -16,13 +16,13 @@ namespace F4B1.Audio
         public AudioSource audioSource;
         public int comboScore;
     }
-    
+
     public class Jukebox : MonoBehaviour
     {
         [SerializeField] private float fadeTime;
         [SerializeField] private MusicTrack[] layers;
         private float volume;
-        
+
         private void Awake()
         {
             volume = layers[0].audioSource.volume;
@@ -31,7 +31,7 @@ namespace F4B1.Audio
 
         public void SwitchTrack(int comboValue)
         {
-            bool layerFound = false;
+            var layerFound = false;
             foreach (var layer in layers)
             {
                 if (layer.comboScore > comboValue || layerFound)

@@ -6,23 +6,20 @@
 //  **/
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace F4B1.Core.SaveSystem
 {
-
     [Serializable]
     public class SaveItem
     {
         public string id;
         public IntVariable count;
     }
-    
+
     public class GameSaver : MonoBehaviour
     {
         [SerializeField] private SaveItem[] buildingItems;
@@ -49,7 +46,7 @@ namespace F4B1.Core.SaveSystem
             if (data == null) return;
 
             coins.SetValue(data.coins);
-            
+
             BuyItems(buildingItems, data.buildingItems);
             BuyItems(recipeItems, data.recipeItems);
             BuyItems(cursorItems, data.cursorItems);
@@ -57,24 +54,18 @@ namespace F4B1.Core.SaveSystem
 
         private void ClearItems(SaveItem[] items)
         {
-            foreach (var saveItem in items)
-            {
-                saveItem.count.Reset();
-            }
+            foreach (var saveItem in items) saveItem.count.Reset();
         }
-        
+
         private void BuyItems(SaveItem[] items, Dictionary<string, int> dict)
         {
-            foreach (var saveItem in items)
-            {
-                saveItem.count.SetValue(dict[saveItem.id]);
-            }
+            foreach (var saveItem in items) saveItem.count.SetValue(dict[saveItem.id]);
         }
-        
+
         public void SaveGame()
         {
             if (!loaded) return;
-            
+
             var data = new SaveData
             {
                 buildingItems = CreateDictionary(buildingItems),
@@ -89,6 +80,5 @@ namespace F4B1.Core.SaveSystem
         {
             return items.ToDictionary(saveItem => saveItem.id, saveItem => saveItem.count.Value);
         }
-        
     }
 }

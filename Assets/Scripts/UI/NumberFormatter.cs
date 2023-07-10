@@ -11,8 +11,8 @@ namespace F4B1.UI
     {
         public static string FormatNumberWithLetters(double number)
         {
-            string[] suffixes = { "", "K", "M", "B", "T", "Q" }; // Add more if needed
-            int suffixIndex = 0;
+            string[] suffixes = { "", "K", "M", "B", "T", "Q" };
+            var suffixIndex = 0;
 
             while (number >= 1000 && suffixIndex < suffixes.Length - 1)
             {

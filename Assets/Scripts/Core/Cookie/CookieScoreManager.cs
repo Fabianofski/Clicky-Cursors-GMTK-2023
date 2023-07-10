@@ -11,7 +11,7 @@ namespace F4B1.Core.Cookie
         [SerializeField] private Sound cookieSound;
         [SerializeField] private IntVariable playerScoreVariable;
         [SerializeField] private IntVariable currentComboVariable;
-        
+
         [SerializeField] private GameObject scorePopupText;
 
         private LTDescr activeScaleTween;
@@ -22,9 +22,8 @@ namespace F4B1.Core.Cookie
             playerScoreVariable.Add(calculatedScore);
             soundEvent.Raise(cookieSound);
 
-            GameObject go = Instantiate(scorePopupText, pos, Quaternion.identity);
+            var go = Instantiate(scorePopupText, pos, Quaternion.identity);
             go.GetComponentInChildren<ClickScorePopup>().SetNumber(calculatedScore);
         }
-        
     }
 }

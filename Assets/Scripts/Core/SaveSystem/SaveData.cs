@@ -5,17 +5,17 @@
 //  * Distributed under the terms of the MIT license (cf. LICENSE.md file)
 //  **/
 
+using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace F4B1.Core.SaveSystem
 {
-    [System.Serializable]
+    [Serializable]
     public class SaveData
     {
         public int coins;
         public Dictionary<string, int> buildingItems;
-        public Dictionary<string, int> recipeItems;
         public Dictionary<string, int> cursorItems;
+        public Dictionary<string, int> recipeItems;
     }
 }

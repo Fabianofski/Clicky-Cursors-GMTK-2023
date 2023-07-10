@@ -18,26 +18,18 @@ namespace F4B1.UI
         public IntVariable countVariable;
         public int income;
     }
-    
+
     public class PassiveIncomeManager : MonoBehaviour
     {
-
-        private float countdown = 1;
-        
         [SerializeField] private IntVariable totalPassiveIncome;
         [SerializeField] private IntVariable coins;
         [SerializeField] private PassiveIncomeItem[] passiveIncomeItems;
 
+        private float countdown = 1;
+
         private void Start()
         {
             CalculateTotalPassiveIncome();
-        }
-
-        public void CalculateTotalPassiveIncome()
-        {
-            var passiveIncome = passiveIncomeItems.Sum(passiveIncomeItem => passiveIncomeItem.income * passiveIncomeItem.countVariable.Value);
-
-            totalPassiveIncome.SetValue(passiveIncome);
         }
 
         private void Update()
@@ -45,9 +37,17 @@ namespace F4B1.UI
             countdown -= Time.deltaTime;
 
             if (countdown > 0) return;
-            
+
             coins.Add(totalPassiveIncome.Value);
             countdown = 1;
+        }
+
+        public void CalculateTotalPassiveIncome()
+        {
+            var passiveIncome = passiveIncomeItems.Sum(passiveIncomeItem =>
+                passiveIncomeItem.income * passiveIncomeItem.countVariable.Value);
+
+            totalPassiveIncome.SetValue(passiveIncome);
         }
     }
 }

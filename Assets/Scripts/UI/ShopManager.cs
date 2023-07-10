@@ -6,7 +6,6 @@
 //  **/
 
 using System;
-using UnityAtoms;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
@@ -24,10 +23,9 @@ namespace F4B1.UI
         public string description;
         public string effect;
     }
-    
+
     public class ShopManager : MonoBehaviour
     {
-
         [SerializeField] private Transform buildingsTab;
         [SerializeField] private Transform recipesTab;
         [SerializeField] private Transform hardwareTab;
@@ -49,7 +47,7 @@ namespace F4B1.UI
         {
             foreach (var item in items)
             {
-                GameObject go = Instantiate(shopButtonPrefab, tab);
+                var go = Instantiate(shopButtonPrefab, tab);
                 go.GetComponent<ShopButton>().SetButtonInformation(item);
             }
         }

@@ -25,6 +25,5 @@ namespace F4B1.UI
         {
             textField.text = prefix + value + suffix;
         }
-        
     }
 }

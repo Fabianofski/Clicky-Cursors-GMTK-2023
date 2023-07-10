@@ -5,7 +5,6 @@
 //  * Distributed under the terms of the MIT license (cf. LICENSE.md file)
 //  **/
 
-using System;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
@@ -13,7 +12,6 @@ namespace F4B1.Core.Cookie
 {
     public class CookieUpgradeManager : MonoBehaviour
     {
-
         [SerializeField] private GameObject[] cookies;
         [SerializeField] private IntVariable currentCookieSize;
 
@@ -35,6 +33,5 @@ namespace F4B1.Core.Cookie
                 cookie.SetActive(index == currentCookieSize.Value);
             }
         }
-        
     }
 }
