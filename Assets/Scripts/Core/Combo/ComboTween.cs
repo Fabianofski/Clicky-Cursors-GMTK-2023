@@ -6,14 +6,13 @@
 //  **/
 
 using System;
-using System.Collections;
 using F4B1.Audio;
 using TMPro;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace F4B1.UI
+namespace F4B1.Core.Combo
 {
     [Serializable]
     public class ComboSounds

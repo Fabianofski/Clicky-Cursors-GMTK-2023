@@ -22,6 +22,7 @@ namespace F4B1.Core.SaveSystem
 
     public class GameSaver : MonoBehaviour
     {
+        [Header("Saved Items")]
         [SerializeField] private SaveItem[] buildingItems;
         [SerializeField] private SaveItem[] recipeItems;
         [SerializeField] private SaveItem[] cursorItems;

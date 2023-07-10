@@ -26,7 +26,7 @@ PrefabInstance:
     - target: {fileID: 6857057635525809214, guid: d96e51312ee149547984e64f8bbea307, type: 3}
       propertyPath: valueChangedSound
       value: 
-      objectReference: {fileID: 11400000, guid: 7bb831b7b9c146c419f16c198a6bcd86, type: 2}
+      objectReference: {fileID: 11400000, guid: 8fa7e2f62ecb3684abf358ae44ddea98, type: 2}
     - target: {fileID: 6857057635525809215, guid: d96e51312ee149547984e64f8bbea307, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

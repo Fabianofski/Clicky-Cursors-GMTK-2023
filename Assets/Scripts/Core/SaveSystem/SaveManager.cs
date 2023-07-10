@@ -10,22 +10,22 @@ using UnityEngine;
 
 namespace F4B1.Core.SaveSystem
 {
-    public class SaveManager
+    public static class SaveManager
     {
-        private const string saveKey = "clickyCursorData";
+        private const string SaveKey = "clickyCursorData";
 
         public static void SaveGame(SaveData data)
         {
             var json = JsonConvert.SerializeObject(data);
-            PlayerPrefs.SetString(saveKey, json);
+            PlayerPrefs.SetString(SaveKey, json);
             PlayerPrefs.Save();
         }
 
         public static SaveData LoadGame()
         {
-            if (PlayerPrefs.HasKey(saveKey))
+            if (PlayerPrefs.HasKey(SaveKey))
             {
-                var json = PlayerPrefs.GetString(saveKey);
+                var json = PlayerPrefs.GetString(SaveKey);
                 return JsonConvert.DeserializeObject<SaveData>(json);
             }
 

@@ -17,25 +17,23 @@ namespace F4B1.UI
     {
         [SerializeField] private IntVariable coins;
 
-        [Header("Shop Button")] [SerializeField]
-        private Button button;
-
+        [Header("Shop Button")] 
         [SerializeField] private TextMeshProUGUI titleTextField;
         [SerializeField] private TextMeshProUGUI costTextField;
+        [SerializeField] private Button button;
         [SerializeField] private Image imageIcon;
 
-        [Header("Shop Tooltip")] [SerializeField]
-        private TextMeshProUGUI descriptionTextField;
-
+        [Header("Shop Tooltip")] 
+        [SerializeField] private TextMeshProUGUI descriptionTextField;
         [SerializeField] private TextMeshProUGUI effectTextField;
 
-        [SerializeField] private float multiplier;
-
+        [Header("Sounds")] 
         [SerializeField] private SoundEvent soundEvent;
         [SerializeField] private Sound buySound;
         [SerializeField] private Sound clickSound;
 
-
+        [Header("Cost Multiplier")] 
+        [SerializeField] private float multiplier;
         private int itemCost;
         private ShopItem shopItem;
 

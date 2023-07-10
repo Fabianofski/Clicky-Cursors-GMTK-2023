@@ -7,7 +7,7 @@
 
 namespace F4B1.UI
 {
-    public class NumberFormatter
+    public static class NumberFormatter
     {
         public static string FormatNumberWithLetters(double number)
         {

@@ -26,12 +26,13 @@ namespace F4B1.UI
 
     public class ShopManager : MonoBehaviour
     {
+        [Header("Shop Tabs")]
         [SerializeField] private Transform buildingsTab;
         [SerializeField] private Transform recipesTab;
         [SerializeField] private Transform hardwareTab;
 
+        [Header("Items")]
         [SerializeField] private GameObject shopButtonPrefab;
-
         [SerializeField] private ShopItem[] buildingItems;
         [SerializeField] private ShopItem[] recipesItems;
         [SerializeField] private ShopItem[] hardwareItems;

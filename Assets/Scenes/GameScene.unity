@@ -156,10 +156,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4644067965694726092, guid: d8cde3dab9e8a164b9bfe96c0908bbd0, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4644067965694726092, guid: d8cde3dab9e8a164b9bfe96c0908bbd0, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 2
       objectReference: {fileID: 0}
@@ -2072,14 +2068,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   combo: {fileID: 11400000, guid: 8fbbd8868feb55145a773c9cf8c5e624, type: 2}
+  cooldownProgress: {fileID: 11400000, guid: aa525ac62af920a42b3ee9398956a9aa, type: 2}
   comboCooldown: 10
   comboCooldownMultiplier: 1.1
+  levelUpProgress: {fileID: 11400000, guid: f18a158a588d77f46b00bb757a0dc052, type: 2}
   levelUpAmount: 1
   levelUpMultiplier: 1.5
-  comboLevelUp: 0
-  comboLevelAmount: 0
-  cooldownProgress: {fileID: 11400000, guid: aa525ac62af920a42b3ee9398956a9aa, type: 2}
-  levelUpProgress: {fileID: 11400000, guid: f18a158a588d77f46b00bb757a0dc052, type: 2}
 --- !u!4 &1584699252
 Transform:
   m_ObjectHideFlags: 0

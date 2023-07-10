@@ -12,17 +12,16 @@ namespace F4B1.Core.Cursor
 {
     public class CursorManager : MonoBehaviour
     {
-        [Header("Cursors")] [SerializeField] private GameObject brokenCursor;
-
+        [Header("Cursors")] 
+        [SerializeField] private GameObject brokenCursor;
         [SerializeField] private GameObject grandpaCursor;
         [SerializeField] private GameObject normalCursor;
         [SerializeField] private GameObject greenCursor;
         [SerializeField] private GameObject proCursor;
         [SerializeField] private GameObject roboCursor;
 
-        [Header("Cursor Count")] [SerializeField]
-        private IntVariable brokenCursorCount;
-
+        [Header("Cursor Count")] 
+        [SerializeField] private IntVariable brokenCursorCount;
         [SerializeField] private IntVariable grandpaCursorCount;
         [SerializeField] private IntVariable normalCursorCount;
         [SerializeField] private IntVariable greenCursorCount;

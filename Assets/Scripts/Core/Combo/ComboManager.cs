@@ -8,23 +8,25 @@
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
-namespace F4B1.Core.Cookie
+namespace F4B1.Core.Combo
 {
     public class ComboManager : MonoBehaviour
     {
         [SerializeField] private IntVariable combo;
+        
+        [Header("Combo Cooldown")]
+        [SerializeField] private FloatEvent cooldownProgress;
         [SerializeField] private float comboCooldown;
         [SerializeField] private float comboCooldownMultiplier;
-
-        [SerializeField] private float levelUpAmount;
-        [SerializeField] private float levelUpMultiplier;
-        [SerializeField] private float comboLevelUp;
-        [SerializeField] private float comboLevelAmount;
-
-        [SerializeField] private FloatEvent cooldownProgress;
-        [SerializeField] private FloatEvent levelUpProgress;
         private float comboCooldownTimer;
         private float comboCooldownTimerPassed;
+
+        [Header("Combo Level Up")]
+        [SerializeField] private FloatEvent levelUpProgress;
+        [SerializeField] private float levelUpAmount;
+        [SerializeField] private float levelUpMultiplier;
+        private float comboLevelUp;
+        private float comboLevelAmount;
 
         private void Awake()
         {

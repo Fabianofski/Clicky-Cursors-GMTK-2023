@@ -14,8 +14,10 @@ namespace F4B1.Core.Cursor
 {
     public class CursorMovement : MonoBehaviour
     {
+        [Header("Parameters")]
         [SerializeField] private float speed;
 
+        [Header("Boundaries")]
         [SerializeField] private Vector2 bottomLeft;
         [SerializeField] private Vector2 topRight;
 

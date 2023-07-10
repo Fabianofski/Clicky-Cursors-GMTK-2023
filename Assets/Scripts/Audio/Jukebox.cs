@@ -19,7 +19,6 @@ namespace F4B1.Audio
 
     public class Jukebox : MonoBehaviour
     {
-        [SerializeField] private float fadeTime;
         [SerializeField] private MusicTrack[] layers;
         private float volume;
 
@@ -43,21 +42,6 @@ namespace F4B1.Audio
                 layerFound = true;
                 layer.audioSource.volume = volume;
             }
-        }
-
-        private static IEnumerator FadeInTrack(AudioSource audioSource, float fadeTime)
-        {
-            var startVolume = audioSource.volume;
-            audioSource.volume = 0;
-
-            while (audioSource.volume < startVolume)
-            {
-                audioSource.volume += startVolume * Time.deltaTime / fadeTime;
-                yield return null;
-            }
-
-            audioSource.volume = startVolume;
-            audioSource.Play();
         }
     }
 }

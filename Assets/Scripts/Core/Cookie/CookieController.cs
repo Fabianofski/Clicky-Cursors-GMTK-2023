@@ -7,15 +7,17 @@ namespace F4B1.Core.Cookie
 {
     public class CookieController : MonoBehaviour
     {
+        [Header("Boundaries")]
         [SerializeField] private Vector2 leftLowerBoundaryCorner;
         [SerializeField] private Vector2 rightUpperBoundaryCorner;
 
-        [SerializeField] private IntVariable speedUpgrade;
+        [Header("Movement Parameters")]
+        private Vector2 targetPos;
+        private bool lockCookie;
         [SerializeField] private IntVariable sizeUpgrade;
+        [SerializeField] private IntVariable speedUpgrade;
         [SerializeField] private float originalSpeed = 2;
         [SerializeField] private float speedMultiplier = 1.1f;
-        private bool lockCookie;
-        private Vector2 targetPos;
         private float speed => originalSpeed * Mathf.Pow(speedMultiplier, speedUpgrade.Value) / (sizeUpgrade.Value + 1);
 
         private void Update()

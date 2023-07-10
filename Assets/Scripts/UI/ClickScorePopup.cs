@@ -12,11 +12,14 @@ namespace F4B1.UI
 {
     public class ClickScorePopup : MonoBehaviour
     {
+        [Header("Components")]
+        [SerializeField] private TextMeshProUGUI textField;
+        
+        [Header("Tweening")]
         [SerializeField] private LeanTweenType tweenType;
         [SerializeField] private float tweenTime;
 
-        [SerializeField] private TextMeshProUGUI textField;
-
+        [Header("Gradient")]
         [SerializeField] private Gradient gradient;
         [SerializeField] private int maxScoreColor;
 

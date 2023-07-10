@@ -14,16 +14,19 @@ namespace F4B1.Core.Cursor
 {
     public class CursorClicker : MonoBehaviour
     {
+        [Header("Cursor Components")]
         [SerializeField] private Transform cursorPos;
         [SerializeField] private Vector2 hitBox;
         [SerializeField] private LayerMask mask;
         [SerializeField] private Transform loadingBar;
 
+        [Header("Click Score")]
         [SerializeField] private int scoreAmount;
         [SerializeField] private float critChance;
         [SerializeField] private float cooldown;
         [SerializeField] private IntEvent increaseComboEvent;
 
+        [Header("Sounds")]
         [SerializeField] private SoundEvent clickSoundEvent;
         [SerializeField] private Sound[] clickSounds;
         private float cooldownTimer;

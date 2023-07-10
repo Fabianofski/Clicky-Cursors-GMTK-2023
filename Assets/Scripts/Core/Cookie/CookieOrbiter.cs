@@ -57,8 +57,9 @@ namespace F4B1.Core.Cookie
 
             do
             {
-                cookies += PlaceCookies(radius + rowSpacing * rows, moveDistance * moveSpeed * (rows + 1),
-                    childCount - cookies, cookies);
+                var rad = radius + rowSpacing * rows;
+                var offset = moveDistance * moveSpeed * (rows + 1);
+                cookies += PlaceCookies(rad, offset,childCount - cookies, cookies);
                 rows++;
             } while (cookies <= childCount);
         }
@@ -81,17 +82,6 @@ namespace F4B1.Core.Cookie
             }
 
             return Mathf.RoundToInt(cookiesPerCircumference);
-        }
-
-        private void DestroyAllChildren()
-        {
-            var childCount = transform.childCount;
-
-            for (var i = childCount - 1; i >= 0; i--)
-            {
-                var child = transform.GetChild(i).gameObject;
-                Destroy(child);
-            }
         }
     }
 }

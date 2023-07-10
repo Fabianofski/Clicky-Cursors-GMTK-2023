@@ -7,14 +7,14 @@ namespace F4B1.Core.Cookie
 {
     public class CookieScoreManager : MonoBehaviour
     {
+        [Header("Sounds")]
         [SerializeField] private SoundEvent soundEvent;
         [SerializeField] private Sound cookieSound;
+        
+        [Header("Score Variables")]
         [SerializeField] private IntVariable playerScoreVariable;
         [SerializeField] private IntVariable currentComboVariable;
-
         [SerializeField] private GameObject scorePopupText;
-
-        private LTDescr activeScaleTween;
 
         public void Click(int score, Vector2 pos)
         {
