@@ -35,6 +35,8 @@ namespace F4B1.Core.Combo
 
         private void Update()
         {
+            if (Time.deltaTime == 0) return;
+            
             comboCooldownTimerPassed -= Time.deltaTime;
 
             if (combo.Value > 0)

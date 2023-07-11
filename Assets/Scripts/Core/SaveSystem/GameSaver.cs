@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace F4B1.Core.SaveSystem
 {
@@ -27,6 +28,7 @@ namespace F4B1.Core.SaveSystem
         [SerializeField] private SaveItem[] recipeItems;
         [SerializeField] private SaveItem[] cursorItems;
         [SerializeField] private IntVariable coins;
+        [SerializeField] private IntVariable combo;
 
         private bool loaded;
 
@@ -38,7 +40,20 @@ namespace F4B1.Core.SaveSystem
 
         public void ClearData()
         {
-            PlayerPrefs.DeleteKey("clickyCursorData");
+            PlayerPrefs.DeleteAll();
+            
+            ClearItems(buildingItems);
+            ClearItems(recipeItems);
+            ClearItems(cursorItems);
+            coins.SetValue(10);
+            combo.SetValue(0);
+            LeanTween.cancelAll();
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        private void ClearItems(SaveItem[] items)
+        {
+            foreach (var saveItem in items) saveItem.count.SetValue(0);
         }
 
         private void LoadGame()
@@ -51,11 +66,6 @@ namespace F4B1.Core.SaveSystem
             BuyItems(buildingItems, data.buildingItems);
             BuyItems(recipeItems, data.recipeItems);
             BuyItems(cursorItems, data.cursorItems);
-        }
-
-        private void ClearItems(SaveItem[] items)
-        {
-            foreach (var saveItem in items) saveItem.count.Reset();
         }
 
         private void BuyItems(SaveItem[] items, Dictionary<string, int> dict)
