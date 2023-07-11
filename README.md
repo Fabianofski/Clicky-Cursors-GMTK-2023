@@ -23,7 +23,7 @@ If you want to try out the game you can play it in web or download it for Mac, W
 To open the project do the following:
 
 1. Install [Unity Hub](https://unity.com/download)
-2. In Unity Hub install Unity Version 2021.3.4f1
+2. In Unity Hub install Unity Version 2021.3.27f1
 3. Clone the repo
    ```sh
    git clone https://github.com/Fabianofski/GMTK-2023.git
