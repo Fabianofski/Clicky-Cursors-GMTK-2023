@@ -12,7 +12,7 @@ using UnityAtoms.BaseAtoms;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace F4B1.Core.SaveSystem
+namespace F4B1.SaveSystem
 {
     [Serializable]
     public class SaveItem
@@ -27,7 +27,7 @@ namespace F4B1.Core.SaveSystem
         [SerializeField] private SaveItem[] buildingItems;
         [SerializeField] private SaveItem[] recipeItems;
         [SerializeField] private SaveItem[] cursorItems;
-        [SerializeField] private IntVariable coins;
+        [SerializeField] private Int64Variable coins;
         [SerializeField] private IntVariable combo;
 
         private bool loaded;

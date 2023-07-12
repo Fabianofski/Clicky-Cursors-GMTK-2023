@@ -12,7 +12,7 @@ namespace F4B1.Core.Cookie
         [SerializeField] private Sound cookieSound;
         
         [Header("Score Variables")]
-        [SerializeField] private IntVariable playerScoreVariable;
+        [SerializeField] private Int64Variable playerScoreVariable;
         [SerializeField] private IntVariable currentComboVariable;
         [SerializeField] private GameObject scorePopupText;
 

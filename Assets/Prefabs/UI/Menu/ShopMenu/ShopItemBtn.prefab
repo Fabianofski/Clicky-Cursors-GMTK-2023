@@ -61,17 +61,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2858308cc89d467aadf1520f67196ede, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coins: {fileID: 11400000, guid: 99a2605f7a5768c44a5fb61ffbff67ff, type: 2}
-  button: {fileID: 4261530443342005515}
+  coins: {fileID: 11400000, guid: 7cbfb300913ff8d4dbbe7beedb04d9e7, type: 2}
   titleTextField: {fileID: 5469774465994383261}
   costTextField: {fileID: 2355680050780796996}
+  button: {fileID: 4261530443342005515}
   imageIcon: {fileID: 1936993585791300780}
   descriptionTextField: {fileID: 2865934432236370261}
   effectTextField: {fileID: 2240259303513035044}
-  multiplier: 1.3
   soundEvent: {fileID: 11400000, guid: ca1eca7eb3b3c154293af562b7eb9d9a, type: 2}
   buySound: {fileID: 11400000, guid: d3aa3fa40cdff394da5e49dc23f0a14a, type: 2}
   clickSound: {fileID: 11400000, guid: cf8c94f672906f548bfacba650137366, type: 2}
+  multiplier: 1.3
 --- !u!114 &645428027892586431
 MonoBehaviour:
   m_ObjectHideFlags: 0

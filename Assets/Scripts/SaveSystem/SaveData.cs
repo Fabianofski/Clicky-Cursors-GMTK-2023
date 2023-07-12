@@ -8,12 +8,12 @@
 using System;
 using System.Collections.Generic;
 
-namespace F4B1.Core.SaveSystem
+namespace F4B1.SaveSystem
 {
     [Serializable]
     public class SaveData
     {
-        public int coins;
+        public long coins;
         public Dictionary<string, int> buildingItems;
         public Dictionary<string, int> cursorItems;
         public Dictionary<string, int> recipeItems;

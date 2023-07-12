@@ -8,7 +8,7 @@
 using Newtonsoft.Json;
 using UnityEngine;
 
-namespace F4B1.Core.SaveSystem
+namespace F4B1.SaveSystem
 {
     public static class SaveManager
     {

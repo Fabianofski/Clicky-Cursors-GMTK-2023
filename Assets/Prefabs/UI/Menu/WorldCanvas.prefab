@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 367685851655211911}
   - component: {fileID: 367685851655211904}
   - component: {fileID: 367685851655211909}
-  - component: {fileID: 367685851655211910}
+  - component: {fileID: 1733470472924059966}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -152,7 +152,7 @@ MonoBehaviour:
   textField: {fileID: 367685851655211904}
   prefix: 
   suffix: 
---- !u!114 &367685851655211910
+--- !u!114 &1733470472924059966
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 367685851655211906}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050ff37b5550f4b7e9bdf8b985aff484, type: 3}
+  m_Script: {fileID: 11500000, guid: 513f4fe3d869d4c4f8ba276ceecfb294, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _developerDescription: 
@@ -170,7 +170,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 367685851655211909}
         m_TargetAssemblyTypeName: F4B1.UI.UIHelper, Assembly-CSharp
-        m_MethodName: SetIntText
+        m_MethodName: SetLongText
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -186,7 +186,7 @@ MonoBehaviour:
   _replayEventBufferOnRegister: 1
   _eventReference:
     _usage: 0
-    _event: {fileID: 11400000, guid: cd71e9687cf5c7c418d3492499498366, type: 2}
+    _event: {fileID: 11400000, guid: c6c63d7657b8f044a9316cd36259d540, type: 2}
     _eventInstancer: {fileID: 0}
     _variable: {fileID: 0}
     _variableInstancer: {fileID: 0}

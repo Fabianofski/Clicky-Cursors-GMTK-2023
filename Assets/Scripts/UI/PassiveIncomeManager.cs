@@ -22,7 +22,7 @@ namespace F4B1.UI
     public class PassiveIncomeManager : MonoBehaviour
     {
         [Header("Variables")]
-        [SerializeField] private IntVariable coins;
+        [SerializeField] private Int64Variable coins;
         [SerializeField] private IntVariable totalPassiveIncome;
         
         [Header("Items")]

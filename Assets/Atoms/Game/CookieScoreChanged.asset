@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 734fbfb568154d32a89d792102f0c779, type: 3}
-  m_Name: New Atom Type
+  m_Script: {fileID: 11500000, guid: e9fa5bf5e01c8ab468822ea06ec07be3, type: 3}
+  m_Name: CookieScoreChanged
   m_EditorClassIdentifier: 
-  FullQualifiedName: 
-  Namespace: 
-  BaseType: 
-  GenerationOptions: 4194303
-  Scripts: []
+  _developerDescription: 
+  _replayBufferSize: 1
+  _inspectorRaiseValue: 0

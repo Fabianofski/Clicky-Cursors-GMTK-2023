@@ -381,7 +381,7 @@ MonoBehaviour:
     count: {fileID: 11400000, guid: f3a680e53bf01334ca0d9abd65c1168c, type: 2}
   - id: robo
     count: {fileID: 11400000, guid: cecc3c66db93aa747b6c2e5bc4af94f5, type: 2}
-  coins: {fileID: 11400000, guid: 99a2605f7a5768c44a5fb61ffbff67ff, type: 2}
+  coins: {fileID: 11400000, guid: 7cbfb300913ff8d4dbbe7beedb04d9e7, type: 2}
   combo: {fileID: 11400000, guid: 8fbbd8868feb55145a773c9cf8c5e624, type: 2}
 --- !u!4 &472555677
 Transform:
@@ -1733,7 +1733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3e93d3fa4c46bd8fd1a560e5201e10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coins: {fileID: 11400000, guid: 99a2605f7a5768c44a5fb61ffbff67ff, type: 2}
+  coins: {fileID: 11400000, guid: 7cbfb300913ff8d4dbbe7beedb04d9e7, type: 2}
   totalPassiveIncome: {fileID: 11400000, guid: 12d6adc59bdee984eb072f4a8c7ce5ac, type: 2}
   passiveIncomeItems:
   - countVariable: {fileID: 11400000, guid: afc1d918cba5b0d49b56e670d5bc93ba, type: 2}

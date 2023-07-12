@@ -15,7 +15,7 @@ namespace F4B1.UI
 {
     public class ShopButton : MonoBehaviour
     {
-        [SerializeField] private IntVariable coins;
+        [SerializeField] private Int64Variable coins;
 
         [Header("Shop Button")] 
         [SerializeField] private TextMeshProUGUI titleTextField;
@@ -58,7 +58,7 @@ namespace F4B1.UI
             button.onClick.AddListener(() => BuyItem(item.clickEvent));
         }
 
-        public void CookieScoreChanged(int value)
+        public void CookieScoreChanged(long value)
         {
             var maxPurchasesReached = shopItem != null && shopItem.purchases.Value >= shopItem.maxPurchases &&
                                       shopItem.maxPurchases != -1;

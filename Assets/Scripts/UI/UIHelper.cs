@@ -20,6 +20,11 @@ namespace F4B1.UI
         {
             textField.text = NumberFormatter.FormatNumberWithLetters(value);
         }
+        
+        public void SetLongText(long value)
+        {
+            textField.text = NumberFormatter.FormatNumberWithLetters(value);
+        }
 
         public void SetIntTextWithText(int value)
         {
