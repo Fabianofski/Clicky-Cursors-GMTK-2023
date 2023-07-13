@@ -5,6 +5,7 @@
 //  * Distributed under the terms of the MIT license (cf. LICENSE.md file)
 //  **/
 
+using System;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
@@ -22,7 +23,13 @@ namespace F4B1.Core.Cookie
         [SerializeField] private float moveSpeed = 1f;
         private float moveDistance;
 
-        private void Start()
+
+        private void OnEnable()
+        {
+            LoadCookieOrbits();
+        }
+
+        public void LoadCookieOrbits()
         {
             for (var i = 0; i < cookieOrbitAmount.Value; i++)
                 Instantiate(orbitPrefab, transform);

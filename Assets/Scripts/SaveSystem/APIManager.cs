@@ -24,7 +24,7 @@ namespace F4B1.SaveSystem
         public static bool isLoggedIn()
         {
             password = "12345";
-            username = "hans";
+            username = "f4b1";
             return username != "" && password != "";
         }
 

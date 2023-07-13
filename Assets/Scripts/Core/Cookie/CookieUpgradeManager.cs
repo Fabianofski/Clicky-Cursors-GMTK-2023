@@ -15,17 +15,12 @@ namespace F4B1.Core.Cookie
         [SerializeField] private GameObject[] cookies;
         [SerializeField] private IntVariable currentCookieSize;
 
-        private void Start()
-        {
-            SetCookiesActive();
-        }
-
         public void IncreaseCookieSize()
         {
             SetCookiesActive();
         }
 
-        private void SetCookiesActive()
+        public void SetCookiesActive()
         {
             for (var index = 0; index < cookies.Length; index++)
             {

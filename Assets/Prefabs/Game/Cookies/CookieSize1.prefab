@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3135483902552536967}
   - component: {fileID: 8022368630170286203}
   - component: {fileID: 6580385298569482769}
+  - component: {fileID: -9034640458034569655}
   m_Layer: 6
   m_Name: CookieSize1
   m_TagString: Untagged
@@ -180,3 +181,43 @@ MonoBehaviour:
   playerScoreVariable: {fileID: 11400000, guid: 7cbfb300913ff8d4dbbe7beedb04d9e7, type: 2}
   currentComboVariable: {fileID: 11400000, guid: 8fbbd8868feb55145a773c9cf8c5e624, type: 2}
   scorePopupText: {fileID: 4399874285742653116, guid: 87e0dc3c064a61042b2cbfeb0ac9adea, type: 3}
+--- !u!114 &-9034640458034569655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5060521279130361598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2458933140c54c9db0aec7a69c1b617, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _developerDescription: 
+  _unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3135483902552536967}
+        m_TargetAssemblyTypeName: F4B1.Core.Cookie.CookieOrbiter, Assembly-CSharp
+        m_MethodName: LoadCookieOrbits
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _actionResponses: []
+  _conditions: []
+  _operator: 0
+  _replayEventBufferOnRegister: 1
+  _eventReference:
+    _usage: 0
+    _event: {fileID: 11400000, guid: 8ce2484676ce4ee45ac01611bc945f87, type: 2}
+    _eventInstancer: {fileID: 0}
+    _collection: {fileID: 0}
+    _list: {fileID: 0}
+    _collectionInstancer: {fileID: 0}
+    _listInstancer: {fileID: 0}

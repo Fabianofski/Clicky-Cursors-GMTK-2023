@@ -40,6 +40,8 @@ namespace F4B1.UI
         private void OnEnable()
         {
             CookieScoreChanged(coins.Value);
+            if(shopItem != null)
+                UpdateTextFields();
         }
 
         public void SetButtonInformation(ShopItem item)

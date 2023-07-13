@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4358418897413349634}
   - component: {fileID: 9108068554474794722}
   - component: {fileID: 5274307163154350855}
+  - component: {fileID: 6933113924436043217}
   m_Layer: 6
   m_Name: CookieParent
   m_TagString: Untagged
@@ -53,13 +54,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftLowerBoundaryCorner: {x: -8.5, y: -4.5}
   rightUpperBoundaryCorner: {x: 4.5, y: 4.5}
-  speedUpgrade: {fileID: 11400000, guid: 929fb63194142e84fa60791a554f89a5, type: 2}
   sizeUpgrade: {fileID: 11400000, guid: 89bfed2e9c57d0e4db08e7fc097b0cc4, type: 2}
-  speedUpgrades:
-  - 2
-  - 4
-  - 6
-  - 8
+  speedUpgrade: {fileID: 11400000, guid: 929fb63194142e84fa60791a554f89a5, type: 2}
+  originalSpeed: 2
+  speedMultiplier: 1.1
 --- !u!114 &4358418897413349634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,6 +141,46 @@ MonoBehaviour:
   _eventReference:
     _usage: 0
     _event: {fileID: 11400000, guid: acca1637f03a0ac46a9db6d6ca298a2e, type: 2}
+    _eventInstancer: {fileID: 0}
+    _collection: {fileID: 0}
+    _list: {fileID: 0}
+    _collectionInstancer: {fileID: 0}
+    _listInstancer: {fileID: 0}
+--- !u!114 &6933113924436043217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4358418897413349638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2458933140c54c9db0aec7a69c1b617, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _developerDescription: 
+  _unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9108068554474794722}
+        m_TargetAssemblyTypeName: F4B1.Core.Cookie.CookieUpgradeManager, Assembly-CSharp
+        m_MethodName: SetCookiesActive
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _actionResponses: []
+  _conditions: []
+  _operator: 0
+  _replayEventBufferOnRegister: 1
+  _eventReference:
+    _usage: 0
+    _event: {fileID: 11400000, guid: 8ce2484676ce4ee45ac01611bc945f87, type: 2}
     _eventInstancer: {fileID: 0}
     _collection: {fileID: 0}
     _list: {fileID: 0}
