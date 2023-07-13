@@ -8,24 +8,31 @@ namespace UnityAtoms.BaseAtoms
     /// </summary>
     [EditorIcon("atom-icon-lush")]
     [CreateAssetMenu(menuName = "Unity Atoms/Variables/Int64", fileName = "Int64Variable")]
-    public sealed class Int64Variable : AtomVariable<System.Int64, Int64Pair, Int64Event, Int64PairEvent, Int64Int64Function>
+    public sealed class Int64Variable : AtomVariable<long, Int64Pair, Int64Event, Int64PairEvent, Int64Int64Function>
     {
-        public void Add(System.Int64 value)
+        
+        public override object BaseValue
+        {
+            get => _value;
+            set => Value = (int) value;
+        }
+        
+        public void Add(long value)
         {
             SetValue(Value + value, true);
         }
 
-        public void Subtract(System.Int64 value)
+        public void Subtract(long value)
         {
             SetValue(Value - value, true);
         }
 
-        public void SetValue(System.Int64 newValue)
+        public void SetValue(long newValue)
         {
             SetValue(newValue, true);
         }
 
-        protected override bool ValueEquals(System.Int64 other)
+        protected override bool ValueEquals(long other)
         {
             return Value == other;
         }
