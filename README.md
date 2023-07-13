@@ -26,7 +26,7 @@ To open the project do the following:
 2. In Unity Hub install Unity Version 2021.3.27f1
 3. Clone the repo
    ```sh
-   git clone https://github.com/Fabianofski/GMTK-2023.git
+   git clone https://github.com/Fabianofski/Clicky-Cursors-GMTK-2023.git
    ```
 4. Open the Project in Unity Hub
 
