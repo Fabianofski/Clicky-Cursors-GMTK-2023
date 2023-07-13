@@ -29,13 +29,13 @@ namespace F4B1.SaveSystem
         [SerializeField] private SaveItem[] cursorItems;
         [SerializeField] private Int64Variable coins;
         [SerializeField] private IntVariable combo;
+        [SerializeField] private VoidEvent gameLoadedEvent;
 
         private bool loaded;
 
         private void Awake()
         {
             LoadGame();
-            loaded = true;
         }
 
         public void ClearData()
@@ -58,19 +58,34 @@ namespace F4B1.SaveSystem
 
         private void LoadGame()
         {
-            var data = SaveManager.LoadGame();
-            if (data == null) return;
+            var enumerator = SaveManager.LoadGame(GameLoadedCallback);
+            if (enumerator == null)
+            {
+                loaded = true;
+                return;
+            }
+            StartCoroutine(enumerator);
+        }
 
+        private void GameLoadedCallback(SaveData data)
+        {
             coins.SetValue(data.coins);
 
             BuyItems(buildingItems, data.buildingItems);
             BuyItems(recipeItems, data.recipeItems);
             BuyItems(cursorItems, data.cursorItems);
+            
+            gameLoadedEvent.Raise();
+            loaded = true;
         }
 
         private void BuyItems(SaveItem[] items, Dictionary<string, int> dict)
         {
-            foreach (var saveItem in items) saveItem.count.SetValue(dict[saveItem.id]);
+            foreach (var saveItem in items)
+            {
+                var count = dict.ContainsKey(saveItem.id) ? dict[saveItem.id] : 0;
+                saveItem.count.SetValue(count);
+            }
         }
 
         public void SaveGame()
@@ -84,7 +99,10 @@ namespace F4B1.SaveSystem
                 cursorItems = CreateDictionary(cursorItems),
                 coins = coins.Value
             };
-            SaveManager.SaveGame(data);
+            
+            var enumerator = SaveManager.SaveGame(data, Debug.Log);
+            if (enumerator == null) return;
+            StartCoroutine(enumerator);
         }
 
         private Dictionary<string, int> CreateDictionary(SaveItem[] items)

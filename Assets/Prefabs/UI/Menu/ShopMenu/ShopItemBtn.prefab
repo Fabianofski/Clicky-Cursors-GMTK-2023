@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 535745025484261779}
   - component: {fileID: 2818630457013676946}
   - component: {fileID: 5973386791314478008}
-  - component: {fileID: 645428027892586431}
+  - component: {fileID: 2151375505716811369}
+  - component: {fileID: 3813324593646518456}
   m_Layer: 5
   m_Name: ShopItemBtn
   m_TagString: Untagged
@@ -72,7 +73,7 @@ MonoBehaviour:
   buySound: {fileID: 11400000, guid: d3aa3fa40cdff394da5e49dc23f0a14a, type: 2}
   clickSound: {fileID: 11400000, guid: cf8c94f672906f548bfacba650137366, type: 2}
   multiplier: 1.3
---- !u!114 &645428027892586431
+--- !u!114 &2151375505716811369
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -81,7 +82,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 420976522915839672}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050ff37b5550f4b7e9bdf8b985aff484, type: 3}
+  m_Script: {fileID: 11500000, guid: 513f4fe3d869d4c4f8ba276ceecfb294, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _developerDescription: 
@@ -106,10 +107,50 @@ MonoBehaviour:
   _replayEventBufferOnRegister: 1
   _eventReference:
     _usage: 0
-    _event: {fileID: 11400000, guid: cd71e9687cf5c7c418d3492499498366, type: 2}
+    _event: {fileID: 11400000, guid: c6c63d7657b8f044a9316cd36259d540, type: 2}
     _eventInstancer: {fileID: 0}
     _variable: {fileID: 0}
     _variableInstancer: {fileID: 0}
+--- !u!114 &3813324593646518456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420976522915839672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2458933140c54c9db0aec7a69c1b617, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _developerDescription: 
+  _unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5973386791314478008}
+        m_TargetAssemblyTypeName: F4B1.UI.ShopButton, Assembly-CSharp
+        m_MethodName: UpdateTextFields
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _actionResponses: []
+  _conditions: []
+  _operator: 0
+  _replayEventBufferOnRegister: 1
+  _eventReference:
+    _usage: 0
+    _event: {fileID: 11400000, guid: 8ce2484676ce4ee45ac01611bc945f87, type: 2}
+    _eventInstancer: {fileID: 0}
+    _collection: {fileID: 0}
+    _list: {fileID: 0}
+    _collectionInstancer: {fileID: 0}
+    _listInstancer: {fileID: 0}
 --- !u!1 &960366676080722211
 GameObject:
   m_ObjectHideFlags: 0

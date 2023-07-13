@@ -34,7 +34,7 @@ namespace F4B1.UI
 
         [Header("Cost Multiplier")] 
         [SerializeField] private float multiplier;
-        private int itemCost;
+        private long itemCost;
         private ShopItem shopItem;
 
         private void OnEnable()
@@ -79,13 +79,14 @@ namespace F4B1.UI
             if (clickEvent) clickEvent.Raise();
         }
 
-        private void UpdateTextFields()
+        public void UpdateTextFields()
         {
             imageIcon.sprite = shopItem.icon;
             titleTextField.text = $"{shopItem.title} (x{shopItem.purchases.Value})";
-            itemCost = Mathf.RoundToInt(shopItem.cost * Mathf.Pow(multiplier, shopItem.purchases.Value));
+            itemCost = (long) (shopItem.cost * Mathf.Pow(multiplier, shopItem.purchases.Value));
             costTextField.text = NumberFormatter.FormatNumberWithLetters(itemCost);
 
+            button.interactable = coins.Value >= itemCost;
             var maxPurchasesReached = shopItem.purchases.Value >= shopItem.maxPurchases && shopItem.maxPurchases != -1;
             if (maxPurchasesReached)
             {

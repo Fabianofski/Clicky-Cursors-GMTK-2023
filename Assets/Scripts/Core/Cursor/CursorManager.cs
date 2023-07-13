@@ -28,7 +28,7 @@ namespace F4B1.Core.Cursor
         [SerializeField] private IntVariable proCursorCount;
         [SerializeField] private IntVariable roboCursorCount;
 
-        private void Start()
+        public void BuyCursorsFromSaveFile()
         {
             for (var i = 0; i < brokenCursorCount.Value; i++) BuyBrokenCursor();
             for (var i = 0; i < grandpaCursorCount.Value; i++) BuyGrandpaCursor();

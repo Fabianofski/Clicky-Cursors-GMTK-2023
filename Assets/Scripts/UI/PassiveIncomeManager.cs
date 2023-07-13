@@ -40,9 +40,10 @@ namespace F4B1.UI
             countdown -= Time.deltaTime;
 
             if (countdown > 0) return;
+            countdown = 1;
+            if (totalPassiveIncome.Value == 0) return;
 
             coins.Add(totalPassiveIncome.Value);
-            countdown = 1;
         }
 
         public void CalculateTotalPassiveIncome()
