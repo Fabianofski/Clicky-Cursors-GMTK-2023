@@ -17,5 +17,13 @@ namespace F4B1.SaveSystem
         public Dictionary<string, int> buildingItems;
         public Dictionary<string, int> cursorItems;
         public Dictionary<string, int> recipeItems;
+        public DateTime timestamp;
+
+        public SaveData()
+        {
+            buildingItems = new Dictionary<string, int>();
+            cursorItems = new Dictionary<string, int>();
+            recipeItems = new Dictionary<string, int>();
+        }
     }
 }

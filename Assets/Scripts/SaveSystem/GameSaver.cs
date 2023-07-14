@@ -31,10 +31,15 @@ namespace F4B1.SaveSystem
         [SerializeField] private IntVariable combo;
         [SerializeField] private VoidEvent gameLoadedEvent;
 
+        
+        [SerializeField] private StringVariable usernameVariable;
+
         private bool loaded;
 
         private void Awake()
         {
+            if (PlayerPrefs.HasKey("username"))
+                usernameVariable.SetValue(PlayerPrefs.GetString("username"));
             LoadGame();
         }
 
@@ -58,17 +63,27 @@ namespace F4B1.SaveSystem
 
         private void LoadGame()
         {
-            var enumerator = SaveManager.LoadGame(GameLoadedCallback);
-            if (enumerator == null)
-            {
-                loaded = true;
-                return;
-            }
-            StartCoroutine(enumerator);
+            StartCoroutine(SaveManager.LoadGame(GameLoadedCallback));
         }
 
-        private void GameLoadedCallback(SaveData data)
+        private void GameLoadedCallback(SaveData onlineData)
         {
+            var localData = SaveManager.LoadLocalGame();
+
+            SaveData data;
+            if (localData == null && onlineData == null)
+                data = new SaveData()
+                {
+                    coins = coins.InitialValue,
+                };
+            else if (localData == null)
+                data = onlineData;
+            else if (onlineData == null)
+                data = localData;
+            else
+               data = localData.timestamp < onlineData.timestamp ? onlineData : localData;
+            Debug.Log(localData + " " + onlineData);
+            
             coins.SetValue(data.coins);
 
             BuyItems(buildingItems, data.buildingItems);
@@ -97,9 +112,11 @@ namespace F4B1.SaveSystem
                 buildingItems = CreateDictionary(buildingItems),
                 recipeItems = CreateDictionary(recipeItems),
                 cursorItems = CreateDictionary(cursorItems),
-                coins = coins.Value
+                coins = coins.Value,
+                timestamp = DateTime.UtcNow
             };
             
+            SaveManager.SaveLocalGame(data);
             var enumerator = SaveManager.SaveGame(data, Debug.Log);
             if (enumerator == null) return;
             StartCoroutine(enumerator);

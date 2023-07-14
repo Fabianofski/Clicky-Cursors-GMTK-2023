@@ -20,14 +20,58 @@ namespace F4B1.SaveSystem
         
         public static string username { get; set; }
         public static string password { get; set; }
-
+        
+        static APIManager()
+        {
+            if (PlayerPrefs.HasKey("username"))
+                username = PlayerPrefs.GetString("username");
+            if (PlayerPrefs.HasKey("password"))
+                password = PlayerPrefs.GetString("password");
+        }
+        
         public static bool isLoggedIn()
         {
-            password = "12345";
-            username = "f4b1";
             return username != "" && password != "";
         }
 
+        public static IEnumerator AttemptLogin(string name, string pwd, Action<bool> callback)
+        {
+            var endpoint = $"{URL}/api/login?username={name}&password={pwd}";
+
+            using var webRequest = UnityWebRequest.Get(endpoint);
+            yield return webRequest.SendWebRequest();
+
+            if (webRequest.result == UnityWebRequest.Result.Success)
+            {
+                var response = webRequest.downloadHandler.text;
+                callback?.Invoke(JsonConvert.DeserializeObject<bool>(response));
+            }
+            else
+            {
+                Debug.LogError($"Error checking if user exists: " + webRequest.error);
+                callback?.Invoke(false);
+            }
+        }
+        
+        public static IEnumerator UserExists(Action<bool> callback)
+        {
+            var endpoint = $"{URL}/api/userExists?username={username}";
+
+            using var webRequest = UnityWebRequest.Get(endpoint);
+            yield return webRequest.SendWebRequest();
+
+            if (webRequest.result == UnityWebRequest.Result.Success)
+            {
+                var response = webRequest.downloadHandler.text;
+                callback?.Invoke(JsonConvert.DeserializeObject<bool>(response));
+            }
+            else
+            {
+                Debug.LogError($"Error checking if user exists: " + webRequest.error);
+                callback?.Invoke(false);
+            }
+        }
+        
         public static IEnumerator FetchSaveData(Action<SaveData> callback)
         {
             var endpoint = $"{URL}/api/load?username={username}&password={password}&apiKey={APIKey}";
@@ -38,7 +82,6 @@ namespace F4B1.SaveSystem
             if (webRequest.result == UnityWebRequest.Result.Success)
             {
                 var response = webRequest.downloadHandler.text;
-                Debug.Log(response);
                 callback?.Invoke(JsonConvert.DeserializeObject<SaveData>(response));
             }
             else

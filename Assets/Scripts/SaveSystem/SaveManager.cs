@@ -14,32 +14,37 @@ namespace F4B1.SaveSystem
 {
     public static class SaveManager
     {
-        private const string SaveKey = "clickyCursorData";
+        private static string saveKey => APIManager.username + "clickyCursorData";
 
         public static IEnumerator SaveGame(SaveData data, Action<string> callback)
         {
             if (APIManager.isLoggedIn())
                 return APIManager.PostSaveData(data, callback);
             
-            var json = JsonConvert.SerializeObject(data);
-            PlayerPrefs.SetString(SaveKey, json);
-            PlayerPrefs.Save();
-            callback("Saved data locally!");
-
             return null;
+        }
+
+        public static void SaveLocalGame(SaveData data)
+        {
+            var json = JsonConvert.SerializeObject(data);
+            PlayerPrefs.SetString(saveKey, json);
+            PlayerPrefs.Save();
         }
 
         public static IEnumerator LoadGame(Action<SaveData> callback)
         {
             if (APIManager.isLoggedIn())
                 return APIManager.FetchSaveData(callback);
-
-            if (!PlayerPrefs.HasKey(SaveKey)) return null;
             
-            var json = PlayerPrefs.GetString(SaveKey);
-            callback(JsonConvert.DeserializeObject<SaveData>(json));
-
             return null;
+        }
+
+        public static SaveData LoadLocalGame()
+        {
+            if (!PlayerPrefs.HasKey(saveKey)) return null;
+            
+            var json = PlayerPrefs.GetString(saveKey);
+            return JsonConvert.DeserializeObject<SaveData>(json);
         }
     }
 }

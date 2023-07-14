@@ -9,16 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08e5435bd453754428ff8ce9b35cc507, type: 3}
-  m_Name: CookieScore 1
+  m_Script: {fileID: 11500000, guid: 0fdbbdbe4268c4d729a51bde5e681e8c, type: 3}
+  m_Name: ActiveUser
   m_EditorClassIdentifier: 
   _developerDescription: 
   _id: 
-  _value: 0
-  _changed: {fileID: 11400000, guid: c6c63d7657b8f044a9316cd36259d540, type: 2}
+  _value: 
+  _changed: {fileID: 11400000, guid: e37b613a5da196741a81053095b65948, type: 2}
   _changedWithHistory: {fileID: 0}
   _triggerChangedOnOnEnable: 0
   _triggerChangedWithHistoryOnOnEnable: 0
-  _oldValue: 0
-  _initialValue: 0
+  _oldValue: 
+  _initialValue: 
   _preChangeTransformers: []
