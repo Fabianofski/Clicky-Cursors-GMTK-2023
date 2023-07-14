@@ -72,7 +72,7 @@ namespace F4B1.SaveSystem
             }
         }
         
-        public static IEnumerator FetchSaveData(Action<SaveData> callback)
+        public static IEnumerator FetchSaveData(Action<SaveData> callback, Action<Exception> exceptionCallback)
         {
             var endpoint = $"{URL}/api/load?username={username}&password={password}&apiKey={APIKey}";
 
@@ -88,10 +88,11 @@ namespace F4B1.SaveSystem
             {
                 Debug.LogError($"Error fetching Save Data: " + webRequest.error);
                 callback?.Invoke(null);
+                exceptionCallback.Invoke(new Exception(webRequest.error));
             }
         }
         
-        public static IEnumerator PostSaveData(SaveData data, Action<string> callback)
+        public static IEnumerator PostSaveData(SaveData data, Action<string> callback, Action<Exception> exceptionCallback)
         {
             var endpoint = $"{URL}/api/save?username={username}&password={password}&apiKey={APIKey}";
 
@@ -107,12 +108,11 @@ namespace F4B1.SaveSystem
             if (webRequest.result == UnityWebRequest.Result.Success)
             {
                 var response = webRequest.downloadHandler.text;
-                callback?.Invoke(response);
+                callback.Invoke(response);
             }
             else
             {
-                Debug.LogError($"Error saving Data: " + webRequest.error);
-                callback?.Invoke(null);
+                exceptionCallback.Invoke(new Exception(webRequest.error));
             }
         }
     }

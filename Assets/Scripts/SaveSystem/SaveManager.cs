@@ -16,10 +16,10 @@ namespace F4B1.SaveSystem
     {
         private static string saveKey => APIManager.username + "clickyCursorData";
 
-        public static IEnumerator SaveGame(SaveData data, Action<string> callback)
+        public static IEnumerator SaveGame(SaveData data, Action<string> callback, Action<Exception> exceptionCallback)
         {
             if (APIManager.isLoggedIn())
-                return APIManager.PostSaveData(data, callback);
+                return APIManager.PostSaveData(data, callback, exceptionCallback);
             
             return null;
         }
@@ -31,10 +31,10 @@ namespace F4B1.SaveSystem
             PlayerPrefs.Save();
         }
 
-        public static IEnumerator LoadGame(Action<SaveData> callback)
+        public static IEnumerator LoadGame(Action<SaveData> callback, Action<Exception> exceptionCallback)
         {
             if (APIManager.isLoggedIn())
-                return APIManager.FetchSaveData(callback);
+                return APIManager.FetchSaveData(callback, exceptionCallback);
             
             return null;
         }

@@ -35,8 +35,9 @@ namespace F4B1.SaveSystem
         [SerializeField] private int globalSaveCooldown;
         private float globalSaveTimer;
 
-        
+        [Header("Atoms")]
         [SerializeField] private StringVariable usernameVariable;
+        [SerializeField] private BoolEvent offlineChangedEvent;
 
         private bool loaded;
 
@@ -72,11 +73,15 @@ namespace F4B1.SaveSystem
 
         private void LoadGame()
         {
-            StartCoroutine(SaveManager.LoadGame(GameLoadedCallback));
+            StartCoroutine(SaveManager.LoadGame(GameLoadedCallback, exception =>
+            {
+                offlineChangedEvent.Raise(true);
+            }));
         }
 
         private void GameLoadedCallback(SaveData onlineData)
         {
+            if(onlineData != null) offlineChangedEvent.Raise(false);
             var localData = SaveManager.LoadLocalGame();
 
             SaveData data;
@@ -128,10 +133,14 @@ namespace F4B1.SaveSystem
 
             if (globalSaveTimer > 0) return;
             globalSaveTimer = globalSaveCooldown;
-            
-            var enumerator = SaveManager.SaveGame(data, Debug.Log);
-            if (enumerator == null) return;
-            StartCoroutine(enumerator);
+
+            StartCoroutine(SaveManager.SaveGame(data, message =>
+            {
+                offlineChangedEvent.Raise(false);
+            }, exception =>
+            {
+                offlineChangedEvent.Raise(true);
+            }));
         }
 
         private Dictionary<string, int> CreateDictionary(SaveItem[] items)
