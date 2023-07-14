@@ -98,19 +98,19 @@ PrefabInstance:
     - target: {fileID: 6016430111722829154, guid: 00bc882bfdb47eb4d95e2569a96267cc, type: 3}
       propertyPath: m_SpriteState.m_PressedSprite
       value: 
-      objectReference: {fileID: -696550191, guid: ea4a9646f1791554c9b645ed873d0b1a, type: 3}
+      objectReference: {fileID: -1511233746, guid: 84551454703848e4593a03461b9afd92, type: 3}
     - target: {fileID: 6016430111722829154, guid: 00bc882bfdb47eb4d95e2569a96267cc, type: 3}
       propertyPath: m_SpriteState.m_DisabledSprite
       value: 
-      objectReference: {fileID: -696550191, guid: ea4a9646f1791554c9b645ed873d0b1a, type: 3}
+      objectReference: {fileID: 1541946625, guid: 84551454703848e4593a03461b9afd92, type: 3}
     - target: {fileID: 6016430111722829154, guid: 00bc882bfdb47eb4d95e2569a96267cc, type: 3}
       propertyPath: m_SpriteState.m_SelectedSprite
       value: 
-      objectReference: {fileID: -944752672, guid: ea4a9646f1791554c9b645ed873d0b1a, type: 3}
+      objectReference: {fileID: -1511233746, guid: 84551454703848e4593a03461b9afd92, type: 3}
     - target: {fileID: 6016430111722829154, guid: 00bc882bfdb47eb4d95e2569a96267cc, type: 3}
       propertyPath: m_SpriteState.m_HighlightedSprite
       value: 
-      objectReference: {fileID: -944752672, guid: ea4a9646f1791554c9b645ed873d0b1a, type: 3}
+      objectReference: {fileID: 1541946625, guid: 84551454703848e4593a03461b9afd92, type: 3}
     - target: {fileID: 6016430111722829154, guid: 00bc882bfdb47eb4d95e2569a96267cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -122,6 +122,6 @@ PrefabInstance:
     - target: {fileID: 6016430111722829155, guid: 00bc882bfdb47eb4d95e2569a96267cc, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21048188, guid: ea4a9646f1791554c9b645ed873d0b1a, type: 3}
+      objectReference: {fileID: 896185700, guid: 84551454703848e4593a03461b9afd92, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00bc882bfdb47eb4d95e2569a96267cc, type: 3}

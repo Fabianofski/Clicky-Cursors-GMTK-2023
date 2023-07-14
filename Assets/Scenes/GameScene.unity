@@ -135,6 +135,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1306743368}
     m_Modifications:
+    - target: {fileID: 3702054624489034886, guid: d8cde3dab9e8a164b9bfe96c0908bbd0, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4644067967067922965, guid: d8cde3dab9e8a164b9bfe96c0908bbd0, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -293,6 +297,7 @@ MonoBehaviour:
   coins: {fileID: 11400000, guid: 7cbfb300913ff8d4dbbe7beedb04d9e7, type: 2}
   combo: {fileID: 11400000, guid: 8fbbd8868feb55145a773c9cf8c5e624, type: 2}
   gameLoadedEvent: {fileID: 11400000, guid: 8ce2484676ce4ee45ac01611bc945f87, type: 2}
+  globalSaveCooldown: 30
   usernameVariable: {fileID: 11400000, guid: 4556104ec2980c849817ea13a94cac03, type: 2}
 --- !u!4 &472555677
 Transform:

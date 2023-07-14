@@ -115,7 +115,511 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Play
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 1111
+        width: 159
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ec4b62fce4c22646960b0d54010ede7
+      internalID: 430241783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play_Clicked
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 1111
+        width: 160
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 629feaa748cc5fe4bbaeb06967294190
+      internalID: 1082793971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play_Highlighted
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 1111
+        width: 160
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e486ddfa84798b4c9e8df193351493d
+      internalID: 101340047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leaderboard
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 1056
+        width: 383
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c6a145289934c8488159e40281628d1
+      internalID: 350860129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leaderboard_Clicked
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1056
+        width: 384
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6ea57868778195428226bd7119d202e
+      internalID: -315776363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leaderboard_Selected
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 1056
+        width: 384
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fcfb43f1ad7a4c4294c4c14f6c8f603
+      internalID: 274810274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Options
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 992
+        width: 217
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7041c14806ec59542937c01ba5e05546
+      internalID: 1882856787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Options_Clicked
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 992
+        width: 218
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa4e1b6e3ef9b1f43ac2573e6d535219
+      internalID: -344249967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Options_Selected
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 992
+        width: 218
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d55d16073418e1347949916c5e1a48bc
+      internalID: 706827524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quit
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 921
+        width: 117
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e10a7720de32d37409003dcc79f20989
+      internalID: 896185700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quit_Clicked
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 921
+        width: 120
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69866f6e74f948946bf840eb61665d04
+      internalID: 1541946625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quit_Selected
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 921
+        width: 119
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd85181ab410ea1438de68d56f3106a2
+      internalID: -1511233746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Login
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 869
+        width: 110
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ba8d4a31c61e0e4db54c7f4fd0a85f1
+      internalID: 1914319370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Login_Clicked
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 869
+        width: 110
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6f8f332f7b06a1459eb2b941929b309
+      internalID: 928602093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Login_Selected
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 869
+        width: 110
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 632ccde2ed123714c9179488ee003273
+      internalID: 764579234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SignUp
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 817
+        width: 148
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 556f61b54ddd8274c9445002f2ae6129
+      internalID: 1947463958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SignUp_Clicked
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 817
+        width: 148
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9b5ab49da6128542abcbe06490a118a
+      internalID: 1110476832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SignUp_Selected
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 817
+        width: 148
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a405b180beb6c8847aa0b930e47e7315
+      internalID: 1397732548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loginInfo
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 783
+        width: 78
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fb4b4bff2088f1438fa5c216a42520d
+      internalID: 131328377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loginInfo_Clicked
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 783
+        width: 78
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91ff3952fe04a504eb4507c5af7de2e0
+      internalID: 1066765334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loginInfo_Selected
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 783
+        width: 78
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74fec1355b48278448b8a0ec730490b1
+      internalID: -1116745699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: notyou
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 750
+        width: 95
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb34aa96f86aac44b90b7b2a67584aec
+      internalID: 1810881753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: notyou_clicked
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 750
+        width: 95
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cba297b5481182548b91e425d169e67f
+      internalID: -30416499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: notyou_Selected
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 750
+        width: 95
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f7bc11836d470b468adb5fb968c3424
+      internalID: -1423420524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +630,86 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Leaderboard: 350860129
+      Leaderboard_Clicked: -315776363
+      Leaderboard_Selected: 274810274
+      Login: 1914319370
+      Login_Clicked: 928602093
+      Login_Selected: 764579234
+      Options: 1882856787
+      Options_Clicked: -344249967
+      Options_Selected: 706827524
+      Play: 430241783
+      Play_Clicked: 1082793971
+      Play_Highlighted: 101340047
+      Quit: 896185700
+      Quit_Clicked: 1541946625
+      Quit_Selected: -1511233746
+      SignUp: 1947463958
+      SignUp_Clicked: 1110476832
+      SignUp_Selected: 1397732548
+      UINew_16: -108941008
+      UINew_18: 1983349060
+      UINew_20: -519521869
+      UINew_27: 1848594587
+      UINew_28: -567364206
+      UINew_29: 1081771456
+      UINew_30: 1731527048
+      UINew_31: -89724723
+      UINew_32: 1710499368
+      UINew_33: -943069281
+      UINew_34: 67648888
+      UINew_35: 919213287
+      UINew_36: -1846251495
+      UINew_37: 1382007396
+      UINew_38: -1071726
+      UINew_39: -153702554
+      UINew_40: -266831133
+      UINew_41: 746363131
+      UINew_42: 46504269
+      UINew_43: 221785397
+      UINew_44: -1247507289
+      UINew_45: -1661283893
+      UINew_46: -1173367908
+      UINew_47: -1936430459
+      UINew_48: -320738684
+      UINew_49: -1013927897
+      UINew_50: 1073769416
+      UINew_51: 1607291817
+      UINew_52: 364242445
+      UINew_53: -887077857
+      UINew_54: 413141255
+      UINew_55: -124193173
+      UINew_56: 864306107
+      UINew_57: 1416705371
+      UINew_58: -891131378
+      UINew_59: -884205575
+      UINew_60: 1326688213
+      UINew_61: 1170046017
+      UINew_62: 646691346
+      UINew_63: -536997237
+      UINew_64: -1724099971
+      UINew_65: -2090076493
+      UINew_66: -1451531004
+      UINew_67: -1292642801
+      UINew_68: -1186520329
+      UINew_69: 136288349
+      UINew_70: 1557081940
+      UINew_71: -316585526
+      UINew_72: 1513305260
+      UINew_73: 1307138192
+      UINew_74: 757266357
+      UINew_75: 1535433106
+      UINew_76: -1606882988
+      UINew_77: 1179154636
+      UINew_78: -291966405
+      loginInfo: 131328377
+      loginInfo_Clicked: 1066765334
+      loginInfo_Selected: -1116745699
+      notyou: 1810881753
+      notyou_Selected: -1423420524
+      notyou_clicked: -30416499
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

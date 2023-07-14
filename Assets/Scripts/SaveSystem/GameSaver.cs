@@ -31,6 +31,10 @@ namespace F4B1.SaveSystem
         [SerializeField] private IntVariable combo;
         [SerializeField] private VoidEvent gameLoadedEvent;
 
+        [Header("Global Save")] 
+        [SerializeField] private int globalSaveCooldown;
+        private float globalSaveTimer;
+
         
         [SerializeField] private StringVariable usernameVariable;
 
@@ -41,6 +45,11 @@ namespace F4B1.SaveSystem
             if (PlayerPrefs.HasKey("username"))
                 usernameVariable.SetValue(PlayerPrefs.GetString("username"));
             LoadGame();
+        }
+
+        private void Update()
+        {
+            globalSaveTimer -= Time.deltaTime;
         }
 
         public void ClearData()
@@ -82,7 +91,6 @@ namespace F4B1.SaveSystem
                 data = localData;
             else
                data = localData.timestamp < onlineData.timestamp ? onlineData : localData;
-            Debug.Log(localData + " " + onlineData);
             
             coins.SetValue(data.coins);
 
@@ -117,6 +125,10 @@ namespace F4B1.SaveSystem
             };
             
             SaveManager.SaveLocalGame(data);
+
+            if (globalSaveTimer > 0) return;
+            globalSaveTimer = globalSaveCooldown;
+            
             var enumerator = SaveManager.SaveGame(data, Debug.Log);
             if (enumerator == null) return;
             StartCoroutine(enumerator);

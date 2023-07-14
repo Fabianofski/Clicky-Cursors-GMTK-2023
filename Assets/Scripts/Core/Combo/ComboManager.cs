@@ -30,6 +30,7 @@ namespace F4B1.Core.Combo
 
         private void Awake()
         {
+            combo.SetValue(0);
             comboLevelUp = levelUpAmount;
         }
 

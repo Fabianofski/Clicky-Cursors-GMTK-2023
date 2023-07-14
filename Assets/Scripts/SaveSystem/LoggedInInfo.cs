@@ -15,12 +15,17 @@ namespace F4B1.SaveSystem
 
         [SerializeField] private TextMeshProUGUI usernameTextField;
         [SerializeField] private TextMeshProUGUI loggedInTextField;
+        
+        [SerializeField] private GameObject loginBtn;
+        [SerializeField] private GameObject notYouBtn;
 
 
         public void SetLoggedInInfo(string username)
         {
             usernameTextField.text = username;
             loggedInTextField.text = username != "" ? "Logged in as:" : "Not logged in!";
+            loginBtn.SetActive(username == "");
+            notYouBtn.SetActive(username != "");
         }
         
     }
