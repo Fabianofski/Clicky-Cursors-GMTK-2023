@@ -18,6 +18,7 @@ namespace F4B1.SaveSystem
         public Dictionary<string, int> cursorItems;
         public Dictionary<string, int> recipeItems;
         public DateTime timestamp;
+        public string displayName;
 
         public SaveData()
         {

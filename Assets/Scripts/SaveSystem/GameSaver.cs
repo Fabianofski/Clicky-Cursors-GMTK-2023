@@ -126,7 +126,8 @@ namespace F4B1.SaveSystem
                 recipeItems = CreateDictionary(recipeItems),
                 cursorItems = CreateDictionary(cursorItems),
                 coins = coins.Value,
-                timestamp = DateTime.UtcNow
+                timestamp = DateTime.UtcNow,
+                displayName = APIManager.username
             };
             
             SaveManager.SaveLocalGame(data);
