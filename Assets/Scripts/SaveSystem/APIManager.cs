@@ -53,6 +53,25 @@ namespace F4B1.SaveSystem
             }
         }
         
+        public static IEnumerator FetchLeaderboard(Action<SaveData[]> callback)
+        {
+            var endpoint = $"{URL}/api/leaderboard";
+
+            using var webRequest = UnityWebRequest.Get(endpoint);
+            yield return webRequest.SendWebRequest();
+
+            if (webRequest.result == UnityWebRequest.Result.Success)
+            {
+                var response = webRequest.downloadHandler.text;
+                callback?.Invoke(JsonConvert.DeserializeObject<SaveData[]>(response));
+            }
+            else
+            {
+                Debug.LogError($"Error fetching Leaderboard: " + webRequest.error);
+                callback?.Invoke(null);
+            }
+        }
+        
         public static IEnumerator UserExists(Action<bool> callback, Action<Exception> exceptionCallback)
         {
             var endpoint = $"{URL}/api/userExists?username={username}";
