@@ -6,7 +6,6 @@
 //  **/
 
 using System;
-using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -16,6 +15,8 @@ namespace F4B1.Core.Cursor
     {
         [Header("Parameters")]
         [SerializeField] private float speed;
+        [SerializeField] private float idleChance;
+        [SerializeField] private Vector2 idleTime;
 
         [Header("Boundaries")]
         [SerializeField] private Vector2 bottomLeft;
@@ -48,7 +49,17 @@ namespace F4B1.Core.Cursor
             path = CreateBezierPath(transform.position, endPos);
 
             var distance = path.length;
-            LeanTween.move(gameObject, path, distance / speed).setOnComplete(MoveToRandomPosition);
+            LeanTween.move(gameObject, path, distance / speed).setOnComplete(() =>
+            {
+                Invoke(nameof(MoveToRandomPosition), GetIdleTime());
+            });
+        }
+
+        private float GetIdleTime()
+        {
+            var random = Random.Range(0f, 1f);
+            var idle = random < idleChance;
+            return idle ? Random.Range(idleTime.x, idleTime.y) : 0;
         }
 
         private LTBezierPath CreateBezierPath(Vector3 startPos, Vector3 endPos)

@@ -244,5 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  idleChance: 0.2
+  idleTime: {x: 1, y: 4}
   bottomLeft: {x: -8.5, y: -4.5}
   topRight: {x: 4.5, y: 4.5}
