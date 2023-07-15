@@ -28,7 +28,9 @@ namespace F4B1.SaveSystem
         [SerializeField] private VoidEvent saveGameEvent;
         
         [Header("Input Checks")]
-        private bool userFilledAndExists;
+        private bool userFilled;
+        private bool userExists;
+        private bool serverError;
         private bool passwordFilled;
         [SerializeField] private StringVariable usernameVariable;
         
@@ -38,15 +40,19 @@ namespace F4B1.SaveSystem
             signUpBtn.interactable = false;
             loginBtn.interactable = false;
 
-            if (username.Length <= 3)
+            userFilled = username.Length >= 3;
+            if (!userFilled)
             {
                 usernameTooltip.text = "";
-                userFilledAndExists = false;
                 return;
             }
-
+            
             usernameTooltip.text = "Loading...";
-            StartCoroutine(APIManager.UserExists(UserExistsCallback));
+            StartCoroutine(APIManager.UserExists(UserExistsCallback, exception =>
+            {
+                serverError = true;
+                usernameTooltip.text = "Couldn't connect to server.";
+            }));
         }
 
         public void PasswordChanged()
@@ -58,15 +64,16 @@ namespace F4B1.SaveSystem
 
         private void UserExistsCallback(bool userExists)
         {
-            userFilledAndExists = userExists;
-            usernameTooltip.text = userFilledAndExists ? "Found existing user with this username." : "Username is free.";
+            serverError = false;
+            this.userExists = userExists;
+            usernameTooltip.text = userExists && userFilled ? "Found existing user with this username." : "Username is free.";
             ActivateButtons();
         }
 
         private void ActivateButtons()
         {
-            signUpBtn.interactable = passwordFilled && !userFilledAndExists;
-            loginBtn.interactable = passwordFilled && userFilledAndExists;
+            signUpBtn.interactable = passwordFilled && !userExists && userFilled && !serverError;
+            loginBtn.interactable = passwordFilled && userExists && userFilled && !serverError;
         }
         
         public void Login()

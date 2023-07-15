@@ -15,7 +15,7 @@ namespace F4B1.SaveSystem
 {
     public static class APIManager
     {
-        private const string URL = "http://localhost:3000";
+        private const string URL = "https://clicky-cursors.onrender.com";
         private const string APIKey = "";
         
         public static string username { get; set; }
@@ -53,7 +53,7 @@ namespace F4B1.SaveSystem
             }
         }
         
-        public static IEnumerator UserExists(Action<bool> callback)
+        public static IEnumerator UserExists(Action<bool> callback, Action<Exception> exceptionCallback)
         {
             var endpoint = $"{URL}/api/userExists?username={username}";
 
@@ -68,7 +68,7 @@ namespace F4B1.SaveSystem
             else
             {
                 Debug.LogError($"Error checking if user exists: " + webRequest.error);
-                callback?.Invoke(false);
+                exceptionCallback?.Invoke(new Exception(webRequest.error));
             }
         }
         
