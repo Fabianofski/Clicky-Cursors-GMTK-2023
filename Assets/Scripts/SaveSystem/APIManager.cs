@@ -15,7 +15,7 @@ namespace F4B1.SaveSystem
 {
     public static class APIManager
     {
-        private const string URL = "https://clicky-cursors.onrender.com";
+        private const string URL = "http://212.227.170.13";
         private const string APIKey = "";
         
         public static string username { get; set; }

@@ -14,9 +14,12 @@ namespace F4B1.UI.Leaderboard
         [SerializeField] private GameObject secondLeaderboardEntryPrefab;
         [SerializeField] private GameObject thirdLeaderboardEntryPrefab;
         [SerializeField] private GameObject leaderboardEntryPrefab;
+        [SerializeField] private GameObject loadingEntryPrefab;
         
         private void OnEnable()
         {
+            DeleteAllChildren();
+            Instantiate(loadingEntryPrefab, parent);
             StartCoroutine(APIManager.FetchLeaderboard(LeaderboardCallback));
         }
 
