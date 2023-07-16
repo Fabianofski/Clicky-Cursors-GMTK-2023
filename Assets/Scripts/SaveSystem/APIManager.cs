@@ -16,7 +16,6 @@ namespace F4B1.SaveSystem
     public static class APIManager
     {
         private const string URL = "http://212.227.170.13";
-        private const string APIKey = "";
         
         public static string username { get; set; }
         public static string password { get; set; }
@@ -93,7 +92,7 @@ namespace F4B1.SaveSystem
         
         public static IEnumerator FetchSaveData(Action<SaveData> callback, Action<Exception> exceptionCallback)
         {
-            var endpoint = $"{URL}/api/load?username={username}&password={password}&apiKey={APIKey}";
+            var endpoint = $"{URL}/api/load?username={username}&password={password}";
 
             using var webRequest = UnityWebRequest.Get(endpoint);
             yield return webRequest.SendWebRequest();
@@ -113,7 +112,7 @@ namespace F4B1.SaveSystem
         
         public static IEnumerator PostSaveData(SaveData data, Action<string> callback, Action<Exception> exceptionCallback)
         {
-            var endpoint = $"{URL}/api/save?username={username}&password={password}&apiKey={APIKey}";
+            var endpoint = $"{URL}/api/save?username={username}&password={password}";
 
             using var webRequest = new UnityWebRequest(endpoint, "POST");
             var body = JsonConvert.SerializeObject(data);
