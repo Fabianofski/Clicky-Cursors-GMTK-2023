@@ -15,7 +15,7 @@ namespace F4B1.SaveSystem
 {
     public static class APIManager
     {
-        private const string URL = "http://212.227.170.13";
+        private const string URL = "https://jamalyzer.com/clicky-cursors";
         
         public static string username { get; set; }
         public static string password { get; set; }
@@ -54,9 +54,11 @@ namespace F4B1.SaveSystem
         
         public static IEnumerator FetchLeaderboard(Action<SaveData[]> callback)
         {
-            var endpoint = $"{URL}/api/leaderboard";
+            var endpoint = $"{URL}/api/leaderboard/";
 
             using var webRequest = UnityWebRequest.Get(endpoint);
+            webRequest.SetRequestHeader("Access-Control-Allow-Origin", "https://jamalyzer.com/");
+            
             yield return webRequest.SendWebRequest();
 
             if (webRequest.result == UnityWebRequest.Result.Success)
@@ -119,7 +121,6 @@ namespace F4B1.SaveSystem
             byte[] byteData = new System.Text.UTF8Encoding().GetBytes(body);
             webRequest.uploadHandler = (UploadHandler) new UploadHandlerRaw(byteData);
             webRequest.downloadHandler = (DownloadHandler) new DownloadHandlerBuffer();
-            webRequest.SetRequestHeader("Content-Type", "application/json");
             
             yield return webRequest.SendWebRequest();
 
