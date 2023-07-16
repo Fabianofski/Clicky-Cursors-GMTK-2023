@@ -75,6 +75,7 @@ namespace F4B1.SaveSystem
         {
             StartCoroutine(SaveManager.LoadGame(GameLoadedCallback, exception =>
             {
+                Debug.Log(exception);
                 offlineChangedEvent.Raise(true);
             }));
         }
@@ -111,7 +112,7 @@ namespace F4B1.SaveSystem
         {
             foreach (var saveItem in items)
             {
-                var count = dict.ContainsKey(saveItem.id) ? dict[saveItem.id] : 0;
+                var count = dict.TryGetValue(saveItem.id, out var value) ? value : 0;
                 saveItem.count.SetValue(count);
             }
         }
@@ -140,6 +141,7 @@ namespace F4B1.SaveSystem
                 offlineChangedEvent.Raise(false);
             }, exception =>
             {
+                Debug.Log(exception);
                 offlineChangedEvent.Raise(true);
             }));
         }
