@@ -14,16 +14,22 @@ namespace F4B1.UI.Shop
     [Serializable]
     public class ShopItem
     {
+        [Header("General")]
         public string id;
         public string title;
         public string description;
         public string effect;
         public Sprite icon;
         
+        [Header("Shop")]
         public int maxPurchases = -1;
         public int cost;
         
+        [Header("Atoms")]
         public VoidEvent clickEvent;
         public IntVariable purchases;
+
+        [Header("Optional")] 
+        public GameObject prefab;
     }
 }

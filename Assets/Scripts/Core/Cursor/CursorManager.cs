@@ -5,6 +5,9 @@
 //  * Distributed under the terms of the MIT license (cf. LICENSE.md file)
 //  **/
 
+using System;
+using System.Collections.Generic;
+using F4B1.UI.Shop;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
@@ -13,64 +16,31 @@ namespace F4B1.Core.Cursor
     public class CursorManager : MonoBehaviour
     {
         [Header("Cursors")] 
-        [SerializeField] private GameObject brokenCursor;
-        [SerializeField] private GameObject grandpaCursor;
-        [SerializeField] private GameObject normalCursor;
-        [SerializeField] private GameObject greenCursor;
-        [SerializeField] private GameObject proCursor;
-        [SerializeField] private GameObject roboCursor;
+        [SerializeField] private ShopItemValueList cursorAtomList;
+        private Dictionary<string, int> purchasedCursors;
 
-        [Header("Cursor Count")] 
-        [SerializeField] private IntVariable brokenCursorCount;
-        [SerializeField] private IntVariable grandpaCursorCount;
-        [SerializeField] private IntVariable normalCursorCount;
-        [SerializeField] private IntVariable greenCursorCount;
-        [SerializeField] private IntVariable proCursorCount;
-        [SerializeField] private IntVariable roboCursorCount;
-
-        public void BuyCursorsFromSaveFile()
+        private void OnEnable()
         {
-            for (var i = 0; i < brokenCursorCount.Value; i++) BuyBrokenCursor();
-            for (var i = 0; i < grandpaCursorCount.Value; i++) BuyGrandpaCursor();
-            for (var i = 0; i < normalCursorCount.Value; i++) BuyNormalCursor();
-            for (var i = 0; i < greenCursorCount.Value; i++) BuyGreenCursor();
-            for (var i = 0; i < proCursorCount.Value; i++) BuyProCursor();
-            for (var i = 0; i < roboCursorCount.Value; i++) BuyRoboCursor();
+            purchasedCursors = new Dictionary<string, int>();
         }
 
-        public void BuyBrokenCursor()
+        public void BuyRemainingCursors()
         {
-            InstantiateCursor(brokenCursor);
+            foreach (var shopItem in cursorAtomList.List)
+            {
+                var createdCursors = purchasedCursors.TryGetValue(shopItem.id, out var value) ? value : 0;
+                var toBeCreated = shopItem.purchases.Value - createdCursors;
+                for (var i = 0; i < toBeCreated; i++)
+                    InstantiateCursor(shopItem);
+            }
         }
 
-        public void BuyGrandpaCursor()
+        private void InstantiateCursor(ShopItem item)
         {
-            InstantiateCursor(grandpaCursor);
-        }
-
-        public void BuyNormalCursor()
-        {
-            InstantiateCursor(normalCursor);
-        }
-
-        public void BuyGreenCursor()
-        {
-            InstantiateCursor(greenCursor);
-        }
-
-        public void BuyProCursor()
-        {
-            InstantiateCursor(proCursor);
-        }
-
-        public void BuyRoboCursor()
-        {
-            InstantiateCursor(roboCursor);
-        }
-
-        private void InstantiateCursor(GameObject cursor)
-        {
-            Instantiate(cursor.gameObject, transform);
+            Instantiate(item.prefab, transform);
+            if (purchasedCursors.ContainsKey(item.id))
+                purchasedCursors[item.id]++;
+            else purchasedCursors[item.id] = 1;
         }
     }
 }

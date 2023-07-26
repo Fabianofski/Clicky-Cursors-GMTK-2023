@@ -27,6 +27,7 @@ MonoBehaviour:
     cost: 10
     clickEvent: {fileID: 11400000, guid: 4011495a992637e47aaddeb7a413f0f3, type: 2}
     purchases: {fileID: 11400000, guid: cdbc6e3aa8c53e94a8ddb3a1e80738f9, type: 2}
+    prefab: {fileID: 7700042135947206547, guid: e70628fc701c5c54c8736c4957698b57, type: 3}
   - id: grandpa
     title: Grandpa Cursors
     description: Very wise gentleman, but not as sharp as he used to be...
@@ -34,8 +35,9 @@ MonoBehaviour:
     icon: {fileID: 21300000, guid: 6a24f28a0ae21114e816b0f2707f3f3e, type: 3}
     maxPurchases: -1
     cost: 100
-    clickEvent: {fileID: 11400000, guid: 4c5fc66ecffc2194080250643763dee7, type: 2}
+    clickEvent: {fileID: 11400000, guid: 4011495a992637e47aaddeb7a413f0f3, type: 2}
     purchases: {fileID: 11400000, guid: a7778c818d34a4e4ebb377db69344f1e, type: 2}
+    prefab: {fileID: 627528950047205807, guid: 2abe05a4b226aa3449c98513a7808c9e, type: 3}
   - id: normal
     title: Normal Cursor
     description: Ol' reliable.
@@ -43,8 +45,9 @@ MonoBehaviour:
     icon: {fileID: 21300000, guid: 2cf75f664aec62e42aef63254505fa24, type: 3}
     maxPurchases: -1
     cost: 500
-    clickEvent: {fileID: 11400000, guid: 5d0de2c33f964924f9ff4e9844ec4ae3, type: 2}
+    clickEvent: {fileID: 11400000, guid: 4011495a992637e47aaddeb7a413f0f3, type: 2}
     purchases: {fileID: 11400000, guid: 0c8ffde7d1d056f429db343877dc1257, type: 2}
+    prefab: {fileID: 610250395027955966, guid: 01ad2f1d110a6824f91f4fa41b5125b0, type: 3}
   - id: baby
     title: Baby Cursor
     description: Full of youthful energy!
@@ -52,8 +55,9 @@ MonoBehaviour:
     icon: {fileID: 21300000, guid: 7adad2b47ad7f7e4d8ebb269597cd767, type: 3}
     maxPurchases: -1
     cost: 3000
-    clickEvent: {fileID: 11400000, guid: 50a39d075862c5347b0b54e5801ea5ba, type: 2}
+    clickEvent: {fileID: 11400000, guid: 4011495a992637e47aaddeb7a413f0f3, type: 2}
     purchases: {fileID: 11400000, guid: 6e3fdc0ed323cd444bf6b01194f72d8b, type: 2}
+    prefab: {fileID: 143627787730368964, guid: 999f144e0719b1947b8838288e97a13d, type: 3}
   - id: robo
     title: Robot Cursor
     description: Precision-machined to optimise CPS (cookies per second).
@@ -61,8 +65,9 @@ MonoBehaviour:
     icon: {fileID: 21300000, guid: 3810a32a44cbe24478e5069da5196833, type: 3}
     maxPurchases: -1
     cost: 10000
-    clickEvent: {fileID: 11400000, guid: 65333b55bab985547aa38598e0b4cdef, type: 2}
+    clickEvent: {fileID: 11400000, guid: 4011495a992637e47aaddeb7a413f0f3, type: 2}
     purchases: {fileID: 11400000, guid: cecc3c66db93aa747b6c2e5bc4af94f5, type: 2}
+    prefab: {fileID: 3733340706874805159, guid: cc62762fdd5323449a5f95260665b267, type: 3}
   - id: pro
     title: Pro Cursor
     description: Hey! This guy is cheating!
@@ -70,5 +75,6 @@ MonoBehaviour:
     icon: {fileID: 21300000, guid: 2a0e99cede2d58944915b418d6ff700f, type: 3}
     maxPurchases: -1
     cost: 50000
-    clickEvent: {fileID: 11400000, guid: fca3fc5e4366563468397d484fd2c0dd, type: 2}
+    clickEvent: {fileID: 11400000, guid: 4011495a992637e47aaddeb7a413f0f3, type: 2}
     purchases: {fileID: 11400000, guid: f3a680e53bf01334ca0d9abd65c1168c, type: 2}
+    prefab: {fileID: 2151492730770399572, guid: 9d875b71b8f59d14fa3361e05776d74e, type: 3}
