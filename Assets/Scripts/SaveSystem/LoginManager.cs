@@ -38,7 +38,6 @@ namespace F4B1.SaveSystem
         
         public void UsernameChanged(string username)
         {
-            APIManager.username = username;
             signUpBtn.interactable = false;
             loginBtn.interactable = false;
 
@@ -50,7 +49,7 @@ namespace F4B1.SaveSystem
             }
             
             usernameTooltip.text = "Loading...";
-            StartCoroutine(APIManager.UserExists(UserExistsCallback, exception =>
+            StartCoroutine(APIManager.UserExists(username ,UserExistsCallback, exception =>
             {
                 serverError = true;
                 usernameTooltip.text = "Couldn't connect to server.";
@@ -89,6 +88,7 @@ namespace F4B1.SaveSystem
             if (success)
             {
                 SaveCredentials();
+                LeanTween.cancelAll();
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
             else
@@ -99,17 +99,23 @@ namespace F4B1.SaveSystem
         {
             var isLoggedIn = usernameVariable.Value != "";
             SaveCredentials();
-            if (!isLoggedIn)
-            {
-                saveGameEvent.Raise();
-                loginBtn.interactable = false;
-                signUpBtn.interactable = false;
-                usernameInput.text = "";
-                passwordInput.text = "";
-                signedUp.Invoke();
-            }
+            if (!isLoggedIn) 
+                SaveAndClosePanel();
             else
+            {
+                LeanTween.cancelAll();
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+        }
+
+        private void SaveAndClosePanel()
+        {
+            saveGameEvent.Raise();
+            loginBtn.interactable = false;
+            signUpBtn.interactable = false;
+            usernameInput.text = "";
+            passwordInput.text = "";
+            signedUp.Invoke();
         }
 
         private void SaveCredentials()
@@ -118,9 +124,7 @@ namespace F4B1.SaveSystem
             usernameVariable.SetValue(usernameInput.text);
             APIManager.password = passwordInput.text;
             PlayerPrefs.SetString("username", usernameInput.text);
-            PlayerPrefs.SetString("password", passwordInput.text);
             PlayerPrefs.Save();
-            LeanTween.cancelAll();
         }
     }
 }

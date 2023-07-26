@@ -23,7 +23,7 @@ namespace F4B1.SaveSystem
         static APIManager()
         {
             username = PlayerPrefs.HasKey("username") ? PlayerPrefs.GetString("username") : "";
-            password = PlayerPrefs.HasKey("password") ? PlayerPrefs.GetString("password") : "";
+            password = "";
         }
         
         public static bool isLoggedIn()
@@ -71,9 +71,9 @@ namespace F4B1.SaveSystem
             }
         }
         
-        public static IEnumerator UserExists(Action<bool> callback, Action<Exception> exceptionCallback)
+        public static IEnumerator UserExists(string name, Action<bool> callback, Action<Exception> exceptionCallback)
         {
-            var endpoint = $"{URL}/api/userExists?username={username}";
+            var endpoint = $"{URL}/api/userExists?username={name}";
 
             using var webRequest = UnityWebRequest.Get(endpoint);
             yield return webRequest.SendWebRequest();
@@ -93,7 +93,7 @@ namespace F4B1.SaveSystem
         public static IEnumerator FetchSaveData(Action<SaveData> callback, Action<Exception> exceptionCallback)
         {
             var endpoint = $"{URL}/api/load?username={username}&password={password}";
-
+            
             using var webRequest = UnityWebRequest.Get(endpoint);
             yield return webRequest.SendWebRequest();
 

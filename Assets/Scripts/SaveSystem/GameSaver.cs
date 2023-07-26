@@ -37,8 +37,7 @@ namespace F4B1.SaveSystem
 
         private void Start()
         {
-            PlayerPrefs.DeleteAll();
-            if (PlayerPrefs.HasKey("username"))
+            if (PlayerPrefs.HasKey("username") && APIManager.isLoggedIn())
                 usernameVariable.SetValue(PlayerPrefs.GetString("username"));
             LoadGame();
         }
