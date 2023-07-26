@@ -15,13 +15,18 @@ namespace F4B1.SaveSystem
 {
     public static class APIManager
     {
-        private const string URL = "https://jamalyzer.com/clicky-cursors";
+        private static readonly string URL;
         
         public static string username { get; set; }
         public static string password { get; set; }
         
         static APIManager()
         {
+#if UNITY_EDITOR
+            URL = "http://localhost:3000/clicky-cursors";
+#else
+            URL = "https://jamalyzer.com/clicky-cursors";
+#endif
             username = PlayerPrefs.HasKey("username") ? PlayerPrefs.GetString("username") : "";
             password = "";
         }
@@ -33,9 +38,12 @@ namespace F4B1.SaveSystem
 
         public static IEnumerator AttemptLogin(string name, string pwd, Action<bool> callback)
         {
-            var endpoint = $"{URL}/api/login?username={name}&password={pwd}";
+            var endpoint = $"{URL}/api/login";
 
             using var webRequest = UnityWebRequest.Get(endpoint);
+            var auth = $"{name}:{pwd}";
+            var authHeader = "Basic " + Convert.ToBase64String(System.Text.Encoding.ASCII.GetBytes(auth));
+            webRequest.SetRequestHeader("Authorization", authHeader);
             yield return webRequest.SendWebRequest();
 
             if (webRequest.result == UnityWebRequest.Result.Success)
@@ -92,9 +100,12 @@ namespace F4B1.SaveSystem
         
         public static IEnumerator FetchSaveData(Action<SaveData> callback, Action<Exception> exceptionCallback)
         {
-            var endpoint = $"{URL}/api/load?username={username}&password={password}";
+            var endpoint = $"{URL}/api/load";
             
             using var webRequest = UnityWebRequest.Get(endpoint);
+            var auth = $"{username}:{password}";
+            var authHeader = "Basic " + Convert.ToBase64String(System.Text.Encoding.ASCII.GetBytes(auth));
+            webRequest.SetRequestHeader("Authorization", authHeader);
             yield return webRequest.SendWebRequest();
 
             if (webRequest.result == UnityWebRequest.Result.Success)
@@ -112,14 +123,19 @@ namespace F4B1.SaveSystem
         
         public static IEnumerator PostSaveData(SaveData data, Action<string> callback, Action<Exception> exceptionCallback)
         {
-            var endpoint = $"{URL}/api/save?username={username}&password={password}";
+            var endpoint = $"{URL}/api/save";
 
             using var webRequest = new UnityWebRequest(endpoint, "POST");
+            
             var body = JsonConvert.SerializeObject(data);
             byte[] byteData = new System.Text.UTF8Encoding().GetBytes(body);
             webRequest.uploadHandler = (UploadHandler) new UploadHandlerRaw(byteData);
             webRequest.downloadHandler = (DownloadHandler) new DownloadHandlerBuffer();
             webRequest.SetRequestHeader("Content-Type", "application/json");
+            
+            var auth = $"{username}:{password}";
+            var authHeader = "Basic " + Convert.ToBase64String(System.Text.Encoding.ASCII.GetBytes(auth));
+            webRequest.SetRequestHeader("Authorization", authHeader);
             
             yield return webRequest.SendWebRequest();
 
