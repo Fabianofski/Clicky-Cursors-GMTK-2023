@@ -73,11 +73,12 @@ namespace F4B1.SaveSystem
 
         private void LoadGame()
         {
-            StartCoroutine(SaveManager.LoadGame(GameLoadedCallback, exception =>
+            var coroutine = SaveManager.LoadGame(GameLoadedCallback, exception =>
             {
                 Debug.Log(exception);
                 offlineChangedEvent.Raise(true);
-            }));
+            });
+            if(coroutine != null) StartCoroutine(coroutine);
         }
 
         private void GameLoadedCallback(SaveData onlineData)
@@ -136,14 +137,15 @@ namespace F4B1.SaveSystem
             if (globalSaveTimer > 0) return;
             globalSaveTimer = globalSaveCooldown;
 
-            StartCoroutine(SaveManager.SaveGame(data, message =>
+            var coroutine = SaveManager.SaveGame(data, message =>
             {
                 offlineChangedEvent.Raise(false);
             }, exception =>
             {
                 Debug.Log(exception);
                 offlineChangedEvent.Raise(true);
-            }));
+            });
+            if (coroutine != null) StartCoroutine(coroutine);
         }
 
         private Dictionary<string, int> CreateDictionary(SaveItem[] items)

@@ -9,7 +9,6 @@ namespace F4B1.UI
         {
             var gameWasStarted = PlayerPrefs.HasKey("StartedBefore");
             gameObject.SetActive(!gameWasStarted);
-            Debug.Log(gameWasStarted);
             PlayerPrefs.SetInt("StartedBefore", 1);
         }
     }

@@ -18,10 +18,7 @@ namespace F4B1.SaveSystem
 
         public static IEnumerator SaveGame(SaveData data, Action<string> callback, Action<Exception> exceptionCallback)
         {
-            if (APIManager.isLoggedIn())
-                return APIManager.PostSaveData(data, callback, exceptionCallback);
-            
-            return null;
+            return APIManager.isLoggedIn() ? APIManager.PostSaveData(data, callback, exceptionCallback) : null;
         }
 
         public static void SaveLocalGame(SaveData data)
@@ -33,10 +30,7 @@ namespace F4B1.SaveSystem
 
         public static IEnumerator LoadGame(Action<SaveData> callback, Action<Exception> exceptionCallback)
         {
-            if (APIManager.isLoggedIn())
-                return APIManager.FetchSaveData(callback, exceptionCallback);
-            
-            return null;
+            return APIManager.isLoggedIn() ? APIManager.FetchSaveData(callback, exceptionCallback) : null;
         }
 
         public static SaveData LoadLocalGame()

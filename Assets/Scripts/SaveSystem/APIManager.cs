@@ -22,10 +22,9 @@ namespace F4B1.SaveSystem
         
         static APIManager()
         {
-            if (PlayerPrefs.HasKey("username"))
-                username = PlayerPrefs.GetString("username");
-            if (PlayerPrefs.HasKey("password"))
-                password = PlayerPrefs.GetString("password");
+            PlayerPrefs.DeleteAll();
+            username = PlayerPrefs.HasKey("username") ? PlayerPrefs.GetString("username") : "";
+            password = PlayerPrefs.HasKey("password") ? PlayerPrefs.GetString("password") : "";
         }
         
         public static bool isLoggedIn()
@@ -114,6 +113,7 @@ namespace F4B1.SaveSystem
         
         public static IEnumerator PostSaveData(SaveData data, Action<string> callback, Action<Exception> exceptionCallback)
         {
+            Debug.Log("Save!!!");
             var endpoint = $"{URL}/api/save?username={username}&password={password}";
 
             using var webRequest = new UnityWebRequest(endpoint, "POST");
