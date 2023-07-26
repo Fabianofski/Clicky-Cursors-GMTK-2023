@@ -9,11 +9,12 @@ using F4B1.Audio;
 using TMPro;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace F4B1.UI.Shop
 {
-    public class ShopButton : MonoBehaviour
+    public class ShopButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         [SerializeField] private Int64Variable coins;
 
@@ -24,6 +25,7 @@ namespace F4B1.UI.Shop
         [SerializeField] private Image imageIcon;
 
         [Header("Shop Tooltip")] 
+        [SerializeField] private GameObject tooltip;
         [SerializeField] private TextMeshProUGUI descriptionTextField;
         [SerializeField] private TextMeshProUGUI effectTextField;
 
@@ -31,6 +33,7 @@ namespace F4B1.UI.Shop
         [SerializeField] private SoundEvent soundEvent;
         [SerializeField] private Sound buySound;
         [SerializeField] private Sound clickSound;
+        [SerializeField] private Sound hoverSound;
 
         [Header("Cost Multiplier")] 
         [SerializeField] private float multiplier;
@@ -95,6 +98,17 @@ namespace F4B1.UI.Shop
                 costTextField.text = "MAX";
                 button.interactable = false;
             }
+        }
+
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            tooltip.SetActive(true);
+            soundEvent.Raise(hoverSound);
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            tooltip.SetActive(false);
         }
     }
 }

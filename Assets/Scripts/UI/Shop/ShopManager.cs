@@ -5,7 +5,6 @@
 //  * Distributed under the terms of the MIT license (cf. LICENSE.md file)
 //  **/
 
-using System;
 using System.Collections.Generic;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
