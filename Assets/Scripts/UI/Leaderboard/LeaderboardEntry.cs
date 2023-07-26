@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using F4B1.UI.Shop;
+using TMPro;
 using UnityEngine;
 
 namespace F4B1.UI.Leaderboard

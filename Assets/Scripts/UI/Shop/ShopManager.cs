@@ -9,7 +9,7 @@ using System;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
-namespace F4B1.UI
+namespace F4B1.UI.Shop
 {
     [Serializable]
     public class ShopItem

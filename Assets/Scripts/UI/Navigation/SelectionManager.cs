@@ -7,7 +7,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace F4B1.UI
+namespace F4B1.UI.Navigation
 {
     public class SelectionManager : MonoBehaviour
     {

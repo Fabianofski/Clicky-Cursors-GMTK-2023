@@ -11,7 +11,7 @@ using UnityAtoms.BaseAtoms;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace F4B1.UI
+namespace F4B1.UI.Shop
 {
     public class ShopButton : MonoBehaviour
     {

@@ -5,7 +5,7 @@
 //  * Distributed under the terms of the MIT license (cf. LICENSE.md file)
 //  **/
 
-namespace F4B1.UI
+namespace F4B1.UI.Shop
 {
     public static class NumberFormatter
     {

@@ -9,7 +9,7 @@ using UnityAtoms.BaseAtoms;
 using UnityEngine;
 using UnityEngine.Audio;
 
-namespace F4B1.UI
+namespace F4B1.UI.Navigation
 {
     public class AudioSlider : MonoBehaviour
     {

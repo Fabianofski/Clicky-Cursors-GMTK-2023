@@ -5,10 +5,11 @@
 //  * Distributed under the terms of the MIT license (cf. LICENSE.md file)
 //  **/
 
+using F4B1.UI.Shop;
 using TMPro;
 using UnityEngine;
 
-namespace F4B1.UI
+namespace F4B1.UI.Navigation
 {
     public class UIHelper : MonoBehaviour
     {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using F4B1.SaveSystem;
+using F4B1.UI.Shop;
 using TMPro;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
