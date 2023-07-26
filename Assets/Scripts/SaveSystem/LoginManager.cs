@@ -8,6 +8,7 @@
 using TMPro;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -26,6 +27,7 @@ namespace F4B1.SaveSystem
 
         [Header("Events")] 
         [SerializeField] private VoidEvent saveGameEvent;
+        [SerializeField] private UnityEvent signedUp;
         
         [Header("Input Checks")]
         private bool userFilled;
@@ -98,7 +100,14 @@ namespace F4B1.SaveSystem
             var isLoggedIn = usernameVariable.Value != "";
             SaveCredentials();
             if (!isLoggedIn)
+            {
                 saveGameEvent.Raise();
+                loginBtn.interactable = false;
+                signUpBtn.interactable = false;
+                usernameInput.text = "";
+                passwordInput.text = "";
+                signedUp.Invoke();
+            }
             else
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }

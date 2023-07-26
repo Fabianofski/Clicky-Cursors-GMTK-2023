@@ -22,7 +22,6 @@ namespace F4B1.SaveSystem
         
         static APIManager()
         {
-            PlayerPrefs.DeleteAll();
             username = PlayerPrefs.HasKey("username") ? PlayerPrefs.GetString("username") : "";
             password = PlayerPrefs.HasKey("password") ? PlayerPrefs.GetString("password") : "";
         }
@@ -113,7 +112,6 @@ namespace F4B1.SaveSystem
         
         public static IEnumerator PostSaveData(SaveData data, Action<string> callback, Action<Exception> exceptionCallback)
         {
-            Debug.Log("Save!!!");
             var endpoint = $"{URL}/api/save?username={username}&password={password}";
 
             using var webRequest = new UnityWebRequest(endpoint, "POST");
@@ -121,6 +119,7 @@ namespace F4B1.SaveSystem
             byte[] byteData = new System.Text.UTF8Encoding().GetBytes(body);
             webRequest.uploadHandler = (UploadHandler) new UploadHandlerRaw(byteData);
             webRequest.downloadHandler = (DownloadHandler) new DownloadHandlerBuffer();
+            webRequest.SetRequestHeader("Content-Type", "application/json");
             
             yield return webRequest.SendWebRequest();
 

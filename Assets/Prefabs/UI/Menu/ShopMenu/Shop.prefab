@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 1063865494}
   - component: {fileID: 1063865493}
   - component: {fileID: 3808033865431667087}
+  - component: {fileID: 529780930}
   m_Layer: 5
   m_Name: Tooltip
   m_TagString: Untagged
@@ -167,6 +168,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8a1662494234ae494c55e1b5199e584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &529780930
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063865491}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bccc6797a0df6254fa9a420976aa46cb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1104827519547437469
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,133 +323,9 @@ MonoBehaviour:
   recipesTab: {fileID: 7092694471784777764}
   hardwareTab: {fileID: 577459948794588576}
   shopButtonPrefab: {fileID: 420976522915839672, guid: bc12483945293894eaa1928289058582, type: 3}
-  buildingItems:
-  - clickEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
-    purchases: {fileID: 11400000, guid: afc1d918cba5b0d49b56e670d5bc93ba, type: 2}
-    maxPurchases: -1
-    title: Old Lady
-    cost: 500
-    icon: {fileID: 21300000, guid: 88ee7a5e95be6af40b6b62e2a534ae7d, type: 3}
-    description: A friendly grandma who buys cookies off the store and passes them
-      off as her own.
-    effect: 2 cookies/second
-  - clickEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
-    purchases: {fileID: 11400000, guid: 626096e57a4175f4b88fc96f47eff48a, type: 2}
-    maxPurchases: -1
-    title: Steading
-    cost: 1200
-    icon: {fileID: 21300000, guid: 997dac1c0788dca46953389499abb2c0, type: 3}
-    description: 'Farmland where you can grow everything you need: wheat, milk, chocolate
-      chips...'
-    effect: 10 cookies/second
-  - clickEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
-    purchases: {fileID: 11400000, guid: c62acf752e78caf44b6d71b20e5475b9, type: 2}
-    maxPurchases: -1
-    title: Industry
-    cost: 3000
-    icon: {fileID: 21300000, guid: 5678fe26c24001c4c85d912aadc7f63f, type: 3}
-    description: Nothing like the warm, friendly touch of heavy machinery!
-    effect: 100 cookies/second
-  - clickEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
-    purchases: {fileID: 11400000, guid: 6a5a485be745561459cde89b3e3f78fd, type: 2}
-    maxPurchases: -1
-    title: Quarry
-    cost: 10000
-    icon: {fileID: 21300000, guid: 594f6f619efbadd4f85f31e0fddb40c3, type: 3}
-    description: Did you know that you can sell precious gems for more cookies? It's
-      true!
-    effect: 500 cookies/second
-  - clickEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
-    purchases: {fileID: 11400000, guid: 491243dee127ca141b65c5fd9c52ad62, type: 2}
-    maxPurchases: -1
-    title: Spacecraft
-    cost: 50000
-    icon: {fileID: 21300000, guid: f3dac124485bab542a27c400a9a89760, type: 3}
-    description: Even Martians need a lil' choc chip in their lives...
-    effect: 2000 cookies/second
-  - clickEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
-    purchases: {fileID: 11400000, guid: 82b499fc89b534440900e74356626a95, type: 2}
-    maxPurchases: -1
-    title: Vortex
-    cost: 200000
-    icon: {fileID: 21300000, guid: 996b146e2b749f74da5a355cf8249566, type: 3}
-    description: Steal cookies from other games involving cookies and/or clicking!
-    effect: 6000 cookies/second
-  recipesItems:
-  - clickEvent: {fileID: 0}
-    purchases: {fileID: 11400000, guid: 929fb63194142e84fa60791a554f89a5, type: 2}
-    maxPurchases: -1
-    title: 'Faster Oven:'
-    cost: 60
-    icon: {fileID: 21300000, guid: 59b6cce487239ce42ba29886daceabe4, type: 3}
-    description: "Baking at 190\xBAC for 10 minutes is the same as baking at 1900\xBAC
-      for 1 minute!"
-    effect: Cookie follows your mouse faster.
-  - clickEvent: {fileID: 11400000, guid: 954feb5dd3e718d45a64f8cea0e7e6c4, type: 2}
-    purchases: {fileID: 11400000, guid: 1930b9690cbec664bb4c4b8f4430f495, type: 2}
-    maxPurchases: -1
-    title: Cooking in Batches
-    cost: 100
-    icon: {fileID: 21300000, guid: 3636277b754ee5a4381095fb12c0ad2e, type: 3}
-    description: Why waste dough bake lot cookie when many small cookie do trick?
-    effect: Extra mini-cookies.
-  - clickEvent: {fileID: 11400000, guid: acca1637f03a0ac46a9db6d6ca298a2e, type: 2}
-    purchases: {fileID: 11400000, guid: 89bfed2e9c57d0e4db08e7fc097b0cc4, type: 2}
-    maxPurchases: 3
-    title: Extra Dough
-    cost: 400
-    icon: {fileID: 21300000, guid: 320b6e821ee74614e80617a4ec4762f2, type: 3}
-    description: Double the recipe, double the cookie!
-    effect: Cookie increases in size but is slower.
-  hardwareItems:
-  - clickEvent: {fileID: 11400000, guid: 4011495a992637e47aaddeb7a413f0f3, type: 2}
-    purchases: {fileID: 11400000, guid: cdbc6e3aa8c53e94a8ddb3a1e80738f9, type: 2}
-    maxPurchases: -1
-    title: Broken Cursor
-    cost: 10
-    icon: {fileID: 21300000, guid: 14359936588c7a64f95af5d097ecd2e6, type: 3}
-    description: It was on discount.
-    effect: 0.66 clicks/s, 1 cookie/click, slowest.
-  - clickEvent: {fileID: 11400000, guid: 4c5fc66ecffc2194080250643763dee7, type: 2}
-    purchases: {fileID: 11400000, guid: a7778c818d34a4e4ebb377db69344f1e, type: 2}
-    maxPurchases: -1
-    title: Grandpa Cursors
-    cost: 100
-    icon: {fileID: 21300000, guid: 6a24f28a0ae21114e816b0f2707f3f3e, type: 3}
-    description: Very wise gentleman, but not as sharp as he used to be...
-    effect: 0.66 clicks/s, 2 cookies/click, slow.
-  - clickEvent: {fileID: 11400000, guid: 5d0de2c33f964924f9ff4e9844ec4ae3, type: 2}
-    purchases: {fileID: 11400000, guid: 0c8ffde7d1d056f429db343877dc1257, type: 2}
-    maxPurchases: -1
-    title: Normal Cursor
-    cost: 500
-    icon: {fileID: 21300000, guid: 2cf75f664aec62e42aef63254505fa24, type: 3}
-    description: Ol' reliable.
-    effect: 1.25 clicks/s, 3 cookies/click, average.
-  - clickEvent: {fileID: 11400000, guid: 50a39d075862c5347b0b54e5801ea5ba, type: 2}
-    purchases: {fileID: 11400000, guid: 6e3fdc0ed323cd444bf6b01194f72d8b, type: 2}
-    maxPurchases: -1
-    title: Baby Cursor
-    cost: 3000
-    icon: {fileID: 21300000, guid: 7adad2b47ad7f7e4d8ebb269597cd767, type: 3}
-    description: Full of youthful energy!
-    effect: 2 clicks/s, 3 cookies/click, fast.
-  - clickEvent: {fileID: 11400000, guid: 65333b55bab985547aa38598e0b4cdef, type: 2}
-    purchases: {fileID: 11400000, guid: cecc3c66db93aa747b6c2e5bc4af94f5, type: 2}
-    maxPurchases: -1
-    title: Robot Cursor
-    cost: 10000
-    icon: {fileID: 21300000, guid: 3810a32a44cbe24478e5069da5196833, type: 3}
-    description: Precision-machined to optimise CPS (cookies per second).
-    effect: 3.33 clicks/s, 5 cookies/click, fast.
-  - clickEvent: {fileID: 11400000, guid: fca3fc5e4366563468397d484fd2c0dd, type: 2}
-    purchases: {fileID: 11400000, guid: f3a680e53bf01334ca0d9abd65c1168c, type: 2}
-    maxPurchases: -1
-    title: Pro Cursor
-    cost: 50000
-    icon: {fileID: 21300000, guid: 2a0e99cede2d58944915b418d6ff700f, type: 3}
-    description: Hey! This guy is cheating!
-    effect: 2 clicks/s, 20 cookies/click, fastest.
+  buildingItems: {fileID: 11400000, guid: d4f079d0b2d1c6b47849b0b952511186, type: 2}
+  recipesItems: {fileID: 11400000, guid: 080564e3030953f4cb358f812b8c5d1c, type: 2}
+  hardwareItems: {fileID: 11400000, guid: fa8948574f40b364b946978e6fda1e2b, type: 2}
 --- !u!1 &9210088983351103597
 GameObject:
   m_ObjectHideFlags: 0

@@ -30,7 +30,7 @@ namespace F4B1.Core.Cookie
 
         public void LoadCookieOrbits()
         {
-            for (var i = 0; i < cookieOrbitAmount.Value; i++)
+            for (var i = 0; i < cookieOrbitAmount.Value - transform.childCount; i++)
                 Instantiate(orbitPrefab, transform);
             RedrawCookies();
         }

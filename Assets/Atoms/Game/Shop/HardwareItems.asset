@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 495e035e47fada847b9310a80a9ccadc, type: 3}
+  m_Name: HardwareItems
+  m_EditorClassIdentifier: 
+  _developerDescription: 
+  Cleared: {fileID: 0}
+  _startCleared: 0
+  Added: {fileID: 0}
+  Removed: {fileID: 0}
+  list:
+  - id: broken
+    title: Broken Cursor
+    description: It was on discount.
+    effect: 0.66 clicks/s, 1 cookie/click, slowest.
+    icon: {fileID: 21300000, guid: 14359936588c7a64f95af5d097ecd2e6, type: 3}
+    maxPurchases: -1
+    cost: 10
+    clickEvent: {fileID: 11400000, guid: 4011495a992637e47aaddeb7a413f0f3, type: 2}
+    purchases: {fileID: 11400000, guid: cdbc6e3aa8c53e94a8ddb3a1e80738f9, type: 2}
+  - id: grandpa
+    title: Grandpa Cursors
+    description: Very wise gentleman, but not as sharp as he used to be...
+    effect: 0.66 clicks/s, 2 cookies/click, slow.
+    icon: {fileID: 21300000, guid: 6a24f28a0ae21114e816b0f2707f3f3e, type: 3}
+    maxPurchases: -1
+    cost: 100
+    clickEvent: {fileID: 11400000, guid: 4c5fc66ecffc2194080250643763dee7, type: 2}
+    purchases: {fileID: 11400000, guid: a7778c818d34a4e4ebb377db69344f1e, type: 2}
+  - id: normal
+    title: Normal Cursor
+    description: Ol' reliable.
+    effect: 1.25 clicks/s, 3 cookies/click, average.
+    icon: {fileID: 21300000, guid: 2cf75f664aec62e42aef63254505fa24, type: 3}
+    maxPurchases: -1
+    cost: 500
+    clickEvent: {fileID: 11400000, guid: 5d0de2c33f964924f9ff4e9844ec4ae3, type: 2}
+    purchases: {fileID: 11400000, guid: 0c8ffde7d1d056f429db343877dc1257, type: 2}
+  - id: baby
+    title: Baby Cursor
+    description: Full of youthful energy!
+    effect: 2 clicks/s, 3 cookies/click, fast.
+    icon: {fileID: 21300000, guid: 7adad2b47ad7f7e4d8ebb269597cd767, type: 3}
+    maxPurchases: -1
+    cost: 3000
+    clickEvent: {fileID: 11400000, guid: 50a39d075862c5347b0b54e5801ea5ba, type: 2}
+    purchases: {fileID: 11400000, guid: 6e3fdc0ed323cd444bf6b01194f72d8b, type: 2}
+  - id: robo
+    title: Robot Cursor
+    description: Precision-machined to optimise CPS (cookies per second).
+    effect: 3.33 clicks/s, 5 cookies/click, fast.
+    icon: {fileID: 21300000, guid: 3810a32a44cbe24478e5069da5196833, type: 3}
+    maxPurchases: -1
+    cost: 10000
+    clickEvent: {fileID: 11400000, guid: 65333b55bab985547aa38598e0b4cdef, type: 2}
+    purchases: {fileID: 11400000, guid: cecc3c66db93aa747b6c2e5bc4af94f5, type: 2}
+  - id: pro
+    title: Pro Cursor
+    description: Hey! This guy is cheating!
+    effect: 2 clicks/s, 20 cookies/click, fastest.
+    icon: {fileID: 21300000, guid: 2a0e99cede2d58944915b418d6ff700f, type: 3}
+    maxPurchases: -1
+    cost: 50000
+    clickEvent: {fileID: 11400000, guid: fca3fc5e4366563468397d484fd2c0dd, type: 2}
+    purchases: {fileID: 11400000, guid: f3a680e53bf01334ca0d9abd65c1168c, type: 2}

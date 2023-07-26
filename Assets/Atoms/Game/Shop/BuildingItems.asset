@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 495e035e47fada847b9310a80a9ccadc, type: 3}
+  m_Name: BuildingItems
+  m_EditorClassIdentifier: 
+  _developerDescription: 
+  Cleared: {fileID: 0}
+  _startCleared: 0
+  Added: {fileID: 0}
+  Removed: {fileID: 0}
+  list:
+  - id: grandma
+    title: Old Lady
+    description: A friendly grandma who buys cookies off the store and passes them
+      off as her own.
+    effect: 2 cookies/second
+    icon: {fileID: 21300000, guid: 88ee7a5e95be6af40b6b62e2a534ae7d, type: 3}
+    maxPurchases: -1
+    cost: 500
+    clickEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
+    purchases: {fileID: 11400000, guid: afc1d918cba5b0d49b56e670d5bc93ba, type: 2}
+  - id: steading
+    title: Steading
+    description: 'Farmland where you can grow everything you need: wheat, milk, chocolate
+      chips...'
+    effect: 10 cookies/second
+    icon: {fileID: 21300000, guid: 997dac1c0788dca46953389499abb2c0, type: 3}
+    maxPurchases: -1
+    cost: 1200
+    clickEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
+    purchases: {fileID: 11400000, guid: 626096e57a4175f4b88fc96f47eff48a, type: 2}
+  - id: industry
+    title: Industry
+    description: Nothing like the warm, friendly touch of heavy machinery!
+    effect: 100 cookies/second
+    icon: {fileID: 21300000, guid: 5678fe26c24001c4c85d912aadc7f63f, type: 3}
+    maxPurchases: -1
+    cost: 3000
+    clickEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
+    purchases: {fileID: 11400000, guid: c62acf752e78caf44b6d71b20e5475b9, type: 2}
+  - id: quarry
+    title: Quarry
+    description: Did you know that you can sell precious gems for more cookies? It's
+      true!
+    effect: 500 cookies/second
+    icon: {fileID: 21300000, guid: 594f6f619efbadd4f85f31e0fddb40c3, type: 3}
+    maxPurchases: -1
+    cost: 10000
+    clickEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
+    purchases: {fileID: 11400000, guid: 6a5a485be745561459cde89b3e3f78fd, type: 2}
+  - id: spacecraft
+    title: Spacecraft
+    description: Even Martians need a lil' choc chip in their lives...
+    effect: 2000 cookies/second
+    icon: {fileID: 21300000, guid: f3dac124485bab542a27c400a9a89760, type: 3}
+    maxPurchases: -1
+    cost: 50000
+    clickEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
+    purchases: {fileID: 11400000, guid: 491243dee127ca141b65c5fd9c52ad62, type: 2}
+  - id: vortex
+    title: Vortex
+    description: Steal cookies from other games involving cookies and/or clicking!
+    effect: 6000 cookies/second
+    icon: {fileID: 21300000, guid: 996b146e2b749f74da5a355cf8249566, type: 3}
+    maxPurchases: -1
+    cost: 200000
+    clickEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
+    purchases: {fileID: 11400000, guid: 82b499fc89b534440900e74356626a95, type: 2}
