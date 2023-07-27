@@ -88,16 +88,14 @@ namespace F4B1.UI.Shop
         {
             imageIcon.sprite = shopItem.icon;
             titleTextField.text = $"{shopItem.title} (x{shopItem.purchases.Value})";
-            itemCost = (long) (shopItem.cost * Mathf.Pow(multiplier, shopItem.purchases.Value));
+            itemCost = (long) (shopItem.cost * Mathf.Pow(multiplier, Mathf.Min(30, shopItem.purchases.Value)));
             costTextField.text = NumberFormatter.FormatNumberWithLetters(itemCost);
 
             button.interactable = coins.Value >= itemCost;
             var maxPurchasesReached = shopItem.purchases.Value >= shopItem.maxPurchases && shopItem.maxPurchases != -1;
-            if (maxPurchasesReached)
-            {
-                costTextField.text = "MAX";
-                button.interactable = false;
-            }
+            if (!maxPurchasesReached) return;
+            costTextField.text = "MAX";
+            button.interactable = false;
         }
 
         public void OnPointerEnter(PointerEventData eventData)

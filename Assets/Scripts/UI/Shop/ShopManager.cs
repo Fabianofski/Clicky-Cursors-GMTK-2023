@@ -29,8 +29,6 @@ namespace F4B1.UI.Shop
             InstantiateShopItems(hardwareItems.List, hardwareTab);
             InstantiateShopItems(recipesItems.List, recipesTab);
             InstantiateShopItems(buildingItems.List, buildingsTab);
-            InstantiateShopItems(buildingItems.List, buildingsTab);
-            InstantiateShopItems(buildingItems.List, buildingsTab);
         }
 
         private void InstantiateShopItems(List<ShopItem> items, Transform tab)

@@ -13,14 +13,19 @@ namespace F4B1.Core.Cookie
 {
     public class CookieOrbiter : MonoBehaviour
     {
+        [Header("Components")]
+        [SerializeField] private GameObject orbitPrefab;
+        [SerializeField] private IntVariable cookieOrbitAmount;
+        
+        [Header("Rows")]
         [SerializeField] private float radius;
         [SerializeField] private float spacing;
         [SerializeField] private float rowSpacing;
-        [SerializeField] private GameObject orbitPrefab;
-        [SerializeField] private IntVariable cookieOrbitAmount;
-
+        
+        [Header("Movement")]
         [SerializeField] private float rotationSpeed = 10f;
         [SerializeField] private float moveSpeed = 1f;
+        [SerializeField] private IntVariable moveDistanceUpgrade;
         private float moveDistance;
 
         private void OnEnable()
@@ -38,7 +43,7 @@ namespace F4B1.Core.Cookie
         private void Update()
         {
             transform.Rotate(0f, 0f, rotationSpeed * Time.deltaTime);
-            moveDistance = Mathf.Abs(Mathf.Sin(Time.time));
+            moveDistance = Mathf.Abs(Mathf.Sin(Time.time)) * (moveDistanceUpgrade.Value + 1);
             RedrawCookies();
         }
 
