@@ -1388,6 +1388,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   usernameVariable: {fileID: 11400000, guid: 4556104ec2980c849817ea13a94cac03, type: 2}
+  buffer: 0.3
 --- !u!1 &8555627736803296840
 GameObject:
   m_ObjectHideFlags: 0

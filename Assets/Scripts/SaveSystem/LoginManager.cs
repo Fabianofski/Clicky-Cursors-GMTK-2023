@@ -35,7 +35,29 @@ namespace F4B1.SaveSystem
         private bool serverError;
         private bool passwordFilled;
         [SerializeField] private StringVariable usernameVariable;
-        
+
+        [Header("User Check Buffer")] 
+        [SerializeField] private float buffer;
+        private float timer;
+        private bool checkUsername;
+        private string checkedName;
+
+        private void Update()
+        {
+            if (!checkUsername) return;
+            
+            timer -= Time.unscaledDeltaTime;
+
+            if (timer > 0) return;
+
+            checkUsername = false;
+            StartCoroutine(APIManager.UserExists(checkedName ,UserExistsCallback, exception =>
+            {
+                serverError = true;
+                usernameTooltip.text = "Couldn't connect to server.";
+            }));
+        }
+
         public void UsernameChanged(string username)
         {
             signUpBtn.interactable = false;
@@ -49,11 +71,10 @@ namespace F4B1.SaveSystem
             }
             
             usernameTooltip.text = "Loading...";
-            StartCoroutine(APIManager.UserExists(username ,UserExistsCallback, exception =>
-            {
-                serverError = true;
-                usernameTooltip.text = "Couldn't connect to server.";
-            }));
+            
+            timer = buffer;
+            checkedName = username;
+            checkUsername = true;
         }
 
         public void PasswordChanged()
