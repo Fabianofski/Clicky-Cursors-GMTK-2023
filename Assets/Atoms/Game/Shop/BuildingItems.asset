@@ -28,6 +28,8 @@ MonoBehaviour:
     cost: 500
     clickEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
     purchases: {fileID: 11400000, guid: afc1d918cba5b0d49b56e670d5bc93ba, type: 2}
+    prefab: {fileID: 0}
+    income: 2
   - id: steading
     title: Steading
     description: 'Farmland where you can grow everything you need: wheat, milk, chocolate
@@ -38,6 +40,8 @@ MonoBehaviour:
     cost: 1200
     clickEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
     purchases: {fileID: 11400000, guid: 626096e57a4175f4b88fc96f47eff48a, type: 2}
+    prefab: {fileID: 0}
+    income: 10
   - id: industry
     title: Industry
     description: Nothing like the warm, friendly touch of heavy machinery!
@@ -47,6 +51,8 @@ MonoBehaviour:
     cost: 3000
     clickEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
     purchases: {fileID: 11400000, guid: c62acf752e78caf44b6d71b20e5475b9, type: 2}
+    prefab: {fileID: 0}
+    income: 100
   - id: quarry
     title: Quarry
     description: Did you know that you can sell precious gems for more cookies? It's
@@ -57,21 +63,61 @@ MonoBehaviour:
     cost: 10000
     clickEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
     purchases: {fileID: 11400000, guid: 6a5a485be745561459cde89b3e3f78fd, type: 2}
+    prefab: {fileID: 0}
+    income: 500
   - id: spacecraft
     title: Spacecraft
     description: Even Martians need a lil' choc chip in their lives...
-    effect: 2000 cookies/second
+    effect: 2K cookies/second
     icon: {fileID: 21300000, guid: f3dac124485bab542a27c400a9a89760, type: 3}
     maxPurchases: -1
     cost: 50000
     clickEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
     purchases: {fileID: 11400000, guid: 491243dee127ca141b65c5fd9c52ad62, type: 2}
+    prefab: {fileID: 0}
+    income: 2000
   - id: vortex
     title: Vortex
     description: Steal cookies from other games involving cookies and/or clicking!
-    effect: 6000 cookies/second
+    effect: 6K cookies/second
     icon: {fileID: 21300000, guid: 996b146e2b749f74da5a355cf8249566, type: 3}
     maxPurchases: -1
     cost: 200000
     clickEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
     purchases: {fileID: 11400000, guid: 82b499fc89b534440900e74356626a95, type: 2}
+    prefab: {fileID: 0}
+    income: 6000
+  - id: ancient_cookie_monastery
+    title: Ancient Cookie Monastery
+    description: Monks meditate to channel cosmic energies into an abundant cookie
+      harvest.
+    effect: 12K cookies/second
+    icon: {fileID: 0}
+    maxPurchases: -1
+    cost: 4000000
+    clickEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
+    purchases: {fileID: 11400000, guid: 7763e5d2ead39a241b6d717cb1dc5e7f, type: 2}
+    prefab: {fileID: 0}
+    income: 1200
+  - id: ancient_cookie_relics
+    title: Ancient Cookie Relics
+    description: Unearth powerful relics that manifest an endless supply of cookies.
+    effect: 25K cookies/second
+    icon: {fileID: 0}
+    maxPurchases: -1
+    cost: 10000000
+    clickEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
+    purchases: {fileID: 11400000, guid: f6492e1f018247f41887b9c7cd2a12c5, type: 2}
+    prefab: {fileID: 0}
+    income: 25000
+  - id: quantum_cookie_processor
+    title: Quantum Cookie Processor
+    description: Harness quantum computing to compute the most cookies in the multiverse.
+    effect: 75K cookies/second
+    icon: {fileID: 0}
+    maxPurchases: -1
+    cost: 100000000
+    clickEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
+    purchases: {fileID: 11400000, guid: 0376de76e58e0f44fb14f8349ce39038, type: 2}
+    prefab: {fileID: 0}
+    income: 75000

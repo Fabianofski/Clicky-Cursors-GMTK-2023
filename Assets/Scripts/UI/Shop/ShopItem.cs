@@ -31,5 +31,6 @@ namespace F4B1.UI.Shop
 
         [Header("Optional")] 
         public GameObject prefab;
+        public int income;
     }
 }

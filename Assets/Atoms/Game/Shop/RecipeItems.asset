@@ -28,6 +28,7 @@ MonoBehaviour:
     cost: 60
     clickEvent: {fileID: 0}
     purchases: {fileID: 11400000, guid: 929fb63194142e84fa60791a554f89a5, type: 2}
+    prefab: {fileID: 0}
   - id: orbits
     title: Cooking in Batches
     description: Why waste dough bake lot cookie when many small cookie do trick?
@@ -37,6 +38,17 @@ MonoBehaviour:
     cost: 100
     clickEvent: {fileID: 11400000, guid: 954feb5dd3e718d45a64f8cea0e7e6c4, type: 2}
     purchases: {fileID: 11400000, guid: 1930b9690cbec664bb4c4b8f4430f495, type: 2}
+    prefab: {fileID: 0}
+  - id: orbit_distance
+    title: Orbit Distance
+    description: 'blab bla balb la '
+    effect: Mini cookies travel a larger distance
+    icon: {fileID: 21300000, guid: 320b6e821ee74614e80617a4ec4762f2, type: 3}
+    maxPurchases: 5
+    cost: 400
+    clickEvent: {fileID: 0}
+    purchases: {fileID: 11400000, guid: ab64f84ce812b444893f7be7b3acca7f, type: 2}
+    prefab: {fileID: 0}
   - id: size
     title: Extra Dough
     description: Double the recipe, double the cookie!
@@ -46,3 +58,4 @@ MonoBehaviour:
     cost: 400
     clickEvent: {fileID: 11400000, guid: acca1637f03a0ac46a9db6d6ca298a2e, type: 2}
     purchases: {fileID: 11400000, guid: 89bfed2e9c57d0e4db08e7fc097b0cc4, type: 2}
+    prefab: {fileID: 0}

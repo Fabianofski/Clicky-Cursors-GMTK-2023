@@ -12,13 +12,6 @@ using UnityEngine;
 
 namespace F4B1.UI.Shop
 {
-    [Serializable]
-    public class PassiveIncomeItem
-    {
-        public IntVariable countVariable;
-        public int income;
-    }
-
     public class PassiveIncomeManager : MonoBehaviour
     {
         [Header("Variables")]
@@ -26,7 +19,7 @@ namespace F4B1.UI.Shop
         [SerializeField] private IntVariable totalPassiveIncome;
         
         [Header("Items")]
-        [SerializeField] private PassiveIncomeItem[] passiveIncomeItems;
+        [SerializeField] private ShopItemValueList passiveIncomeItems;
 
         private float countdown = 1;
 
@@ -48,8 +41,8 @@ namespace F4B1.UI.Shop
 
         public void CalculateTotalPassiveIncome()
         {
-            var passiveIncome = passiveIncomeItems.Sum(passiveIncomeItem =>
-                passiveIncomeItem.income * passiveIncomeItem.countVariable.Value);
+            var passiveIncome = passiveIncomeItems.List.Sum(passiveIncomeItem =>
+                passiveIncomeItem.income * passiveIncomeItem.purchases.Value);
 
             totalPassiveIncome.SetValue(passiveIncome);
         }

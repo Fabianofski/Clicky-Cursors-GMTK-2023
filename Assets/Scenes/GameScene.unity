@@ -2039,19 +2039,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coins: {fileID: 11400000, guid: 7cbfb300913ff8d4dbbe7beedb04d9e7, type: 2}
   totalPassiveIncome: {fileID: 11400000, guid: 12d6adc59bdee984eb072f4a8c7ce5ac, type: 2}
-  passiveIncomeItems:
-  - countVariable: {fileID: 11400000, guid: afc1d918cba5b0d49b56e670d5bc93ba, type: 2}
-    income: 2
-  - countVariable: {fileID: 11400000, guid: 626096e57a4175f4b88fc96f47eff48a, type: 2}
-    income: 10
-  - countVariable: {fileID: 11400000, guid: c62acf752e78caf44b6d71b20e5475b9, type: 2}
-    income: 100
-  - countVariable: {fileID: 11400000, guid: 6a5a485be745561459cde89b3e3f78fd, type: 2}
-    income: 500
-  - countVariable: {fileID: 11400000, guid: 491243dee127ca141b65c5fd9c52ad62, type: 2}
-    income: 2000
-  - countVariable: {fileID: 11400000, guid: 82b499fc89b534440900e74356626a95, type: 2}
-    income: 6000
+  passiveIncomeItems: {fileID: 11400000, guid: d4f079d0b2d1c6b47849b0b952511186, type: 2}
 --- !u!114 &1484519526
 MonoBehaviour:
   m_ObjectHideFlags: 0

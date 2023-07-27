@@ -88,7 +88,7 @@ namespace F4B1.UI.Shop
         {
             imageIcon.sprite = shopItem.icon;
             titleTextField.text = $"{shopItem.title} (x{shopItem.purchases.Value})";
-            itemCost = (long) (shopItem.cost * Mathf.Pow(multiplier, Mathf.Min(30, shopItem.purchases.Value)));
+            itemCost = (long) (shopItem.cost * Mathf.Pow(multiplier, shopItem.purchases.Value));
             costTextField.text = NumberFormatter.FormatNumberWithLetters(itemCost);
 
             button.interactable = coins.Value >= itemCost;
