@@ -24,6 +24,7 @@ namespace F4B1.UI.Shop
         [Header("Shop")]
         public int maxPurchases = -1;
         public int cost;
+        public long maxCost = -1;
         
         [Header("Atoms")]
         public VoidEvent clickEvent;
