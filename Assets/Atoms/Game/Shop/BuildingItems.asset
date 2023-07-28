@@ -26,6 +26,7 @@ MonoBehaviour:
     icon: {fileID: 21300000, guid: 88ee7a5e95be6af40b6b62e2a534ae7d, type: 3}
     maxPurchases: -1
     cost: 500
+    maxCost: -1
     clickEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
     purchases: {fileID: 11400000, guid: afc1d918cba5b0d49b56e670d5bc93ba, type: 2}
     prefab: {fileID: 0}
@@ -38,6 +39,7 @@ MonoBehaviour:
     icon: {fileID: 21300000, guid: 997dac1c0788dca46953389499abb2c0, type: 3}
     maxPurchases: -1
     cost: 1200
+    maxCost: -1
     clickEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
     purchases: {fileID: 11400000, guid: 626096e57a4175f4b88fc96f47eff48a, type: 2}
     prefab: {fileID: 0}
@@ -49,6 +51,7 @@ MonoBehaviour:
     icon: {fileID: 21300000, guid: 5678fe26c24001c4c85d912aadc7f63f, type: 3}
     maxPurchases: -1
     cost: 3000
+    maxCost: -1
     clickEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
     purchases: {fileID: 11400000, guid: c62acf752e78caf44b6d71b20e5475b9, type: 2}
     prefab: {fileID: 0}
@@ -61,6 +64,7 @@ MonoBehaviour:
     icon: {fileID: 21300000, guid: 594f6f619efbadd4f85f31e0fddb40c3, type: 3}
     maxPurchases: -1
     cost: 10000
+    maxCost: -1
     clickEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
     purchases: {fileID: 11400000, guid: 6a5a485be745561459cde89b3e3f78fd, type: 2}
     prefab: {fileID: 0}
@@ -72,6 +76,7 @@ MonoBehaviour:
     icon: {fileID: 21300000, guid: f3dac124485bab542a27c400a9a89760, type: 3}
     maxPurchases: -1
     cost: 50000
+    maxCost: -1
     clickEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
     purchases: {fileID: 11400000, guid: 491243dee127ca141b65c5fd9c52ad62, type: 2}
     prefab: {fileID: 0}
@@ -83,40 +88,46 @@ MonoBehaviour:
     icon: {fileID: 21300000, guid: 996b146e2b749f74da5a355cf8249566, type: 3}
     maxPurchases: -1
     cost: 200000
+    maxCost: -1
     clickEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
     purchases: {fileID: 11400000, guid: 82b499fc89b534440900e74356626a95, type: 2}
     prefab: {fileID: 0}
     income: 6000
-  - id: ancient_cookie_monastery
-    title: Ancient Cookie Monastery
-    description: Monks meditate to channel cosmic energies into an abundant cookie
-      harvest.
+  - id: cookieract
+    title: Cookieract
+    description: A recently-discovered shape between the cookie and the tesseract,
+      dotted with chips all across its hypersurface.
     effect: 12K cookies/second
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: 2e9c57da869c2d940bdf43a8d368efb9, type: 3}
     maxPurchases: -1
     cost: 4000000
+    maxCost: -1
     clickEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
     purchases: {fileID: 11400000, guid: 7763e5d2ead39a241b6d717cb1dc5e7f, type: 2}
     prefab: {fileID: 0}
     income: 1200
-  - id: ancient_cookie_relics
-    title: Ancient Cookie Relics
-    description: Unearth powerful relics that manifest an endless supply of cookies.
+  - id: bakers_identity
+    title: Baker's Identity
+    description: Harness the profound connections between fundamental constants (like
+      these cookies' tastiness) and basic operations (like you eating them).
     effect: 25K cookies/second
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: 9e639f42800f1404c8c9ec5a721ad684, type: 3}
     maxPurchases: -1
     cost: 10000000
+    maxCost: -1
     clickEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
     purchases: {fileID: 11400000, guid: f6492e1f018247f41887b9c7cd2a12c5, type: 2}
     prefab: {fileID: 0}
     income: 25000
-  - id: quantum_cookie_processor
-    title: Quantum Cookie Processor
-    description: Harness quantum computing to compute the most cookies in the multiverse.
+  - id: fermion
+    title: Fermion
+    description: An elemental particle. All cookies that were, are and will ever
+      be are based upon this indivisible iota.
     effect: 75K cookies/second
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: 2c34ff3da58e47d4fbc1509519f6a5bf, type: 3}
     maxPurchases: -1
     cost: 100000000
+    maxCost: -1
     clickEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
     purchases: {fileID: 11400000, guid: 0376de76e58e0f44fb14f8349ce39038, type: 2}
     prefab: {fileID: 0}
