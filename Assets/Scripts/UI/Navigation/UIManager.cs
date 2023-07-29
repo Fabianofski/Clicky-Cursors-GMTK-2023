@@ -5,9 +5,11 @@
 //  **/
 
 using System.Collections.Generic;
+using TMPro;
 using UnityAtoms;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
@@ -18,11 +20,13 @@ namespace F4B1.UI.Navigation
         [SerializeField] private BoolVariable pauseToggled;
         [SerializeField] private InputAction pauseInputAction;
         [SerializeField] private List<AtomBaseVariable> resetAtoms;
+        private EventSystem eventSystem;
 
         private void Awake()
         {
             Time.timeScale = 0;
             pauseInputAction.performed += OnPause;
+            eventSystem = FindObjectOfType<EventSystem>();
         }
 
         private void OnEnable()
@@ -37,6 +41,8 @@ namespace F4B1.UI.Navigation
 
         private void OnPause(InputAction.CallbackContext ctx)
         {
+            if (eventSystem.currentSelectedGameObject.GetComponent<TMP_InputField>()) return;
+            
             pauseToggled.Value = !pauseToggled.Value;
         }
 
