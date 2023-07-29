@@ -47,7 +47,7 @@ namespace F4B1.Core.Cookie
 
         public void OnLockCookie(InputValue value)
         {
-            lockCookie = value.isPressed;
+            lockCookie = !lockCookie;
         }
     }
 }

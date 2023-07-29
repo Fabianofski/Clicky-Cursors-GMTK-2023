@@ -1415,7 +1415,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'P - Pause
 
-    Hold RMB - Lock Cookie'
+    RMB - Lock Cookie'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2a9fd1e6f8fdea84fbb2ed0acce538e7, type: 2}
   m_sharedMaterial: {fileID: -5492170285307650066, guid: 2a9fd1e6f8fdea84fbb2ed0acce538e7, type: 2}

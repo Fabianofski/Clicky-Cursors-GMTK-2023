@@ -181,6 +181,7 @@ MonoBehaviour:
   cookieSound: {fileID: 11400000, guid: 1726a62d44d4ab944bf9992c9866c235, type: 2}
   playerScoreVariable: {fileID: 11400000, guid: 7cbfb300913ff8d4dbbe7beedb04d9e7, type: 2}
   currentComboVariable: {fileID: 11400000, guid: 8fbbd8868feb55145a773c9cf8c5e624, type: 2}
+  cursorMultiplierVariable: {fileID: 11400000, guid: 9df26b77bb2bfff4180a600911e2ce98, type: 2}
   scorePopupText: {fileID: 4399874285742653116, guid: 87e0dc3c064a61042b2cbfeb0ac9adea, type: 3}
 --- !u!114 &-9034640458034569655
 MonoBehaviour:

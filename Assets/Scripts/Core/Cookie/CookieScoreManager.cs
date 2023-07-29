@@ -14,11 +14,12 @@ namespace F4B1.Core.Cookie
         [Header("Score Variables")]
         [SerializeField] private Int64Variable playerScoreVariable;
         [SerializeField] private IntVariable currentComboVariable;
+        [SerializeField] private IntVariable cursorMultiplierVariable;
         [SerializeField] private GameObject scorePopupText;
 
         public void Click(int score, Vector2 pos)
         {
-            var calculatedScore = score * Mathf.Max(1, currentComboVariable.Value);
+            var calculatedScore = score * Mathf.Max(1, currentComboVariable.Value) * (cursorMultiplierVariable.Value + 1);
             playerScoreVariable.Add(calculatedScore);
             soundEvent.Raise(cookieSound);
 
