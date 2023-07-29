@@ -69,12 +69,13 @@ MonoBehaviour:
     prefab: {fileID: 0}
     income: 0
   - id: cursor_multiplier
-    title: Extra Clicks
-    description: Double the recipe, double the cookie!
-    effect: Cookie increases in size but is slower.
-    icon: {fileID: 21300000, guid: 320b6e821ee74614e80617a4ec4762f2, type: 3}
+    title: Mix-ins
+    description: A pinch of salt, some lemon zest and marshmallows to take your cookies
+      to the next level!
+    effect: Increases cursor score multiplier.
+    icon: {fileID: 21300000, guid: d1660704a7f5e2d4a8645f2cc9d63c7a, type: 3}
     maxPurchases: -1
-    cost: 400
+    cost: 10000
     maxCost: -1
     clickEvent: {fileID: 0}
     purchases: {fileID: 11400000, guid: 9df26b77bb2bfff4180a600911e2ce98, type: 2}

@@ -105,7 +105,7 @@ MonoBehaviour:
     clickEvent: {fileID: 11400000, guid: 1555ed56518ecb343970a56f4765fddf, type: 2}
     purchases: {fileID: 11400000, guid: 7763e5d2ead39a241b6d717cb1dc5e7f, type: 2}
     prefab: {fileID: 0}
-    income: 1200
+    income: 12000
   - id: bakers_identity
     title: Baker's Identity
     description: Harness the profound connections between fundamental constants (like
