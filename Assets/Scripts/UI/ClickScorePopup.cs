@@ -36,7 +36,12 @@ namespace F4B1.UI
                 LeanTween.value(1, 0, tweenTime / 2).setOnUpdate(UpdateAlpha).setEase(tweenType);
             });
 
-            Destroy(transform.parent.gameObject, tweenTime + 0.1f);
+            Invoke(nameof(Disable), tweenTime + 0.3f);
+        }
+
+        private void Disable()
+        {
+            transform.parent.gameObject.SetActive(false);
         }
 
         public void SetNumber(int value)

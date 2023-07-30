@@ -1,3 +1,4 @@
+using System;
 using F4B1.Audio;
 using F4B1.UI;
 using UnityAtoms.BaseAtoms;
@@ -7,24 +8,33 @@ namespace F4B1.Core.Cookie
 {
     public class CookieScoreManager : MonoBehaviour
     {
-        [Header("Sounds")]
-        [SerializeField] private SoundEvent soundEvent;
-        [SerializeField] private Sound cookieSound;
-        
         [Header("Score Variables")]
         [SerializeField] private Int64Variable playerScoreVariable;
         [SerializeField] private IntVariable currentComboVariable;
         [SerializeField] private IntVariable cursorMultiplierVariable;
-        [SerializeField] private GameObject scorePopupText;
+        private ObjectPool scorePopupPool;
+        private ObjectPool cookiePopupPool;
+
+
+        private void Awake()
+        {
+            scorePopupPool = GameObject.FindWithTag("ScorePopupPool").GetComponent<ObjectPool>();
+            cookiePopupPool = GameObject.FindWithTag("CookieSoundObjectPool").GetComponent<ObjectPool>();
+        }
 
         public void Click(int score, Vector2 pos)
         {
             var calculatedScore = score * Mathf.Max(1, currentComboVariable.Value) * (cursorMultiplierVariable.Value + 1);
             playerScoreVariable.Add(calculatedScore);
-            soundEvent.Raise(cookieSound);
+            
+            var sound = cookiePopupPool.GetPooledGameObject();
+            if(sound != null) sound.SetActive(true);
 
-            var go = Instantiate(scorePopupText, pos, Quaternion.identity);
+            var go = scorePopupPool.GetPooledGameObject();
+            if (go == null) return;
+            go.transform.position = pos;
             go.GetComponentInChildren<ClickScorePopup>().SetNumber(calculatedScore);
+            go.SetActive(true);
         }
     }
 }

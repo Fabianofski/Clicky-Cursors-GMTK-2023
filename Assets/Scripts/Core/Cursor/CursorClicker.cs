@@ -27,13 +27,13 @@ namespace F4B1.Core.Cursor
         [SerializeField] private IntEvent increaseComboEvent;
 
         [Header("Sounds")]
-        [SerializeField] private SoundEvent clickSoundEvent;
-        [SerializeField] private Sound[] clickSounds;
+        private ObjectPool clickPool;
         private float cooldownTimer;
 
         private void Awake()
         {
             cooldownTimer = cooldown + Random.Range(0f, 1f) * cooldown;
+            clickPool = GameObject.FindWithTag("ClickSoundObjectPool").GetComponent<ObjectPool>();
         }
 
         private void Update()
@@ -61,7 +61,8 @@ namespace F4B1.Core.Cursor
         {
             LeanTween.scale(gameObject, new Vector3(0.6f, 0.7f, 0.7f), Mathf.Min(0.3f, cooldown / 2)).setEasePunch();
 
-            clickSoundEvent.Raise(clickSounds[Random.Range(0, clickSounds.Length - 1)]);
+            var clickGo = clickPool.GetPooledGameObject();
+            if(clickGo != null) clickGo.SetActive(true);
 
             var col = Physics2D.OverlapBox(cursorPos.position, hitBox, 0, mask);
             if (!col) return;

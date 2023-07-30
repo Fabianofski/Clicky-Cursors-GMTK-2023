@@ -41,7 +41,8 @@ namespace F4B1.UI.Navigation
 
         private void OnPause(InputAction.CallbackContext ctx)
         {
-            if (eventSystem.currentSelectedGameObject.GetComponent<TMP_InputField>()) return;
+            var selected = eventSystem.currentSelectedGameObject;
+            if (selected != null && selected.GetComponent<TMP_InputField>()) return;
             
             pauseToggled.Value = !pauseToggled.Value;
         }
