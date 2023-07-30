@@ -13,22 +13,17 @@ namespace F4B1.Core.Cookie
         [SerializeField] private IntVariable currentComboVariable;
         [SerializeField] private IntVariable cursorMultiplierVariable;
         private ObjectPool scorePopupPool;
-        private ObjectPool cookiePopupPool;
 
 
         private void Awake()
         {
             scorePopupPool = GameObject.FindWithTag("ScorePopupPool").GetComponent<ObjectPool>();
-            cookiePopupPool = GameObject.FindWithTag("CookieSoundObjectPool").GetComponent<ObjectPool>();
         }
 
         public void Click(int score, Vector2 pos)
         {
             var calculatedScore = score * Mathf.Max(1, currentComboVariable.Value) * (cursorMultiplierVariable.Value + 1);
             playerScoreVariable.Add(calculatedScore);
-            
-            var sound = cookiePopupPool.GetPooledGameObject();
-            if(sound != null) sound.SetActive(true);
 
             var go = scorePopupPool.GetPooledGameObject();
             if (go == null) return;
