@@ -6,11 +6,18 @@ env:
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
 
 jobs:
-  buildWebGL:
-    name: Build for WebGL 🖥️
+  buildTargetPlatforms:
+    name: Build for ${{ matrix.targetPlatform }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
+      matrix:
+        targetPlatform:
+          - StandaloneOSX
+          - StandaloneWindows64
+          - StandaloneLinux64
+          - Android
+          - WebGL
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -35,208 +42,16 @@ jobs:
         uses: actions/cache@v2
         with:
           path: Library
-          key: Library-build-WebGL
+          key: Library-build-${{ matrix.targetPlatform }}
           restore-keys: |
             Library-build-
             Library-
 
       - uses: game-ci/unity-builder@v2
         with:
-          targetPlatform: WebGL
+          targetPlatform: ${{ matrix.targetPlatform }}
 
       - uses: actions/upload-artifact@v2
         with:
-          name: build-WebGL
-          path: build/WebGL
-
-  buildWindows:
-    name: Build for Windows 🖥️
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Create LFS file list
-        run: git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id
-
-      - name: Restore LFS cache
-        uses: actions/cache@v2
-        id: lfs-cache
-        with:
-          path: .git/lfs
-          key: ${{ runner.os }}-lfs-${{ hashFiles('.lfs-assets-id') }}
-
-      - name: Git LFS Pull
-        run: |
-          git lfs pull
-          git add .
-          git reset --hard
-
-      - name: Restore Library cache
-        uses: actions/cache@v2
-        with:
-          path: Library
-          key: Library-build-StandaloneWindows64
-          restore-keys: |
-            Library-build-
-            Library-
-
-      - uses: game-ci/unity-builder@v2
-        with:
-          targetPlatform: StandaloneWindows64
-
-      - uses: actions/upload-artifact@v2
-        with:
-          name: build-StandaloneWindows64
-          path: build/StandaloneWindows64
-          
-  buildMacOs:
-    name: Build for MacOs 🍎️
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Create LFS file list
-        run: git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id
-
-      - name: Restore LFS cache
-        uses: actions/cache@v2
-        id: lfs-cache
-        with:
-          path: .git/lfs
-          key: ${{ runner.os }}-lfs-${{ hashFiles('.lfs-assets-id') }}
-
-      - name: Git LFS Pull
-        run: |
-          git lfs pull
-          git add .
-          git reset --hard
-
-      - name: Restore Library cache
-        uses: actions/cache@v2
-        with:
-          path: Library
-          key: Library-build-StandaloneOSX
-          restore-keys: |
-            Library-build-
-            Library-
-
-      - uses: game-ci/unity-builder@v2
-        with:
-          targetPlatform: StandaloneOSX
-
-      - uses: actions/upload-artifact@v2
-        with:
-          name: build-StandaloneOSX
-          path: build/StandaloneOSX
-          
-  buildLinux:
-    name: Build for Linux 🐧️
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Create LFS file list
-        run: git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id
-
-      - name: Restore LFS cache
-        uses: actions/cache@v2
-        id: lfs-cache
-        with:
-          path: .git/lfs
-          key: ${{ runner.os }}-lfs-${{ hashFiles('.lfs-assets-id') }}
-
-      - name: Git LFS Pull
-        run: |
-          git lfs pull
-          git add .
-          git reset --hard
-
-      - name: Restore Library cache
-        uses: actions/cache@v2
-        with:
-          path: Library
-          key: Library-build-StandaloneLinux64
-          restore-keys: |
-            Library-build-
-            Library-
-
-      - uses: game-ci/unity-builder@v2
-        with:
-          targetPlatform: StandaloneLinux64
-      
-      - uses: actions/upload-artifact@v2
-        with:
-          name: build-StandaloneLinux64
-          path: build/StandaloneLinux64
-  
-  buildAndroid:
-    name: Build for Android 📱
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Create LFS file list
-        run: git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id
-
-      - name: Restore LFS cache
-        uses: actions/cache@v2
-        id: lfs-cache
-        with:
-          path: .git/lfs
-          key: ${{ runner.os }}-lfs-${{ hashFiles('.lfs-assets-id') }}
-
-      - name: Git LFS Pull
-        run: |
-          git lfs pull
-          git add .
-          git reset --hard
-
-      - name: Restore Library cache
-        uses: actions/cache@v2
-        with:
-          path: Library
-          key: Library-build-Android
-          restore-keys: |
-            Library-build-
-            Library-
-
-      - uses: game-ci/unity-builder@v2
-        with:
-          targetPlatform: Android
-
-      - uses: actions/upload-artifact@v2
-        with:
-          name: build-Android
-          path: build/Android
-
-
-  deployPages:
-    needs: buildWebGL
-    name: Deploy to Github Pages 🚀
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - uses: actions/download-artifact@v2
-        with:
-          name: build-WebGL
-          path: build
-
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.4
-        with:
-          branch: gh-pages
-          folder: build/WebGL
+          name: ClickyCursors-${{ matrix.targetPlatform }}
+          path: build/${{ matrix.targetPlatform }}
