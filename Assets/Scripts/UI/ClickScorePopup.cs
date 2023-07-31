@@ -41,7 +41,7 @@ namespace F4B1.UI
 
         private void Disable()
         {
-            transform.parent.gameObject.SetActive(false);
+            gameObject.SetActive(false);
         }
 
         public void SetNumber(int value)

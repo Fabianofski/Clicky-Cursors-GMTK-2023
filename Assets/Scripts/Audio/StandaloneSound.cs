@@ -14,12 +14,14 @@ namespace F4B1.Audio
     {
         [SerializeField] private VoidEvent destroySoundEvent;
         [SerializeField] private Sound[] sounds;
+        private AudioSource source;
 
         public void OnEnable()
         {
             var sound = sounds[Random.Range(0, sounds.Length - 1)];
             
-            var source = gameObject.AddComponent<AudioSource>();
+            if(source == null) source = gameObject.AddComponent<AudioSource>();
+            
             source.playOnAwake = false;
             source.outputAudioMixerGroup = sound.outputAudioMixerGroup;
             source.volume = sound.volume;

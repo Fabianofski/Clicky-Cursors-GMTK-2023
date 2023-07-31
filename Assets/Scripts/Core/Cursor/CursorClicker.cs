@@ -7,6 +7,8 @@
 
 using F4B1.Audio;
 using F4B1.Core.Cookie;
+using F4B1.Core.Pool;
+using F4B1.UI;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
@@ -25,15 +27,22 @@ namespace F4B1.Core.Cursor
         [SerializeField] private float critChance;
         [SerializeField] private float cooldown;
         [SerializeField] private IntEvent increaseComboEvent;
+        
+        [Header("Score Variables")]
+        [SerializeField] private Int64Variable playerScoreVariable;
+        [SerializeField] private IntVariable currentComboVariable;
+        [SerializeField] private IntVariable cursorMultiplierVariable;
+        private ClickScorePopupPool scorePopupPool;
 
         [Header("Sounds")]
-        private ObjectPool clickPool;
+        private TransformPool clickPool;
         private float cooldownTimer;
 
         private void Awake()
         {
             cooldownTimer = cooldown + Random.Range(0f, 1f) * cooldown;
-            clickPool = GameObject.FindWithTag("ClickSoundObjectPool").GetComponent<ObjectPool>();
+            clickPool = GameObject.FindWithTag("ClickSoundObjectPool").GetComponent<TransformPool>();
+            scorePopupPool = GameObject.FindWithTag("ScorePopupPool").GetComponent<ClickScorePopupPool>();
         }
 
         private void Update()
@@ -47,7 +56,7 @@ namespace F4B1.Core.Cursor
             if (cooldownTimer > 0) return;
 
             cooldownTimer = cooldown;
-            PerformClick();
+            TryPerformClick();
         }
 
         private void OnDrawGizmosSelected()
@@ -57,17 +66,29 @@ namespace F4B1.Core.Cursor
             Gizmos.DrawWireCube(cursorPos.position, hitBox);
         }
 
-        private void PerformClick()
+        private void TryPerformClick()
         {
             LeanTween.scale(gameObject, new Vector3(0.6f, 0.7f, 0.7f), Mathf.Min(0.3f, cooldown / 2)).setEasePunch();
 
             var clickGo = clickPool.GetPooledGameObject();
-            if(clickGo != null) clickGo.SetActive(true);
+            if(clickGo != null) clickGo.gameObject.SetActive(true);
 
             var col = Physics2D.OverlapBox(cursorPos.position, hitBox, 0, mask);
             if (!col) return;
-            col.GetComponent<CookieScoreManager>().Click(scoreAmount, cursorPos.position);
+            Click(scoreAmount, cursorPos.position);
             increaseComboEvent.Raise(1);
+        }
+        
+        private void Click(int score, Vector2 pos)
+        {
+            var calculatedScore = score * Mathf.Max(1, currentComboVariable.Value) * (cursorMultiplierVariable.Value + 1);
+            playerScoreVariable.Add(calculatedScore);
+
+            var popup = scorePopupPool.GetPooledGameObject();
+            if (popup == null) return;
+            popup.transform.position = pos;
+            popup.SetNumber(calculatedScore);
+            popup.gameObject.SetActive(true);
         }
     }
 }

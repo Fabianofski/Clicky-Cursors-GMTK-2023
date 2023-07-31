@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 5060521279130361592}
   - component: {fileID: 3135483902552536967}
   - component: {fileID: 8022368630170286203}
-  - component: {fileID: 6580385298569482769}
   - component: {fileID: -9034640458034569655}
   m_Layer: 6
   m_Name: CookieSize1
@@ -165,24 +164,6 @@ MonoBehaviour:
     _list: {fileID: 0}
     _collectionInstancer: {fileID: 0}
     _listInstancer: {fileID: 0}
---- !u!114 &6580385298569482769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5060521279130361598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b6ce7060d1d52144b2d67a079622318, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundEvent: {fileID: 11400000, guid: ca1eca7eb3b3c154293af562b7eb9d9a, type: 2}
-  cookieSound: {fileID: 11400000, guid: 1726a62d44d4ab944bf9992c9866c235, type: 2}
-  playerScoreVariable: {fileID: 11400000, guid: 7cbfb300913ff8d4dbbe7beedb04d9e7, type: 2}
-  currentComboVariable: {fileID: 11400000, guid: 8fbbd8868feb55145a773c9cf8c5e624, type: 2}
-  cursorMultiplierVariable: {fileID: 11400000, guid: 9df26b77bb2bfff4180a600911e2ce98, type: 2}
-  scorePopupText: {fileID: 4399874285742653116, guid: 87e0dc3c064a61042b2cbfeb0ac9adea, type: 3}
 --- !u!114 &-9034640458034569655
 MonoBehaviour:
   m_ObjectHideFlags: 0
