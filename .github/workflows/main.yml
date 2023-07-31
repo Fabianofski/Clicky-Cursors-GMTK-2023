@@ -17,6 +17,8 @@ jobs:
             platform: StandaloneWindows64
           - name: Linux
             platform: StandaloneLinux64
+          - name: MacOS
+            platform: StandaloneOSX
           - name: Android
             platform: Android
           - name: WebGL
@@ -53,6 +55,7 @@ jobs:
       - uses: game-ci/unity-builder@v2
         with:
           targetPlatform: ${{ matrix.targetPlatform.platform }}
+          buildName: ClickyCursors
 
       - uses: actions/upload-artifact@v2
         with:
