@@ -1,4 +1,4 @@
-﻿name: GameCI Template 🎮
+﻿name: Build WebGL, Windows, Linux, Android
 
 on: push
 
@@ -7,17 +7,20 @@ env:
 
 jobs:
   buildTargetPlatforms:
-    name: Build for ${{ matrix.targetPlatform }}
+    name: Build for ${{ matrix.targetPlatform.name }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         targetPlatform:
-          - StandaloneOSX
-          - StandaloneWindows64
-          - StandaloneLinux64
-          - Android
-          - WebGL
+          - name: Windows
+            platform: StandaloneWindows64
+          - name: Linux
+            platform: StandaloneLinux64
+          - name: Android
+            platform: Android
+          - name: WebGL
+            platform: WebGL
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -42,16 +45,16 @@ jobs:
         uses: actions/cache@v2
         with:
           path: Library
-          key: Library-build-${{ matrix.targetPlatform }}
+          key: Library-build-${{ matrix.targetPlatform.platform }}
           restore-keys: |
             Library-build-
             Library-
 
       - uses: game-ci/unity-builder@v2
         with:
-          targetPlatform: ${{ matrix.targetPlatform }}
+          targetPlatform: ${{ matrix.targetPlatform.platform }}
 
       - uses: actions/upload-artifact@v2
         with:
-          name: ClickyCursors-${{ matrix.targetPlatform }}
-          path: build/${{ matrix.targetPlatform }}
+          name: ClickyCursors-${{ matrix.targetPlatform.name }}
+          path: build/${{ matrix.targetPlatform.platform }}
